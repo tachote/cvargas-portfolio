@@ -3,15 +3,9 @@ import Base from '../layouts/Base.astro';
 import { cves } from '../data/cves.ts';
 import ach from '../data/achievements.json';
 import certs from '../data/certs.json';
-import talks from '../data/talks.json';
-import blogs from '../data/blogs.json';
-const FEAT = ['e70b968b15c2', 'qyf-AlgEy20', 'd93394a4d719'];
-const items = [
-  ...blogs.map((b) => ({ kind: 'Post', title: b.title, url: b.url, year: b.year, lang: '' })),
-  ...talks.map((t) => ({ kind: 'Talk', title: t.title, url: t.url, year: t.year, lang: 'ES' })),
-];
-const rank = (u: string) => { const i = FEAT.findIndex((f) => u.includes(f)); return i < 0 ? 99 : i; };
-items.sort((a, b) => rank(a.url) - rank(b.url) || (b.year ?? 0) - (a.year ?? 0));
+import grim from '../data/grimoire.json';
+const KIND: Record<string, string> = { writeup: 'Write-up', post: 'Post', talk: 'Talk' };
+const items = (grim as any[]).filter((g) => !g.hidden);
 const ICO: Record<string,string> = { OSWE: '⚔', CWEE: '⛨', BSCP: '✠' };
 const achTop = ach.filter((a) => a.tier === 'top');
 const achRest = ach.filter((a) => a.tier !== 'top');
@@ -88,7 +82,7 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   <p class="sub">Research write-ups and conference talks.</p>
   <ul class="troph grim">
     {items.map((it) => (
-      <li class={rank(it.url) < 99 ? '' : 'lo'}><span class="k">{it.kind}</span><a href={it.url} rel="noopener">{it.title}</a><span class="d">{it.lang && <span class="lang">{it.lang}</span>}{it.year ?? ''}</span></li>
+      <li class={it.tier === 'top' ? '' : 'lo'}><span class="k">{KIND[it.kind] ?? it.kind}</span><a href={it.url} rel="noopener">{it.title}</a><span class="d">{it.lang && it.lang !== 'EN' && <span class="lang">{it.lang}</span>}{it.year ?? ''}</span></li>
     ))}
   </ul>
 </section>
