@@ -6,7 +6,7 @@
   "location": "Remote, Colombia",
   "tagline": "Finding vulnerabilities in software people depend on, like NestJS, Fastify, DOMPurify and Ghost.",
   "linkedin": "https://www.linkedin.com/in/cvmiracle",
-  "github": "https://github.com/tachote",
+  "github": null,
   "email": null,
   "featured_cve": "CVE-2026-2293"
 }

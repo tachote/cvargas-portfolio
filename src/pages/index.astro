@@ -109,7 +109,7 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
     <h2 id="contact-title">Contact <span class="amb">· Save Room</span></h2>
     <p class="contact-headline">A good place to<br/>start a conversation.</p>
     <p class="sub">For research, talks or disclosure coordination, reach out on LinkedIn.</p>
-    <a class="button primary" href={site.email ? `mailto:${site.email}` : site.linkedin}>{site.email ? 'Send an email' : 'Rest at the save point, then reach out on LinkedIn.'}<Icon name="arrow" size={18}/></a>
+    <a class="button primary" href={site.email ? `mailto:${site.email}` : site.linkedin}>{site.email ? 'Send an email' : 'Rest at the save point · LinkedIn'}<Icon name="arrow" size={18}/></a>
     <div class="contact-links">{site.github && <a href={site.github}><Icon name="github" size={16}/> GitHub ↗</a>}{site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}{eng && <a href={eng.verify_url}>{eng.label} ↗</a>}</div>
   </section>
   </main>
