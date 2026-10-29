@@ -1,6 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import ResearchNote from '../components/ResearchNote.astro';
+import BrandMark from '../components/BrandMark.astro';
+import CastleEntrance from '../components/CastleEntrance.astro';
 import { cves } from '../data/cves.ts';
 import ach from '../data/achievements.json';
 import certs from '../data/certs.json';
@@ -9,33 +12,45 @@ import talksData from '../data/talks.json';
 import skills from '../data/skills.json';
 import notes from '../data/profile-notes.json';
 import site from '../data/site.json';
+import portfolio from '../data/portfolio-ui.json';
+import entrance from '../data/portfolio-entrance.json';
 import { posts } from '../lib/posts';
 const SK = skills.scale ?? 10;
 const live = new Set((await posts()).map(p => `/blog/${p.id}`));
 const items = grim.filter(g => !g.hidden && !g.draft && (!g.url.startsWith('/blog/') || live.has(g.url.replace(/\/$/, ''))));
 const writing = items.filter(g => g.kind !== 'talk');
-const featuredWriting = writing.find(g => g.tier === 'top');
-const talks = items.filter(g => g.kind === 'talk').map(g => { const t = talksData.find(x => x.url === g.url); return { ...g, event: t ? [t.host, t.event].filter(Boolean).join(' · ') : g.host, year: g.year ?? t?.year ?? null }; });
+const talks = items.filter(g => g.kind === 'talk').map(g => {
+  const recorded = talksData.find(talk => talk.url === g.url);
+  return { ...g, host: recorded ? [recorded.host, recorded.event].filter(Boolean).join(' · ') : g.host, year: g.year ?? recorded?.year ?? null };
+});
+const featuredWriting = writing.find(g => g.tier === 'top') ?? writing[0];
+const featuredTalk = talks.find(g => g.tier === 'top') ?? talks[0];
 const achTop = ach.filter(a => a.tier === 'top');
 const achRest = ach.filter(a => a.tier !== 'top');
 const topC = certs.filter(c => c.tier === 'top' && c.confirmed && !c.hidden);
 const inv = certs.filter(c => c.tier === 'other' && c.confirmed && !c.hidden);
-const eng = notes.english;
 const featured = cves.find(c => c.id === site.featured_cve) ?? cves[0];
 const top = cves.slice(0, 6), rest = cves.slice(6);
 const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
 const certIcon: Record<string, string> = { OSWE: 'sword', CWEE: 'shield', BSCP: 'diamond' };
 const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
+const chapters = portfolio.navigation.chapters;
+const chapterIndex = (id: string) => String(chapters.findIndex(chapter => chapter.id === id) + 1).padStart(2, '0');
+const research = portfolio.research;
+const classes = [...new Set(cves.map(c => c.label))].sort();
+const searchText = (c: typeof cves[number]) => [c.id, c.product, c.vuln_class, c.label, c.detail, c.code_name, c.severity, c.date].filter(Boolean).join(' ');
+const formatCount = (template: string, shown = cves.length) => template.replace('{shown}', String(shown)).replace('{total}', String(cves.length));
 ---
 <Base>
+<CastleEntrance />
 <div class="wrap home">
   <a class="skip-link" href="#cves">Skip to research</a>
   <div class="topbar">
-    <a class="wordmark" href="/" aria-label={`${site.name} home`}><Icon name="sword" size={19}/>{site.domain}</a>
-    <nav aria-label="Main navigation"><a href="#cves">Research</a><a href="#writing">Writing</a><a href="#talks">Talks</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
+    <a class="wordmark" href="/" aria-label={`${site.name} home`}><BrandMark size={34}/>{site.domain}</a>
+    <nav aria-label="Main navigation"><a href="#cves">Research</a><a href="#writing">{portfolio.writing.title}</a><a href="#talks">{portfolio.talks.title}</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
   </div>
   <header class="hero">
-    <div class="sky" aria-hidden="true"><i class="l1"></i><i class="moon"></i><i class="l2"></i><i class="l3"></i></div>
+    <div class="hero-atmosphere" aria-hidden="true"><div class="hero-stars"></div><img class="hero-moon" src="/fx/portfolio-moon.svg" width="640" height="640" alt="" decoding="async"/><img class="hero-castle hero-vault" src="/fx/portfolio-castle.svg" width="1600" height="900" alt="" decoding="async"/><div class="hero-mist"></div></div>
     <div class="hero-txt">
       <p class="eyebrow">Offensive security · {site.location}</p>
       <h1>{site.name.split(' ')[0]}<br/><span>{site.name.split(' ').slice(1).join(' ')}<span class="name-mark" aria-hidden="true">✦</span></span></h1>
@@ -44,92 +59,106 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
 
     </div>
     <div class="hero-side">
-      <figure class="avatar"><div class="avatar-arch"><img src="/fx/avatar-hunter-240.webp" srcset="/fx/avatar-hunter-240.webp 1x, /fx/avatar-hunter-480.webp 2x" width="180" height="209" alt="Cristian Vargas depicted as a pixel-art vulnerability hunter" fetchpriority="high" /></div><figcaption><span aria-hidden="true">◆</span> THE VULNERABILITY HUNTER <span aria-hidden="true">◆</span></figcaption></figure>
+      <figure class="avatar"><div class="avatar-arch"><img src="/fx/avatar-hunter-240.webp" srcset="/fx/avatar-hunter-240.webp 1x, /fx/avatar-hunter-480.webp 2x" width="180" height="209" alt={portfolio.art.avatarAlt} fetchpriority="high" /></div><figcaption><span aria-hidden="true">◆</span> THE VULNERABILITY HUNTER <span aria-hidden="true">◆</span></figcaption></figure>
       <button type="button" id="play" class="playbtn" aria-describedby="game-load-status" hidden><Icon name="play" size={14}/> PRESS START <span class="game-hint">Enter the bestiary</span></button>
       <p id="game-load-status" class="game-load-status" role="status" aria-live="polite"></p>
     </div>
       <nav class="links" aria-label="Profile actions"><a class="button primary" href="#cves">View research <Icon name="arrow" size={17}/></a><a class="text-link" href="#contact">Get in touch <span aria-hidden="true">↗</span></a></nav>
   </header>
 
+  <nav class="chapter-nav" aria-label={portfolio.navigation.label}>
+    <div class="chapter-nav-head"><span class="chapter-label">{portfolio.navigation.eyebrow}</span><span class="chapter-current" aria-hidden="true">{chapters[0].subtitle}</span></div>
+    <ol class="chapter-list">{chapters.map((chapter, index) => <li><a class="chapter-link" href={`#${chapter.id}`} data-chapter={chapter.id}><span class="chapter-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><span class="chapter-name">{chapter.label}</span></a></li>)}</ol>
+    <progress class="reading-progress" value="0" max="100" aria-label={portfolio.navigation.progressLabel} hidden></progress>
+  </nav>
+
   <main>
-  <section id="cves" aria-labelledby="cves-title">
-    <div class="section-kicker"><Icon name="sword" size={16}/><span class="section-line"></span><span>{String(cves.length).padStart(2, '0')} ENTRIES</span></div>
+  <section id="cves" aria-labelledby="cves-title" data-research-archive data-result-template={research.results} data-more-template={research.more} data-filtered-more-template={research.filteredMore}>
+    <div class="section-kicker"><span class="section-index" aria-hidden="true">{chapterIndex('cves')}</span><Icon name="sword" size={16}/><span>Research archive</span><span class="section-line"></span><span>{String(cves.length).padStart(2, '0')} ENTRIES</span></div>
     <h2 id="cves-title">CVEs &amp; Advisories <span class="amb">· Bestiary</span></h2>
     <p class="sub">Real software. Disclosed vulnerabilities. Research you can verify.</p>
-    {featured && <a href={featured.advisory_url} class="featured-research">
+    {featured && <a href={featured.advisory_url} class="featured-research" data-research-feature>
       <div class="featured-top"><span class="eyebrow">Featured discovery</span><span class={`severity ${cls[featured.severity]}`}>{featured.severity} · {featured.cvss4}</span></div>
-      <div class="featured-main"><div><p class="case-id">{featured.id}{featured.co && ' · Co-discovered'}</p><h3>{featured.product.split(' ')[0]}</h3><p>{featured.detail ?? featured.vuln_class}</p></div><div class="specimen" aria-hidden="true"><span class="specimen-ring"></span><Icon name="shield" size={49}/></div></div>
+      <div class="featured-main"><div><p class="case-id">{featured.id}{featured.co && ' · Co-discovered'}</p><h3>{featured.product.split(' ')[0]}</h3><p>{featured.detail ?? featured.vuln_class}</p></div><div class="specimen" aria-hidden="true"><img class="specimen-art" src="/fx/portfolio-specimen.svg" width="180" height="180" alt="" loading="lazy" decoding="async"/></div></div>
       <div class="featured-bottom"><span>{featured.label} <span class="muted">/ {featured.code_name}</span></span><span>Read advisory <Icon name="arrow" size={16}/></span></div>
     </a>}
-    <div class="archive-caption"><span>Creatures catalogued</span><span>CVSS 4.0</span></div>
-    <div class="frame table-frame"><table>
+    <div class="research-tools" data-research-tools hidden>
+      <div class="research-search"><label for="research-search">{research.searchLabel}</label><input id="research-search" type="search" placeholder={research.searchPlaceholder} aria-describedby="research-search-hint" autocomplete="off" spellcheck="false"/><p id="research-search-hint" class="sr-only">{research.searchHint}</p></div>
+      <div class="research-filters" role="group" aria-label={research.classLabel}><button type="button" data-filter="" aria-pressed="true">{research.allClasses}<span>{cves.length}</span></button>{classes.map(label => <button type="button" data-filter={label} aria-pressed="false">{label}<span>{cves.filter(c => c.label === label).length}</span></button>)}</div>
+      <div class="research-tools-footer"><p class="research-status" role="status" aria-live="polite" aria-atomic="true">{formatCount(research.results)}</p><button type="button" class="research-reset" hidden>{research.reset}<span aria-hidden="true">↺</span></button></div>
+    </div>
+    <div class="archive-caption"><span>{research.archiveLabel}</span><span>{research.scoreLabel}</span></div>
+    <div class="frame table-frame" data-research-group><table>
       <caption class="sr-only">Disclosed vulnerabilities, affected products, vulnerability classes and severity scores</caption>
       <thead><tr><th scope="col">ID / Advisory</th><th scope="col">Product</th><th scope="col">Class</th><th scope="col">Severity</th></tr></thead>
-      <tbody>{top.map(c => <tr>
+      <tbody>{top.map(c => <tr class="archive-row" data-research-row data-research-id={c.id} data-research-class={c.label} data-class={c.label} data-research-search={searchText(c)}>
         <th scope="row" class="id"><a href={c.advisory_url}>{c.id}</a>{c.co && <span class="co">co-found</span>}</th>
         <td class="prod" title={c.product}>{c.product.split(' ')[0]}{c.product.includes(' ') && <span class="prod-version">{c.product.slice(c.product.indexOf(' ') + 1)}</span>}</td>
-        <td class="cls-td" title={c.detail ?? c.vuln_class}>{c.sprite && <img class="spr" src={`/fx/sprites/${c.sprite}.svg`} alt="" width="20" height="20" loading="lazy" decoding="async" />}{c.label}</td>
+        <td class="cls-td"><ResearchNote label={c.label} detail={c.detail} id={c.id}/></td>
         <td class={`hp ${cls[c.severity]}`}><meter min="0" max="10" value={c.cvss4} aria-label={`${c.id}: ${c.severity}, CVSS 4.0 ${c.cvss4}`}></meter><span>{c.cvss4.toFixed(1)}</span><span class="sr-only"> {c.severity}</span></td>
       </tr>)}</tbody>
     </table></div>
-    {rest.length > 0 && <details class="more"><summary>Reveal the full bestiary ({cves.length}) <span aria-hidden="true">+</span></summary>
-      <div class="frame table-frame"><table><caption class="sr-only">Additional disclosed vulnerabilities</caption><thead><tr><th scope="col">ID / Advisory</th><th scope="col">Product</th><th scope="col">Class</th><th scope="col">Severity</th></tr></thead><tbody>{rest.map(c => <tr>
-        <th scope="row" class="id"><a href={c.advisory_url}>{c.id}</a>{c.co && <span class="co">co-found</span>}</th><td class="prod" title={c.product}>{c.product.split(' ')[0]}{c.product.includes(' ') && <span class="prod-version">{c.product.slice(c.product.indexOf(' ') + 1)}</span>}</td><td class="cls-td" title={c.detail ?? c.vuln_class}>{c.sprite && <img class="spr" src={`/fx/sprites/${c.sprite}.svg`} alt="" width="20" height="20" loading="lazy" decoding="async" />}{c.label}</td><td class={`hp ${cls[c.severity]}`}><meter min="0" max="10" value={c.cvss4} aria-label={`${c.id}: ${c.severity}, CVSS 4.0 ${c.cvss4}`}></meter><span>{c.cvss4.toFixed(1)}</span><span class="sr-only"> {c.severity}</span></td>
+    {rest.length > 0 && <details class="more" data-research-more><summary><span class="archive-more-label">{formatCount(research.more)}</span><span aria-hidden="true">+</span></summary>
+      <div class="frame table-frame" data-research-group><table><caption class="sr-only">Additional disclosed vulnerabilities</caption><thead><tr><th scope="col">ID / Advisory</th><th scope="col">Product</th><th scope="col">Class</th><th scope="col">Severity</th></tr></thead><tbody>{rest.map(c => <tr class="archive-row" data-research-row data-research-id={c.id} data-research-class={c.label} data-class={c.label} data-research-search={searchText(c)}>
+        <th scope="row" class="id"><a href={c.advisory_url}>{c.id}</a>{c.co && <span class="co">co-found</span>}</th><td class="prod" title={c.product}>{c.product.split(' ')[0]}{c.product.includes(' ') && <span class="prod-version">{c.product.slice(c.product.indexOf(' ') + 1)}</span>}</td><td class="cls-td"><ResearchNote label={c.label} detail={c.detail} id={c.id}/></td><td class={`hp ${cls[c.severity]}`}><meter min="0" max="10" value={c.cvss4} aria-label={`${c.id}: ${c.severity}, CVSS 4.0 ${c.cvss4}`}></meter><span>{c.cvss4.toFixed(1)}</span><span class="sr-only"> {c.severity}</span></td>
       </tr>)}</tbody></table></div>
     </details>}
+    <div class="research-empty" hidden><p>{research.emptyTitle}</p><p>{research.emptyHint}</p><button type="button" class="research-clear">{research.clear}<span aria-hidden="true">↺</span></button></div>
   </section>
 
   <section id="awards" aria-labelledby="awards-title">
-    <div class="section-kicker"><Icon name="crown" size={16}/><span>Trophy Hall</span><span class="section-line"></span></div>
+    <div class="section-kicker"><span class="section-index" aria-hidden="true">{chapterIndex('awards')}</span><Icon name="crown" size={16}/><span>Competition record</span><span class="section-line"></span></div>
     <h2 id="awards-title">Awards <span class="amb">· Trophies</span></h2><p class="sub">CTF and cyber competition results.</p>
     {achTop.slice(0, 1).map(a => <div class="trophy-feature"><div class="trophy-emblem"><Icon name="crown" size={40}/></div><div><p class="eyebrow">Featured achievement</p><h3>{a.title}</h3><p>{a.detail}</p></div><span class="trophy-flourish" aria-hidden="true">✦</span></div>)}
     <ul class="troph">{[...achTop.slice(1), ...achRest].map(a => <li class={a.tier === 'top' ? '' : 'lo'}><span class="ico"><Icon name="crown" size={17}/></span><div><h3>{a.title}</h3><p>{a.detail}</p></div></li>)}</ul>
   </section>
 
   <section id="writing" aria-labelledby="writing-title">
-    <div class="section-kicker"><Icon name="book" size={16}/><span class="section-line"></span></div>
-    <h2 id="writing-title">Writing <span class="amb">· Grimoire</span></h2><p class="sub">Research, secure code review and lessons from the field.</p>
-    {featuredWriting && <a class="writing-feature" href={featuredWriting.url}><div class="book-art" aria-hidden="true"><Icon name="book" size={52}/><span>THE GRIMOIRE</span></div><div><p class="eyebrow">Featured {kind[featuredWriting.kind]} · {featuredWriting.lang}</p><h3>{featuredWriting.title}</h3>{featuredWriting.host && <p>{featuredWriting.host}</p>}<span class="read-link">Read article <Icon name="arrow" size={16}/></span></div></a>}
-    <ul class="grim">{writing.filter(it => it !== featuredWriting).map(it => <li><span class="k">{kind[it.kind]}</span><a href={it.url}>{it.title}<span aria-hidden="true">↗</span></a><span class="d">{it.lang}{it.year ? ` / ${it.year}` : ''}</span></li>)}</ul>
-    {live.size > 0 && <p class="all-writing"><a href="/blog/">All writing →</a></p>}
+    <div class="section-kicker"><span class="section-index" aria-hidden="true">{chapterIndex('writing')}</span><Icon name="book" size={16}/><span>{chapters.find(chapter => chapter.id === 'writing')?.kicker}</span><span class="section-line"></span></div>
+    <h2 id="writing-title">{portfolio.writing.title} <span class="amb">· {chapters.find(chapter => chapter.id === 'writing')?.subtitle}</span></h2><p class="sub">{portfolio.writing.description}</p>
+    {featuredWriting && <a class="writing-feature" href={featuredWriting.url}><div class="book-art" aria-hidden="true"><Icon name="book" size={52}/><span>{portfolio.writing.artLabel}</span></div><div><p class="eyebrow">{portfolio.writing.featuredLabel} {kind[featuredWriting.kind]} · {featuredWriting.lang}</p><h3>{featuredWriting.title}</h3>{featuredWriting.host && <p>{featuredWriting.host}</p>}<span class="read-link">{portfolio.writing.readLabel} <Icon name="arrow" size={16}/></span></div></a>}
+    {!featuredWriting && notes.medium && <a class="writing-feature writing-empty" href={notes.medium}><div class="book-art" aria-hidden="true"><Icon name="book" size={52}/><span>{portfolio.writing.artLabel}</span></div><div><p class="eyebrow">{portfolio.writing.mediumEyebrow}</p><h3>{portfolio.writing.mediumTitle}</h3><p>{portfolio.writing.mediumDescription}</p><span class="read-link">{portfolio.writing.mediumLabel} <Icon name="arrow" size={16}/></span></div></a>}
+    {writing.length > 1 && <ul class="grim">{writing.filter(it => it !== featuredWriting).map(it => <li><span class="k">{kind[it.kind]}</span><a href={it.url}>{it.title}<span aria-hidden="true">↗</span></a><span class="d">{it.lang}{it.year ? ` / ${it.year}` : ''}</span></li>)}</ul>}
+    {live.size > 0 && <p class="all-writing"><a href="/blog/">{portfolio.writing.allLabel} →</a></p>}
   </section>
 
   <section id="talks" aria-labelledby="talks-title">
-    <div class="section-kicker"><Icon name="play" size={16}/><span class="section-line"></span><span>{String(talks.length).padStart(2, '0')} TALKS</span></div>
-    <h2 id="talks-title">Talks <span class="amb">· Chapel</span></h2><p class="sub">Recorded sessions on AppSec, tooling and certifications.</p>
-    <ul class="grim talks">{talks.map(t => <li><span class="k play" aria-hidden="true">▶</span><a href={t.url}>{t.title}{t.event && <span class="ev">{t.event}</span>}<span aria-hidden="true">↗</span></a><span class="d">{t.lang}{t.year ? ` / ${t.year}` : ''}</span></li>)}</ul>
+    <div class="section-kicker"><span class="section-index" aria-hidden="true">{chapterIndex('talks')}</span><Icon name="broadcast" size={16}/><span>{chapters.find(chapter => chapter.id === 'talks')?.kicker}</span><span class="section-line"></span></div>
+    <h2 id="talks-title">{portfolio.talks.title} <span class="amb">· {chapters.find(chapter => chapter.id === 'talks')?.subtitle}</span></h2><p class="sub">{portfolio.talks.description}</p>
+    {featuredTalk && <a class="talk-feature" href={featuredTalk.url}><div class="talk-art" aria-hidden="true"><Icon name="broadcast" size={50}/><span>{portfolio.talks.artLabel}</span></div><div class="talk-content"><p class="eyebrow">{portfolio.talks.featuredLabel} · {featuredTalk.lang}{featuredTalk.year ? ` / ${featuredTalk.year}` : ''}</p><h3>{featuredTalk.title}</h3>{featuredTalk.host && <p class="talk-meta">{featuredTalk.host}</p>}<span class="talk-link">{portfolio.talks.watchLabel} <Icon name="arrow" size={16}/></span></div></a>}
+    {talks.length > 1 && <ul class="talk-list">{talks.filter(it => it !== featuredTalk).map(it => <li class="talk-row"><span class="talk-kind">{portfolio.talks.kindLabel}</span><a class="talk-title" href={it.url}>{it.title}<span aria-hidden="true">↗</span></a><span class="talk-meta">{it.lang}{it.year ? ` / ${it.year}` : ''}{it.host ? ` · ${it.host}` : ''}</span></li>)}</ul>}
   </section>
 
   <section id="skills" aria-labelledby="skills-title">
-    <div class="section-kicker"><Icon name="diamond" size={16}/><span>Self-assessed</span><span class="section-line"></span></div>
+    <div class="section-kicker"><span class="section-index" aria-hidden="true">{chapterIndex('skills')}</span><Icon name="diamond" size={16}/><span>Character sheet</span><span class="section-line"></span></div>
     <h2 id="skills-title">Skills <span class="amb">· Attributes</span></h2><p class="sub">{skills.self_assessed ? `Self-assessed, 1–${SK}.` : `Scale 1–${SK}.`} Evidence alongside each attribute.</p>
     <ul class="attrs">{skills.stats.map(st => <li><span class="al">{st.label}</span><span class="ab" role="img" aria-label={`${st.level} of ${SK}`}>{Array.from({ length: SK }, (_, i) => <i class={i < st.level ? 'on' : ''}></i>)}</span><span class="an">{st.level}<span>/{SK}</span></span>{st.evidence && <span class="ae">{st.evidence}</span>}</li>)}</ul>
   </section>
 
   <section id="certifications" aria-labelledby="certifications-title">
-    <div class="section-kicker"><Icon name="shield" size={16}/><span>Relic Chamber</span><span class="section-line"></span></div>
+    <div class="section-kicker"><span class="section-index" aria-hidden="true">{chapterIndex('certifications')}</span><Icon name="shield" size={16}/><span>Credentials</span><span class="section-line"></span></div>
     <h2 id="certifications-title">Certifications <span class="amb">· Relics</span></h2><p class="sub">Offensive web and AppSec certifications.</p>
     <div class="relics">{topC.map(c => <article class="relic"><div class="relic-emblem"><Icon name={certIcon[c.name] ?? 'shield'} size={30}/></div><h3>{c.verify_url ? <a href={c.verify_url}>{c.name}<span aria-hidden="true">↗</span></a> : c.name}</h3><p>{c.full.replace(/\s*\([^)]*\)$/, '')}</p><div class="relic-meta"><span>{c.year}</span>{c.verify_url && <a href={c.verify_url} aria-label={`Verify ${c.name}`}>Verified credential ↗</a>}</div></article>)}</div>
     <p class="inv-h">Inventory <span>· {inv.length} more</span></p><ul class="inv">{inv.map(c => <li title={c.full}>{c.verify_url ? <a href={c.verify_url}>{c.name}</a> : c.name}</li>)}</ul>
   </section>
 
   <section id="contact" class="save-room" aria-labelledby="contact-title">
-    <div class="section-kicker"><Icon name="flame" size={16}/><span class="section-line"></span></div>
-    <div class="save-emblem" aria-hidden="true"><Icon name="flame" size={30}/></div>
+    <div class="save-emblem" aria-hidden="true"><img class="save-seal" src="/fx/portfolio-seal.svg" width="120" height="120" alt="" loading="lazy" decoding="async"/></div>
     <h2 id="contact-title">Contact <span class="amb">· Save Room</span></h2>
     <p class="contact-headline">A good place to<br/>start a conversation.</p>
     <p class="sub">For research, talks or disclosure coordination, reach out on LinkedIn.</p>
-    <a class="button primary" href={site.email ? `mailto:${site.email}` : site.linkedin}>{site.email ? 'Send an email' : 'Rest at the save point · LinkedIn'}<Icon name="arrow" size={18}/></a>
-    <div class="contact-links">{site.github && <a href={site.github}><Icon name="github" size={16}/> GitHub ↗</a>}{site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}{eng && <a href={eng.verify_url}>{eng.label} ↗</a>}</div>
+    <a class="button primary" href={site.email ? `mailto:${site.email}` : site.linkedin}>{site.email ? 'Send an email' : 'Let’s connect on LinkedIn'}<Icon name="arrow" size={18}/></a>
+    <div class="contact-links">{site.github && <a href={site.github}><Icon name="github" size={16}/> GitHub ↗</a>}{site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}</div>
   </section>
   </main>
-  <footer><a class="wordmark" href="/">{site.domain}</a><span>© {new Date().getFullYear()} {site.name}</span><a href="#top" aria-label="Back to top">Back to top ↑</a></footer>
+  <footer><a class="wordmark" href="/"><BrandMark size={26}/>{site.domain}</a><span>© {new Date().getFullYear()} {site.name}</span><button type="button" class="entrance-replay" data-entrance-replay hidden>{entrance.replay}</button><a href="#top" aria-label="Back to top">Back to top ↑</a></footer>
 </div>
 <script>
+  import '../scripts/portfolio.js';
+  import '../scripts/portfolio-motion.js';
+  import '../scripts/castle-entrance.js';
   import { cves } from '../data/cves.ts';
   import skills from '../data/skills.json';
-  import { initParallax } from '../scripts/parallax.js';
-  initParallax();
   const pb = document.getElementById('play');
   const status = document.getElementById('game-load-status');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');

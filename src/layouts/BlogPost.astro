@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import portfolio from '../data/portfolio-ui.json';
 const { frontmatter } = Astro.props;
 import '../fx.css';
 const { title, date, related_cve, draft, medium_url } = frontmatter;
@@ -31,7 +32,8 @@ const pretty = new Date(date + 'T12:00:00').toLocaleDateString('en-US', { year: 
     <p class="back"><a href="/#writing">← Back to Grimoire</a></p>
     <footer>
       <span>Cristian Vargas</span>
-      <a href="/blog/">Writing</a>
+      <a href="/blog/">{portfolio.writing.title}</a>
+      <a href="/#talks">{portfolio.talks.title}</a>
     </footer>
   </main>
 </Base>

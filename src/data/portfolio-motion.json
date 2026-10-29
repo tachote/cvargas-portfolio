@@ -1,0 +1,8 @@
+{
+  "intersectionThreshold": 0.12,
+  "intersectionMargin": "0px 0px -32px 0px",
+  "nearScrollRatio": 0.18,
+  "farScrollRatio": 0.48,
+  "tiltLowerThreshold": 0.36,
+  "tiltUpperThreshold": 0.64
+}

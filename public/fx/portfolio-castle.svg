@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+<defs>
+  <linearGradient id="pc-stone" x1="700" y1="310" x2="1000" y2="890" gradientUnits="userSpaceOnUse"><stop stop-color="#3a3046"/><stop offset=".44" stop-color="#211c2c"/><stop offset="1" stop-color="#100e18"/></linearGradient>
+  <linearGradient id="pc-tower" x1="0" x2="1"><stop stop-color="#171421"/><stop offset=".43" stop-color="#393043"/><stop offset=".7" stop-color="#282333"/><stop offset="1" stop-color="#15131e"/></linearGradient>
+  <linearGradient id="pc-roof" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5b435a"/><stop offset=".43" stop-color="#302337"/><stop offset="1" stop-color="#15121e"/></linearGradient>
+  <linearGradient id="pc-rim" x1="0" x2="1"><stop stop-color="#b6a7c5" stop-opacity=".03"/><stop offset=".55" stop-color="#b6a7c5" stop-opacity=".7"/><stop offset="1" stop-color="#b6a7c5" stop-opacity=".12"/></linearGradient>
+  <linearGradient id="pc-gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f2db9d"/><stop offset=".45" stop-color="#ba9160"/><stop offset="1" stop-color="#695075"/></linearGradient>
+  <linearGradient id="pc-rock" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#27202e"/><stop offset="1" stop-color="#0e0b15"/></linearGradient>
+  <linearGradient id="pc-fog" x1="0" x2="1"><stop stop-color="#766780" stop-opacity="0"/><stop offset=".5" stop-color="#9c8ca9" stop-opacity=".16"/><stop offset="1" stop-color="#766780" stop-opacity="0"/></linearGradient>
+  <pattern id="pc-masonry" width="62" height="34" patternUnits="userSpaceOnUse"><path d="M0 .5h62M0 33.5h62M31 0v17M0 17h62M13 17v17" stroke="#b7a1b9" stroke-opacity=".1"/><path d="M2 3h25M34 3h22M17 20h36" stroke="#dbccdf" stroke-opacity=".035"/></pattern>
+  <pattern id="pc-roof-lines" width="12" height="22" patternUnits="userSpaceOnUse" patternTransform="skewX(-18)"><path d="M.5 0v22M0 11h12" stroke="#baa5c4" stroke-opacity=".13"/></pattern>
+  <filter id="pc-lamp" x="-100%" y="-50%" width="300%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  <g id="pc-lancet"><path d="M-5 0v-25Q-5-32 0-37 5-32 5-25V0Z" fill="#0d0b13" stroke="#9e8b9b" stroke-opacity=".45"/><path d="M-2 0v-25Q-2-29 0-32 2-29 2-25V0Z" fill="url(#pc-gold)" opacity=".8"/><path d="M-5-12H5M0-31V0" stroke="#30212e" stroke-width="1.5"/></g>
+  <g id="pc-amber-lancet"><path d="M-6 1v-26Q-6-33 0-39 6-33 6-26V1Z" fill="#d8aa65" opacity=".35" filter="url(#pc-lamp)"/><use href="#pc-lancet"/></g>
+  <g id="pc-slit"><path d="M-2 0v-17l2-5 2 5V0Z" fill="#16111d" stroke="#a897af" stroke-opacity=".3"/><path d="M0-17V-2" stroke="#ba9771" opacity=".7"/></g>
+  <g id="pc-finial"><path d="M0 0v-32M-5-21l5-6 5 6-5 6Z" stroke="#ad9ab7" stroke-width="1.4"/><path d="M-2-31 0-37l2 6" fill="#c9b7cf"/></g>
+  <g id="pc-rosette"><circle r="25" fill="#16131e" stroke="#a38a9c" stroke-opacity=".6" stroke-width="2"/><circle r="19" stroke="#816477"/><circle r="9" fill="url(#pc-gold)" opacity=".75"/><g stroke="#c2a280" stroke-width="1.2"><path d="M-19 0h38M0-19v38M-13-13 13 13M-13 13 13-13"/><path d="M0-20C10-13 10-7 0 0-10-7-10-13 0-20ZM20 0C13 10 7 10 0 0 7-10 13-10 20 0ZM0 20C-10 13-10 7 0 0 10 7 10 13 0 20ZM-20 0C-13-10-7-10 0 0-7 10-13 10-20 0Z"/></g><circle r="3" fill="#ead3a5"/></g>
+</defs>
+<!-- Distant crags keep the sky open and the silhouette readable. -->
+<path d="M0 835 88 792l74 19 92-86 90 30 90-107 112 29 76-92 94 52 102-74 120 72 106-58 118 119 92-24 112 86 135 42V900H0Z" fill="#211a2a" opacity=".62"/>
+<path d="m0 890 108-44 125 13 131-74 137 33 113-54 174 30 92-41 147 49 142-37 143 57 188-16v94H0Z" fill="#15121e"/>
+<!-- A remote watchtower, deliberately smaller than the keep. -->
+<g opacity=".56"><path d="M318 721V569h49v152Z" fill="#282130"/><path d="m308 571 35-95 35 95Z" fill="#312539"/><path d="m343 475 36 96h-72" stroke="#8d7b98" stroke-opacity=".4"/><path d="M326 589h34M326 650h34" stroke="#796584" stroke-opacity=".3"/><use href="#pc-slit" transform="translate(344 621)"/><path d="M344 477v-24" stroke="#8e7c9a"/></g>
+<!-- Upper north spire and a smaller roof behind the central mass. -->
+<path d="M1088 629V375h72v254Z" fill="url(#pc-tower)" stroke="#84708e" stroke-opacity=".45"/>
+<path d="m1076 377 49-145 49 145Z" fill="url(#pc-roof)"/>
+<path d="m1076 377 49-145 49 145Z" fill="url(#pc-roof-lines)"/>
+<path d="m1125 232 49 145h-98M1125 235v136" stroke="#ad93b3" stroke-opacity=".55"/>
+<use href="#pc-finial" transform="translate(1125 233)"/>
+<path d="M1083 377h83v9h-83Z" fill="#5b4964"/>
+<path d="M1090 411h69M1090 503h69M1090 578h69" stroke="#8c7599" stroke-opacity=".4"/>
+<use href="#pc-amber-lancet" transform="translate(1125 459)"/>
+<use href="#pc-slit" transform="translate(1106 548)"/><use href="#pc-slit" transform="translate(1144 548)"/>
+<!-- Central cathedral keep, a faceted roof and rose-window face. -->
+<path d="M754 767V512l78-92h178l77 92v255Z" fill="url(#pc-stone)" stroke="#7f6f8c" stroke-opacity=".6"/>
+<path d="m736 514 96-140h178l95 140-95-90H832Z" fill="url(#pc-roof)"/>
+<path d="m736 514 96-140h178l95 140-95-90H832Z" fill="url(#pc-roof-lines)"/>
+<path d="m738 514 94-140h178l93 140M832 375l-1 48M1010 375v49" stroke="#b4a2bf" stroke-opacity=".6"/>
+<path d="M756 517h330M770 623h299M770 756h299" stroke="url(#pc-rim)" stroke-width="2"/>
+<path d="M756 514h330v253H756Z" fill="url(#pc-masonry)"/>
+<path d="M859 749V531l61-72 61 72v218Z" fill="#25202e" stroke="#8b7896" stroke-opacity=".55"/>
+<path d="m848 533 72-88 72 88" stroke="#b9a4ba" stroke-opacity=".6" stroke-width="3"/>
+<path d="M858 538h124M859 693h123" stroke="#a891a5" stroke-opacity=".35"/>
+<use href="#pc-rosette" transform="translate(920 576)"/>
+<use href="#pc-amber-lancet" transform="translate(891 674) scale(1.2)"/>
+<use href="#pc-amber-lancet" transform="translate(920 674) scale(1.2)"/>
+<use href="#pc-amber-lancet" transform="translate(949 674) scale(1.2)"/>
+<path d="M851 537v176M989 537v176" stroke="#c0a7bd" stroke-opacity=".27" stroke-width="3"/>
+<!-- Main octagonal tower: bright rim on the moon-facing edge. -->
+<path d="M979 736V343l25-17h74l24 17v393Z" fill="url(#pc-tower)" stroke="#aa98b6" stroke-opacity=".55"/>
+<path d="M979 343h123v393H979Z" fill="url(#pc-masonry)"/>
+<path d="m967 345 73-174 75 174Z" fill="url(#pc-roof)"/>
+<path d="m967 345 73-174 75 174Z" fill="url(#pc-roof-lines)"/>
+<path d="m1040 171 75 174h-148M1040 177v158M1018 224l9 111M1064 224l-11 111" stroke="#c2accd" stroke-opacity=".45"/>
+<use href="#pc-finial" transform="translate(1040 172)"/>
+<path d="M967 345h148v10H967Z" fill="#5b4b67"/>
+<path d="M979 383h123M979 477h123M979 571h123M979 663h123" stroke="#a491b1" stroke-opacity=".4" stroke-width="2"/>
+<path d="M1004 353v374M1078 353v374" stroke="#b2a0be" stroke-opacity=".27"/>
+<use href="#pc-amber-lancet" transform="translate(1041 440) scale(1.17)"/>
+<use href="#pc-slit" transform="translate(992 438)"/><use href="#pc-slit" transform="translate(1090 438)"/>
+<use href="#pc-amber-lancet" transform="translate(1023 537)"/><use href="#pc-amber-lancet" transform="translate(1060 537)"/>
+<use href="#pc-amber-lancet" transform="translate(1040 626)"/>
+<!-- Thin stair turret and its open bell chamber. -->
+<path d="M690 740V460h72v280Z" fill="url(#pc-tower)" stroke="#8c7b97" stroke-opacity=".55"/>
+<path d="M681 461 726 333l46 128Z" fill="url(#pc-roof)"/>
+<path d="m681 461 45-128 46 128M726 337v117" stroke="#b29bbf" stroke-opacity=".5"/>
+<use href="#pc-finial" transform="translate(726 334)"/>
+<path d="M684 462h84v9h-84Z" fill="#5b4b67"/>
+<path d="M705 529v-28q0-18 21-27 21 9 21 27v28Z" fill="#11101a" stroke="#9d87a7" stroke-opacity=".5"/>
+<path d="M725 484v40M712 524h28M719 511q6-14 12 0v10h-12Z" stroke="#b7a085" stroke-opacity=".65"/>
+<path d="M690 538h72M690 610h72M690 685h72" stroke="#9984a5" stroke-opacity=".4"/>
+<use href="#pc-amber-lancet" transform="translate(726 593)"/><use href="#pc-slit" transform="translate(726 668)"/>
+<!-- Flying buttresses and lancets on the nave. -->
+<g fill="#322939" stroke="#9e88ac" stroke-opacity=".4">
+<path d="M790 723V550h14v112l40 47v46h-15v-29l-25-28v25Z"/>
+<path d="M831 723V547h12v120l35 45v43h-13v-29l-22-29v26Z"/>
+<path d="M984 741V550h12v117l36 43v42h-13v-25l-23-26v40Z"/>
+</g>
+<use href="#pc-lancet" transform="translate(779 606)"/><use href="#pc-lancet" transform="translate(819 606)"/>
+<!-- Western hall and its stepped gables. -->
+<path d="M489 772V608l54-69h100l56 69v164Z" fill="url(#pc-stone)" stroke="#7d6a89" stroke-opacity=".5"/>
+<path d="m473 611 70-101h100l72 101-72-65H543Z" fill="url(#pc-roof)"/>
+<path d="m473 611 70-101h100l72 101M543 511v34M643 511v34" stroke="#aa92b2" stroke-opacity=".45"/>
+<path d="M489 608h210v164H489Z" fill="url(#pc-masonry)"/>
+<path d="M507 764V612l84-66 85 66v152Z" fill="#2c2333" stroke="#b298aa" stroke-opacity=".35"/>
+<path d="m500 614 91-81 92 81M512 625h159" stroke="#a88f9c" stroke-opacity=".6" stroke-width="2"/>
+<use href="#pc-rosette" transform="translate(591 632) scale(.69)"/>
+<use href="#pc-amber-lancet" transform="translate(545 704)"/><use href="#pc-amber-lancet" transform="translate(575 704)"/><use href="#pc-amber-lancet" transform="translate(607 704)"/><use href="#pc-amber-lancet" transform="translate(637 704)"/>
+<!-- Roofline pinnacles give the skyline its own rhythm. -->
+<g stroke="#a28ab0" stroke-opacity=".5" fill="#3e3048"><path d="m788 520 9-42 10 42v40h-19ZM830 478l9-37 9 37v36h-18ZM1076 521l9-42 9 42v41h-18Z"/><path d="M797 479v-18M839 441v-17M1085 479v-18"/></g>
+<!-- Curtain wall, crenellations, corner towers and a deep pointed gate. -->
+<path d="M401 804V701h27v-17h24v17h27v-17h24v17h27v-17h24v17h27v-17h24v17h27v-17h24v17h27v-17h24v17h27v-17h24v17h27v103Z" fill="#28212f" stroke="#8b7796" stroke-opacity=".5"/>
+<path d="M401 715h376v89H401Z" fill="url(#pc-masonry)"/>
+<path d="M409 717h363M409 761h363" stroke="#a490ad" stroke-opacity=".23"/>
+<path d="M404 807V638l20-10h44l18 10v169Z" fill="url(#pc-tower)" stroke="#9b88a9" stroke-opacity=".45"/>
+<path d="M393 638v-25h21v11h19v-11h21v11h19v-11h23v25Z" fill="#4a3b54" stroke="#aa94b2" stroke-opacity=".5"/>
+<path d="M407 654h77M407 738h77" stroke="#9580a2" stroke-opacity=".4"/>
+<use href="#pc-slit" transform="translate(446 700)"/>
+<path d="M663 826V672l50-48 50 48v154Z" fill="#302637" stroke="#a188a1" stroke-opacity=".6"/>
+<path d="m653 676 60-66 61 66M668 687h91" stroke="#b9a0ad" stroke-opacity=".6" stroke-width="3"/>
+<path d="M681 825v-82q0-39 32-65 32 26 32 65v82Z" fill="#0d0c13" stroke="#a88e9c" stroke-opacity=".55" stroke-width="3"/>
+<path d="M689 824v-80q0-31 24-53 24 22 24 53v80" stroke="#9e835d" stroke-opacity=".4"/>
+<path d="M696 720v105M707 704v121M718 702v123M729 718v107M687 750h51M687 775h51M687 800h51" stroke="#5a4559" stroke-width="2"/>
+<path d="M777 825V683h23v-15h21v15h24v-15h21v15h24v-15h21v15h24v-15h21v15h24v-15h21v15h25v-15h21v15h23v-15h21v15h24v-15h21v15h24v-15h21v15h24v142Z" fill="#29212f" stroke="#9d87a5" stroke-opacity=".42"/>
+<path d="M781 699h415v126H781Z" fill="url(#pc-masonry)"/>
+<path d="M781 703h415M781 759h415" stroke="#b49cba" stroke-opacity=".22"/>
+<use href="#pc-slit" transform="translate(825 745)"/><use href="#pc-slit" transform="translate(872 745)"/><use href="#pc-slit" transform="translate(1008 745)"/><use href="#pc-slit" transform="translate(1055 745)"/><use href="#pc-slit" transform="translate(1102 745)"/>
+<!-- Eastern bastion. -->
+<path d="M1150 828V612l24-13h48l24 13v216Z" fill="url(#pc-tower)" stroke="#a08caf" stroke-opacity=".5"/>
+<path d="m1137 614 62-103 62 103Z" fill="url(#pc-roof)"/>
+<path d="m1137 614 62-103 62 103M1199 515v92" stroke="#b59bc0" stroke-opacity=".5"/>
+<path d="M1140 614h118v9h-118Z" fill="#584562"/>
+<path d="M1150 655h96M1150 743h96" stroke="#9e89ac" stroke-opacity=".4"/>
+<use href="#pc-amber-lancet" transform="translate(1199 710) scale(1.1)"/>
+<use href="#pc-slit" transform="translate(1174 790)"/><use href="#pc-slit" transform="translate(1221 790)"/>
+<!-- Foundation ledges and jagged mountainside. -->
+<path d="m365 811 180-15 61 13 54-1 66 7 87-14 95 12 88-6 75 10 81-11 89 21-33 73H350Z" fill="#3b2f40" stroke="#a58eaa" stroke-opacity=".25"/>
+<path d="m352 827 87-4 42 18 43-3 38 34 25-33 35 31 57-37 73 16 42-14 32 19 70-18 43 35 56-23 50 14 53-34 57 42 53-26 65 27 71 45H311Z" fill="url(#pc-rock)"/>
+<path d="m440 838 21 49M521 846l17 54M614 850l-20 50M695 848l34 52M823 852l-30 48M925 850l18 50M1036 850l-22 50M1133 850l31 50" stroke="#726078" stroke-opacity=".2" stroke-width="2"/>
+<!-- Elevated approach: the viaduct arches are open negative space. -->
+<path fill-rule="evenodd" d="m0 899 14-35 173-33 166-17 162-4 110 4 61 7 29 14 48 65H0Zm62 1v-13q0-19 25-25 25 6 25 25v13H62Zm109 0v-27q0-25 30-32 30 7 30 32v27h-60Zm126 0v-39q0-28 31-35 31 7 31 35v39h-62Zm132 0v-41q0-29 31-36 31 7 31 36v41h-62Zm127 0v-33q0-26 30-34 30 8 30 34v33h-60Z" fill="#332a39"/>
+<path d="m14 864 173-33 166-17 162-4 110 4 61 7" stroke="#bd9d9d" stroke-opacity=".55" stroke-width="3"/>
+<path d="m15 874 173-31 165-17 163-3 108 5" stroke="#685068" stroke-width="4"/>
+<path d="m81 850 4-22M167 834l3-21M258 823l2-21M350 813v-20M442 811v-20M534 813v-20M620 819v-20" stroke="#a88a9e" stroke-opacity=".55" stroke-width="3"/>
+<!-- Sparse engraved highlights and mist pass behind rather than over lettering. -->
+<path d="M108 817c235-49 384-33 550-4 200 36 409 23 601-5 160-24 255-16 341 4v27c-137-25-245-13-376 3-208 27-386 23-574-8-229-37-373-33-542 5Z" fill="url(#pc-fog)"/>
+<path d="M0 877c228-29 371-19 533-1 234 26 450-15 653-12 170 2 268 18 414 0v36H0Z" fill="#0e0b15" opacity=".65"/>
+</svg>

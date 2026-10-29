@@ -1,0 +1,18 @@
+[
+  { "id": "first-blood", "name": "Proof of Concept", "description": "Defeat your first vulnerability.", "stat": "kills", "target": 1, "gold": 25 },
+  { "id": "wide-scope", "name": "Expanded Scope", "description": "Defeat 100 vulnerabilities across your runs.", "stat": "kills", "target": 100, "gold": 75 },
+  { "id": "thousand-cuts", "name": "Attack at Scale", "description": "Defeat 1,000 vulnerabilities across your runs.", "stat": "kills", "target": 1000, "gold": 200 },
+  { "id": "evolution", "name": "Privilege Escalation", "description": "Discover a weapon evolution.", "stat": "evolutions", "target": 1, "gold": 150 },
+  { "id": "union", "name": "Supply Chain Collapse", "description": "Unite two compatible max-level weapons.", "stat": "unions", "target": 1, "gold": 300 },
+  { "id": "rescue", "name": "Jailbreak", "description": "Defeat the wardens and rescue a trapped process.", "stat": "rescues", "target": 1, "gold": 200 },
+  { "id": "merchant", "name": "Underground Economy", "description": "Buy an upgrade from the in-run merchant.", "stat": "merchantPurchases", "target": 1, "gold": 75 },
+  { "id": "relics", "name": "Full Recon", "description": "Collect four stage relics across your runs.", "stat": "relics", "target": 4, "gold": 200 },
+  { "id": "boss-hunter", "name": "Critical Path", "description": "Defeat ten bosses across your runs.", "stat": "bosses", "target": 10, "gold": 200 },
+  { "id": "level", "name": "Arbitrary Execution", "description": "Reach level 50 in a single run.", "stat": "maxLevel", "target": 50, "gold": 250 },
+  { "id": "full-audit", "name": "Full Audit", "description": "Clear a classic thirty-minute hunt.", "stat": "standardWins", "target": 1, "gold": 500 },
+  { "id": "again", "name": "One More Run", "description": "Bank the bounty from three runs.", "stat": "runs", "target": 3, "gold": 100 },
+  { "id": "cathedral-clear", "name": "Scope Cleared", "description": "Clear The Attack Surface.", "stage": "cathedral", "target": 1, "gold": 150 },
+  { "id": "library-clear", "name": "Source Available", "description": "Clear The Forbidden Repository.", "stage": "library", "target": 1, "gold": 150 },
+  { "id": "foundry-clear", "name": "Weaponized", "description": "Clear The Exploit Foundry.", "stage": "foundry", "target": 1, "gold": 200 },
+  { "id": "void-clear", "name": "Ring Zero", "description": "Clear Ring Zero.", "stage": "void", "target": 1, "gold": 250 }
+]

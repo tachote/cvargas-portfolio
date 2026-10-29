@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" fill="none">
+<defs>
+ <radialGradient id="pm-halo"><stop offset=".56" stop-color="#d7c8e0" stop-opacity=".13"/><stop offset=".7" stop-color="#ab95bf" stop-opacity=".08"/><stop offset="1" stop-color="#9a7bb4" stop-opacity="0"/></radialGradient>
+ <radialGradient id="pm-body" cx=".34" cy=".27" r=".8"><stop stop-color="#eee7db"/><stop offset=".37" stop-color="#d6ced0"/><stop offset=".72" stop-color="#b9b1c4"/><stop offset="1" stop-color="#817b9c"/></radialGradient>
+ <radialGradient id="pm-crater"><stop stop-color="#7e7a94" stop-opacity=".29"/><stop offset=".65" stop-color="#86829b" stop-opacity=".16"/><stop offset=".83" stop-color="#f2e7de" stop-opacity=".12"/><stop offset="1" stop-color="#eee5e1" stop-opacity="0"/></radialGradient>
+ <radialGradient id="pm-vignette"><stop offset=".7" stop-color="#3a304c" stop-opacity="0"/><stop offset="1" stop-color="#463756" stop-opacity=".2"/></radialGradient>
+ <clipPath id="pm-disc"><circle cx="320" cy="320" r="214"/></clipPath>
+</defs>
+<circle cx="320" cy="320" r="320" fill="url(#pm-halo)"/>
+<circle cx="320" cy="320" r="229" stroke="#d9c8de" stroke-opacity=".08"/>
+<circle cx="320" cy="320" r="214" fill="url(#pm-body)"/>
+<g clip-path="url(#pm-disc)">
+ <path d="M284 133c18-7 29 2 31 11 4 13 4 21 14 29 13 11 32 0 41 12 10 11 6 21 15 25 20 9 34-2 40 17 7 20-4 38-18 50-15 14-2 32-15 43-9 8-23 8-30-1-9-11-15 10-29 8-15-2-21-21-34-18-12 4-25 4-31-10-7-14-7-23-24-22-14 1-22-19-13-34 10-17 26-18 29-33 5-20-8-40 6-53 6-6 10-12 18-24Z" fill="#78768f" opacity=".18"/>
+ <path d="M355 288c9-18 23-27 38-22 17 6 22 18 32 12 16-10 13-21 26-16 18 6 31 11 35 27 4 20 10 16 26 22 20 8 19 21 17 35-3 14-18 13-21 25-5 15 5 31-9 39-16 10-32 13-48 6-17-7-22 15-37 12-10-2-13-21-26-22-24-2-30-9-31-26-2-16-14-18-22-29-15-18-4-28-5-40-1-11-9-11 5-23Z" fill="#716b89" opacity=".19"/>
+ <path d="M161 243c17-13 29-18 42-9 15 11 26 14 25 33-1 19 28 8 21 30-6 18-18 28-38 27-14-1-22-22-37-15-14 7-24-1-24-16 0-14-13-15-8-28 5-11 8-14 19-22Z" fill="#817a93" opacity=".19"/>
+ <path d="M249 370c9-12 25-21 38-14 16 8 20 15 36 14 20-2 27 9 32 23 7 16-24 14-19 31 5 16 0 23-16 25-16 3-22 15-38 6-13-8-19-14-30-5-12 9-25-5-18-20 8-18-2-19 1-35 2-12 7-17 14-25Z" fill="#9c8d9f" opacity=".18"/>
+ <path d="M167 377c9-9 21-11 28 0 9 13 0 23-8 31-12 13-25 4-27-9-2-8 1-16 7-22Z" fill="#6c6786" opacity=".14"/>
+ <path d="M391 151c11-7 25-11 37-2 13 10 17 24 8 37-7 12-18 16-25 4-6-11-20-11-18-24 1-7-9-9-2-15Z" fill="#87819a" opacity=".15"/>
+ <path d="M210 201c26-26 62-33 88-17M333 225c23-14 41-17 60-10M385 346c23-15 48-13 64 0M267 403c22-18 48-14 64-2" stroke="#eee5df" stroke-opacity=".12" stroke-width="7"/>
+ <circle cx="221" cy="195" r="32" fill="url(#pm-crater)"/>
+ <path d="M203.1 188.9a19.2 19.2 0 0 1 26.9 -10.2" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="264" cy="234" r="45" fill="url(#pm-crater)"/>
+ <path d="M238.8 225.4a27.0 27.0 0 0 1 37.8 -14.4" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="333" cy="206" r="29" fill="url(#pm-crater)"/>
+ <path d="M316.8 200.5a17.4 17.4 0 0 1 24.4 -9.3" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="379" cy="253" r="41" fill="url(#pm-crater)"/>
+ <path d="M356.0 245.2a24.6 24.6 0 0 1 34.4 -13.1" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="429" cy="307" r="34" fill="url(#pm-crater)"/>
+ <path d="M410.0 300.5a20.4 20.4 0 0 1 28.6 -10.9" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="447" cy="369" r="49" fill="url(#pm-crater)"/>
+ <path d="M419.6 359.7a29.4 29.4 0 0 1 41.2 -15.7" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="375" cy="391" r="26" fill="url(#pm-crater)"/>
+ <path d="M360.4 386.1a15.6 15.6 0 0 1 21.8 -8.3" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="330" cy="321" r="35" fill="url(#pm-crater)"/>
+ <path d="M310.4 314.4a21.0 21.0 0 0 1 29.4 -11.2" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="246" cy="318" r="22" fill="url(#pm-crater)"/>
+ <path d="M233.7 313.8a13.2 13.2 0 0 1 18.5 -7.0" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="197" cy="283" r="36" fill="url(#pm-crater)"/>
+ <path d="M176.8 276.2a21.6 21.6 0 0 1 30.2 -11.5" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="177" cy="353" r="21" fill="url(#pm-crater)"/>
+ <path d="M165.2 349.0a12.6 12.6 0 0 1 17.6 -6.7" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="207" cy="423" r="39" fill="url(#pm-crater)"/>
+ <path d="M185.2 415.6a23.4 23.4 0 0 1 32.8 -12.5" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="280" cy="444" r="32" fill="url(#pm-crater)"/>
+ <path d="M262.1 437.9a19.2 19.2 0 0 1 26.9 -10.2" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="337" cy="477" r="24" fill="url(#pm-crater)"/>
+ <path d="M323.6 472.4a14.4 14.4 0 0 1 20.2 -7.7" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="393" cy="455" r="31" fill="url(#pm-crater)"/>
+ <path d="M375.6 449.1a18.6 18.6 0 0 1 26.0 -9.9" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="467" cy="429" r="22" fill="url(#pm-crater)"/>
+ <path d="M454.7 424.8a13.2 13.2 0 0 1 18.5 -7.0" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="300" cy="167" r="14" fill="url(#pm-crater)"/>
+ <path d="M292.2 164.3a8.4 8.4 0 0 1 11.8 -4.5" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="168" cy="239" r="16" fill="url(#pm-crater)"/>
+ <path d="M159.0 236.0a9.6 9.6 0 0 1 13.4 -5.1" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="476" cy="272" r="18" fill="url(#pm-crater)"/>
+ <path d="M465.9 268.6a10.8 10.8 0 0 1 15.1 -5.8" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="415" cy="204" r="13" fill="url(#pm-crater)"/>
+ <path d="M407.7 201.5a7.8 7.8 0 0 1 10.9 -4.2" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="282" cy="375" r="17" fill="url(#pm-crater)"/>
+ <path d="M272.5 371.8a10.2 10.2 0 0 1 14.3 -5.4" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="226" cy="476" r="16" fill="url(#pm-crater)"/>
+ <path d="M217.0 473.0a9.6 9.6 0 0 1 13.4 -5.1" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="339" cy="263" r="12" fill="url(#pm-crater)"/>
+ <path d="M332.3 260.7a7.2 7.2 0 0 1 10.1 -3.8" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="316" cy="422" r="11" fill="url(#pm-crater)"/>
+ <path d="M309.8 419.9a6.6 6.6 0 0 1 9.2 -3.5" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="380" cy="327" r="14" fill="url(#pm-crater)"/>
+ <path d="M372.2 324.3a8.4 8.4 0 0 1 11.8 -4.5" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <circle cx="250" cy="178" r="11" fill="url(#pm-crater)"/>
+ <path d="M243.8 175.9a6.6 6.6 0 0 1 9.2 -3.5" stroke="#faf0e4" stroke-opacity=".18" stroke-width="1.4"/>
+ <g stroke="#eee5df" stroke-opacity=".2"><path d="m263 359-15-31m15 31-29-7m29 7 1-36m-1 36 21-24m-21 24 35-5m-35 5 26 18m-26-18 8 35m-8-35-16 26"/><path d="m414 438-13-21m13 21 19-24m-19 24 31-1m-31 1 17 19m-17-19-3 30m3-30-22 15"/></g>
+ <circle cx="263" cy="359" r="6" fill="#eee4d8" opacity=".5"/><circle cx="414" cy="438" r="4" fill="#ece0d2" opacity=".45"/>
+ <circle cx="320" cy="320" r="214" fill="url(#pm-vignette)"/>
+</g>
+<circle cx="320" cy="320" r="213.5" stroke="#efe5e0" stroke-opacity=".4"/>
+<path d="M136 240a214 214 0 0 1 262-121" stroke="#fff5df" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
