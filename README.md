@@ -25,7 +25,7 @@ Cloudflare Pages: build command `npm run build`, output directory `dist`. No run
 - Publications: `src/content/blog/`. Drafts remain excluded from the production build. Use `DRAFTS=1 npm run build` only for private editorial preview.
 - `featured_cve` chooses the featured advisory by its existing ID. No new claims or advisories were added.
 
-Read `AGENTS.md`, `DESIGN.md` and `CONTENT.md` before editing. Site copy remains in English. The illustration `public/fx/archive-night.svg` and interface icons are original vector artwork created for this portfolio.
+Read `AGENTS.md`, `DESIGN.md` and `CONTENT.md` before editing. Site copy remains in English. The illustration `assets-unused/fx/archive-night.svg` (not deployed) and interface icons are original vector artwork created for this portfolio.
 
 ## Patch the Night
 
