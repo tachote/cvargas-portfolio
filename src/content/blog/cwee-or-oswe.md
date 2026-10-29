@@ -4,7 +4,7 @@ date: "2025-03-25"
 summary: "Personal comparison of HTB CWEE and OffSec OSWE: price, course, exam, report, and a prep path — without spoiling either exam."
 lang: "en"
 medium_url: "https://medium.com/@deeptester/cwee-or-oswe-which-one-choose-2987443a0e0a"
-draft: true
+draft: false
 ---
 
 **Disclaimer.** Personal opinion. Debatable. I will not leak exam technical detail.

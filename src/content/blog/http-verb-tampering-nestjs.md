@@ -4,7 +4,7 @@ date: "2026-02-09"
 summary: "How Express treating HEAD as GET lets NestJS middleware scoped to GET miss auth — and mutate state anyway."
 lang: "en"
 medium_url: "https://medium.com/@deeptester/http-verb-tampering-in-nestjs-bypassing-middleware-with-head-requests-e70b968b15c2"
-draft: true
+draft: false
 ---
 
 HTTP Verb Tampering is an old attack that still shows up in modern stacks. Authentication and access control often lock down the common verbs (GET, POST, PUT) and leave the rest open.

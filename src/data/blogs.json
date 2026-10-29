@@ -5,7 +5,7 @@
     "date": "2026-02-09",
     "year": 2026,
     "slug": "http-verb-tampering-nestjs",
-    "draft": true,
+    "draft": false,
     "archived_from": "https://medium.com/@deeptester/http-verb-tampering-in-nestjs-bypassing-middleware-with-head-requests-e70b968b15c2"
   },
   {
@@ -14,7 +14,7 @@
     "date": "2025-07-30",
     "year": 2025,
     "slug": "windsurf-cursor-secure-code-review",
-    "draft": true,
+    "draft": false,
     "archived_from": "https://medium.com/@deeptester/how-can-windsurf-cursor-help-you-with-your-secure-code-review-d93394a4d719"
   },
   {
@@ -23,7 +23,7 @@
     "date": "2025-03-25",
     "year": 2025,
     "slug": "cwee-or-oswe",
-    "draft": true,
+    "draft": false,
     "archived_from": "https://medium.com/@deeptester/cwee-or-oswe-which-one-choose-2987443a0e0a"
   }
 ]

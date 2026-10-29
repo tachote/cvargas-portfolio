@@ -6,7 +6,7 @@
     "year": 2026,
     "lang": "EN",
     "tier": "top",
-    "draft": true
+    "draft": false
   },
   {
     "kind": "talk",
@@ -24,7 +24,7 @@
     "year": 2025,
     "lang": "EN",
     "tier": "top",
-    "draft": true
+    "draft": false
   },
   {
     "kind": "post",
@@ -33,7 +33,7 @@
     "year": 2025,
     "lang": "EN",
     "tier": "other",
-    "draft": true
+    "draft": false
   },
   {
     "kind": "talk",

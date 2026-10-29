@@ -4,7 +4,7 @@ date: "2025-07-30"
 summary: "Using AI IDEs for context, endpoint enumeration, explanation, debugging, and light SAST — with the caveats that matter in AppSec."
 lang: "en"
 medium_url: "https://medium.com/@deeptester/how-can-windsurf-cursor-help-you-with-your-secure-code-review-d93394a4d719"
-draft: true
+draft: false
 ---
 
 Editors with built-in agents — Windsurf, Cursor, and similar forks of VS Code — are useful for AppSec work, not only for shipping features faster. This post is how I use them on secure code review.
