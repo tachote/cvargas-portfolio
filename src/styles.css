@@ -8,20 +8,13 @@
  --font:Inter,system-ui,sans-serif;--mono:JBMono,ui-monospace,monospace;--pixel:Pixel,var(--mono);
  --r:0;--s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:40px;--s6:64px;
 }
-[data-theme=vanilla]{
- --bg:#0B0D10;--surface:#12161B;--surface-2:#171C22;--border:#1F252D;
- --text:#E6E8EB;--muted:#8A94A3;--accent:#3DDC97;--blood:#FF6B6B;--blood-2:#a04545;
- --sev-crit:#FF6B6B;--sev-high:#FF9F5A;--sev-med:#E8C547;--sev-low:#3DDC97;--pixel:var(--mono);--r:6px;
-}
 *{box-sizing:border-box}
 html{background:var(--bg)}
 body{margin:0;color:var(--text);font:400 16px/1.6 var(--font);
  background:var(--bg);
  background-image:radial-gradient(rgba(201,162,39,.035) 1px,transparent 1px);background-size:4px 4px}
-[data-theme=vanilla] body{background-image:none}
 body::after{content:"";pointer-events:none;position:fixed;inset:0;
  background:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
-[data-theme=vanilla] body::after{display:none}
 .wrap{max-width:720px;margin:0 auto;padding:var(--s5) var(--s3) var(--s6)}
 a{color:var(--accent);text-underline-offset:3px}
 .topbar{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);font:12px var(--mono);color:var(--muted);margin-bottom:var(--s5)}
@@ -35,10 +28,8 @@ a{color:var(--accent);text-underline-offset:3px}
 section{margin-top:var(--s6)}
 h2{font:700 20px/1.2 var(--font);margin:0 0 var(--s1);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 h2 .amb{font:400 14px var(--pixel);color:var(--accent);letter-spacing:.06em}
-[data-theme=vanilla] h2 .amb{display:none}
 .sub{color:var(--muted);font-size:14px;margin:0 0 var(--s3)}
 .frame{background:var(--surface);border:2px solid var(--border);box-shadow:4px 4px 0 #000;border-radius:var(--r)}
-[data-theme=vanilla] .frame{box-shadow:none}
 .example{font:11px var(--mono);color:var(--bg);background:var(--accent);padding:2px 6px;margin-left:6px;vertical-align:middle}
 table{width:100%;border-collapse:collapse;font-size:14px}
 th{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:2px solid var(--border)}

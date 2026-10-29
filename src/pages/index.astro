@@ -10,20 +10,18 @@ const topC = certs.filter((c) => c.tier === 'top');
 const inv = certs.filter((c) => c.tier === 'other' && c.confirmed && !(c as any).hidden);
 import notes from '../data/profile-notes.json';
 const eng = (notes as any).english ?? certs.find((c) => c.tier === 'lang');
-const counts = {};
-for (const c of cves) counts[c.label] = (counts[c.label] ?? 0) + 1;
 const TOP = 6, top = cves.slice(0, TOP), rest = cves.slice(TOP);
-const kill = [`${cves.length} CVEs`, ...Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n} ${k}`)];
 const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
 ---
 <Base>
 <div class="intro-ov" id="intro" aria-hidden="true"><div><img class="moon" src="/fx/moon.svg" alt="" width="96" height="96" /><div class="nm-wrap"><div class="nm">CRISTIAN VARGAS</div></div></div></div>
 <div class="wrap">
-<div class="topbar"><span>cvargas.com</span><button class="toggle" id="tg" type="button">☾ GOTHIC</button></div>
+<div class="topbar"><span>cvargas.com</span></div>
 <header class="hero">
   <div class="sky" aria-hidden="true"><i class="l1"></i><i class="l2"></i><i class="l3"></i></div>
   <h1>Cristian Vargas <span class="moon">✝</span></h1>
-  <p class="role"><b>Offensive AppSec @ Fluid Attacks</b> · Remote, Colombia</p>
+  <p class="role"><b>Offensive Application Security Engineer @ Fluid Attacks</b> · Remote, Colombia</p>
+  <p class="tagline">Finding vulnerabilities in software people depend on, like NestJS, Fastify, DOMPurify and Ghost.</p>
   <nav class="links"><a href="https://www.linkedin.com/in/cvmiracle">linkedin/cvmiracle</a><a href="#contact">contact</a></nav>
 </header>
 
@@ -106,10 +104,6 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
 <footer><span>© 2026 Cristian Vargas</span><a href="/play/">↑↑↓↓←→←→BA</a></footer>
 </div>
 <script>
-  const b = document.getElementById('tg'), d = document.documentElement;
-  const lbl = () => { b.textContent = d.dataset.theme === 'vanilla' ? '▢ VANILLA' : '☾ GOTHIC'; };
-  lbl();
-  b.addEventListener('click', () => { d.dataset.theme = d.dataset.theme === 'vanilla' ? 'gothic' : 'vanilla'; try { localStorage.setItem('theme', d.dataset.theme); } catch {} lbl(); });
   const k = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']; let i = 0;
   addEventListener('keydown', e => { i = e.key === k[i] ? i + 1 : (e.key === k[0] ? 1 : 0); if (i === k.length) location.href = '/play/'; });
   const ov = document.getElementById('intro');

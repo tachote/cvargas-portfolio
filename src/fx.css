@@ -11,21 +11,18 @@ html.intro .intro-ov .nm-wrap{display:flex;align-items:center;gap:4px}
 @keyframes type{to{width:15ch}} @keyframes moonin{from{opacity:0;transform:translateY(8px)}} @keyframes blink{50%{opacity:0}}
 @keyframes flicker{50%{opacity:.55}} @keyframes ov-out{to{opacity:0;visibility:hidden}}
 
-.killcount{font:13px var(--mono);color:var(--accent);margin:-8px 0 16px;letter-spacing:.02em}
-[data-theme=vanilla] .killcount{color:var(--muted)}
 
 .hero{position:relative;isolation:isolate}
 .sky{position:absolute;top:-40px;left:calc(50% - 50vw);width:100vw;height:380px;opacity:.55;z-index:-1;pointer-events:none;overflow:hidden;
   -webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
 .sky i{position:absolute;inset:0;background:center bottom/cover no-repeat;will-change:transform}
 .sky .l1{background-image:url(/fx/layer-sky.svg)} .sky .l2{background-image:url(/fx/layer-castle.svg)} .sky .l3{background-image:url(/fx/layer-fog.svg);opacity:.35}
-[data-theme=vanilla] .sky{display:none}
 
 @media (hover:hover) and (pointer:fine){
-  [data-theme=gothic] tbody tr:hover{animation:shake .18s linear}
-  [data-theme=gothic] tbody tr:hover .bar i{animation:dmg .5s ease}
-  [data-theme=gothic] body{cursor:url(/fx/cursor-whip.svg) 0 0, auto}
-  [data-theme=gothic] a,[data-theme=gothic] button{cursor:pointer}
+  tbody tr:hover{animation:shake .18s linear}
+  tbody tr:hover .bar i{animation:dmg .5s ease}
+  body{cursor:url(/fx/cursor-whip.svg) 0 0, auto}
+  a,button{cursor:pointer}
 }
 tr.hit .bar i{animation:dmg .5s ease}
 @keyframes shake{25%{transform:translateX(-2px)}50%{transform:translateX(2px)}75%{transform:translateX(-1px)}}
@@ -34,18 +31,16 @@ tr.hit .bar i{animation:dmg .5s ease}
 
 /* HP damage: flash then refill (steps(6)) */
 .bar i::after{content:"";position:absolute;inset:0;background:#fff;opacity:0}
-[data-theme=gothic] tbody tr:hover .bar i::after,tr.hit .bar i::after{animation:flash .12s linear}
+tbody tr:hover .bar i::after,tr.hit .bar i::after{animation:flash .12s linear}
 @keyframes flash{from{opacity:1}to{opacity:0}}
 @keyframes dmg{0%,30%{transform:scaleX(1.25)}100%{transform:scaleX(1)}}
-[data-theme=gothic] tbody tr:hover .bar i,tr.hit .bar i{animation:dmg .42s steps(6)}
+tbody tr:hover .bar i,tr.hit .bar i{animation:dmg .42s steps(6)}
 /* sprite per vuln class */
 tbody tr{position:relative}
 tbody tr td.hp{position:relative}
 .spr{display:inline-block;vertical-align:middle;margin-left:8px;width:20px;height:20px;opacity:0;image-rendering:pixelated;pointer-events:none;transition:opacity .15s}
-[data-theme=gothic] tbody tr:hover .spr,[data-theme=gothic] tr.hit .spr{opacity:1}
-[data-theme=vanilla] .spr{display:none}
+tbody tr:hover .spr,tr.hit .spr{opacity:1}
 
-.killcount .sep{color:var(--muted)}
 /* keep content above the parallax layer */
 section,footer{position:relative;z-index:1}
 .co{font:10px var(--mono);color:var(--muted);border:1px solid var(--border);padding:1px 4px;margin-left:6px;vertical-align:1px}
@@ -73,3 +68,4 @@ section,footer{position:relative;z-index:1}
 .hero-relic h3{font-size:18px;color:var(--accent)}
 #certifications .relics{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:600px){#certifications .relics{grid-template-columns:1fr}}
+.tagline{margin:6px 0 16px;color:var(--muted);font-size:15px;max-width:60ch}
