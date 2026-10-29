@@ -3,7 +3,7 @@
    Overlay que se juega al entrar. Lee CVEs de <script type="application/json" id="gate-cves">.
    Se salta con: Skip/Esc, sessionStorage 'gate', prefers-reduced-motion, ?nogate. */
 import './vgate.css';
-export function openGate(CVES){
+export function openGate(CVES,ST={}){
 if(!CVES.length||document.getElementById('gate'))return;
 const SPR={'SQLi':'sqli','XSS':'xss','SSRF':'ssrf','IDOR':'idor','Auth bypass':'authbypass'};
 const COL={crit:'#B0213A',high:'#D9542B',med:'#C9A227',low:'#6E8F5A'};
@@ -15,7 +15,7 @@ root.innerHTML=`<canvas></canvas>
 <div class="g-doors"><i></i><i></i></div>
 <div class="g-hud"><span>KILLS <b id="g-k">0</b>/${CVES.length}</span><span id="g-t">20</span></div>
 <ol class="g-log" aria-live="polite"></ol>
-<div class="g-title"><h1>CRISTIAN<br>VARGAS</h1><p>Offensive AppSec · Bestiary of ${CVES.length} CVEs</p><button class="g-start">▶ PRESS START</button><small>WASD / flechas · en el cel arrastra el dedo</small></div>
+<div class="g-title"><div class="g-row"><aside class="g-card"><p class="g-lv">HUNTER · Lv. 24</p><img src="/fx/avatar-hunter-240.webp" width="120" height="139" alt=""><dl><dt>CVEs</dt><dd>${ST.cves??CVES.length}</dd><dt>Trophies</dt><dd>${ST.trophies??"–"}</dd><dt>Relics</dt><dd>${ST.relics??"–"}</dd></dl></aside><div><h1>CRISTIAN<br>VARGAS</h1><p>Offensive AppSec · Bestiary of ${CVES.length} CVEs</p><button class="g-start">▶ START</button><small>WASD / arrows · drag on mobile</small></div></div></div>
 <button class="g-skip">Skip (Esc) → CV</button>`;
 document.body.appendChild(root);
 const c=root.querySelector('canvas'),x=c.getContext('2d'),log=root.querySelector('.g-log'),kEl=root.querySelector('#g-k'),tEl=root.querySelector('#g-t');
@@ -76,5 +76,5 @@ function loop(now){raf=requestAnimationFrame(loop);
   x.restore();
   const vg=x.createRadialGradient(W/2,H/2,Math.min(W,H)*.3,W/2,H/2,Math.max(W,H)*.75);vg.addColorStop(0,'rgba(14,10,18,0)');vg.addColorStop(1,'rgba(14,10,18,.85)');x.fillStyle=vg;x.fillRect(0,0,W,H)}
 raf=requestAnimationFrame(loop);
-start();
+root.querySelector('.g-start').focus();
 }

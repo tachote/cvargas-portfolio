@@ -88,7 +88,11 @@ section,footer{position:relative;z-index:1}
 .playbtn{font:12px var(--pixel);letter-spacing:.05em;color:var(--accent);background:none;border:1px solid var(--accent);padding:2px 10px;cursor:pointer}
 .playbtn:hover,.playbtn:focus-visible{background:var(--accent);color:var(--bg);outline:none}
 body{overflow-x:clip}
-.hero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:end}
-.hero .sky{grid-column:1/-1}
-.hero .avatar{width:138px;height:auto;image-rendering:pixelated;filter:drop-shadow(4px 4px 0 #000)}
-@media (max-width:600px){.hero{grid-template-columns:1fr;gap:12px}.hero .avatar{width:104px}}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:24px;align-items:start}
+.hero .sky{grid-column:1/-1;grid-row:1}
+.hero .hero-txt{grid-column:1;grid-row:1}
+.hero .avatar{grid-column:2;grid-row:1;margin:0;justify-self:end;width:180px;background:var(--bg);border:1px solid var(--border);position:relative;padding:8px;box-shadow:4px 4px 0 #000}
+.hero .avatar:before,.hero .avatar:after{content:"";position:absolute;width:6px;height:6px;border:2px solid var(--accent)}
+.hero .avatar:before{top:-2px;left:-2px;border-right:0;border-bottom:0}.hero .avatar:after{bottom:-2px;right:-2px;border-left:0;border-top:0}
+.hero .avatar img{display:block;width:100%;height:auto;image-rendering:pixelated}
+@media (max-width:600px){.hero{grid-template-columns:minmax(0,1fr) 96px;gap:12px}.hero .avatar{width:96px;padding:4px}}

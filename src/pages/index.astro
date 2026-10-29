@@ -23,13 +23,13 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
 <div class="topbar"><span>cvargas.com</span></div>
 <header class="hero">
   <div class="sky" aria-hidden="true"><i class="l1"></i><i class="l2"></i><i class="l3"></i></div>
-  <img class="avatar" src="/fx/avatar-hunter-240.webp" srcset="/fx/avatar-hunter-240.webp 1x, /fx/avatar-hunter-480.webp 2x" width="207" height="240" alt="Pixel-art portrait of Cristian Vargas as a vampire hunter" fetchpriority="high" />
   <div class="hero-txt">
   <h1>Cristian Vargas <span class="moon">✝</span></h1>
   <p class="role"><b>Offensive Application Security Engineer @ Fluid Attacks</b> · Remote, Colombia</p>
   <p class="tagline">Finding vulnerabilities in software people depend on, like NestJS, Fastify, DOMPurify and Ghost.</p>
-  <nav class="links"><a href="https://www.linkedin.com/in/cvmiracle">linkedin/cvmiracle</a><a href="#contact">contact</a><button type="button" id="play" class="playbtn" hidden>▶ PRESS START</button></nav>
+  <nav class="links"><a href="https://www.linkedin.com/in/cvmiracle">linkedin/cvmiracle</a><a href="#contact">contact</a><button type="button" id="play" class="playbtn" hidden data-stats={JSON.stringify({ cves: cves.length, trophies: ach.length, relics: topC.length + inv.length })}>▶ PRESS START</button></nav>
   </div>
+  <figure class="avatar"><img src="/fx/avatar-hunter-240.webp" srcset="/fx/avatar-hunter-240.webp 1x, /fx/avatar-hunter-480.webp 2x" width="180" height="209" alt="Cristian Vargas, pixel-art hunter" fetchpriority="high" /></figure>
 </header>
 
 <section id="cves">
@@ -125,7 +125,7 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   addEventListener('keydown', e => { i = e.key === k[i] ? i + 1 : (e.key === k[0] ? 1 : 0); if (i === k.length) location.href = '/play/'; });
   import { cves as GCV } from '../data/cves.ts';
   const pb = document.getElementById('play');
-  const play = () => import('../scripts/vgate.js').then((m) => m.openGate(GCV.map(({ id, product, label, cvss4 }) => ({ id, product, vuln_class: label, cvss4 }))));
+  const play = () => import('../scripts/vgate.js').then((m) => m.openGate(GCV.map(({ id, product, label, cvss4 }) => ({ id, product, vuln_class: label, cvss4 })), JSON.parse(pb.dataset.stats)));
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { pb.hidden = false; pb.addEventListener('click', play); if (location.hash === '#play') play(); }
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const ls = [...document.querySelectorAll('.sky i')], f = [0.1, 0.25, 0.4], mxr = [0, 8, 14]; let tx = 0, cx = 0, raf = 0;

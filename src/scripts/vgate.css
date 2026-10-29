@@ -22,3 +22,11 @@
 @keyframes gopen{from{transform:scaleX(1)}to{transform:translateX(var(--d))}}
 @keyframes gfade{to{opacity:0}}@keyframes gblink{50%{opacity:.25}}@keyframes gin{from{opacity:0;transform:translateX(-8px)}}
 @media (max-width:600px){#gate .g-log{display:none}}
+#gate .g-row{display:flex;gap:40px;align-items:center;justify-content:center;flex-wrap:wrap}
+#gate .g-row>div{display:grid;gap:14px;text-align:center}
+#gate .g-card{width:200px;background:#1A1220;border:1px solid #3A2A44;padding:12px;text-align:left;box-shadow:4px 4px 0 #000}
+#gate .g-card .g-lv{margin:0 0 8px;color:#C9A227;font-size:14px}
+#gate .g-card img{display:block;width:120px;height:auto;margin:0 auto 10px;background:#0E0A12;image-rendering:pixelated}
+#gate .g-card dl{display:grid;grid-template-columns:1fr auto;gap:4px 8px;margin:0;font:13px JBMono,monospace}
+#gate .g-card dt{color:#9A8FA3}#gate .g-card dd{margin:0;color:#EDE6D6;text-align:right}
+@media (max-width:600px){#gate .g-card{display:none}}
