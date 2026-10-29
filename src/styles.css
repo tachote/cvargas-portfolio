@@ -445,8 +445,9 @@ tbody tr:hover {
   white-space: nowrap;
 }
 .id a {
-  color: var(--text);
-  text-decoration: none;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .id a:hover {
   color: var(--accent);

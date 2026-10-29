@@ -19,7 +19,7 @@
   will-change: transform;
 }
 .sky .l1 { background-image: url(/fx/layer-sky.svg); }
-.sky .l2 { background-image: url(/fx/layer-castle.svg); }
+.sky .l2 { background-image: url(/fx/layer-castle.svg); filter: brightness(4); }
 .sky .l3 { background-image: url(/fx/layer-fog.svg); opacity: 0.45; }
 .sky .moon {
   inset: auto;
