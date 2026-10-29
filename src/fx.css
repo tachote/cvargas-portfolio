@@ -304,3 +304,7 @@ h2 .amb, .save-room h2 .amb { font: 400 1.15em/1 var(--pixel); letter-spacing: 0
 @media (prefers-reduced-motion: reduce) {
   .sky i { transform: none !important; will-change: auto; }
 }
+
+/* 404 */
+.lost { padding-top: 12vh; padding-bottom: 12vh; }
+.lost-spr { display: block; width: 64px; height: 64px; margin: 0 auto 18px; image-rendering: pixelated; filter: drop-shadow(0 0 12px #c9a22740); }

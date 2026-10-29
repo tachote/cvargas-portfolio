@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OG image · cvargas.com</title>
+<!-- Build-time source for public/og.png (1200x630). Not deployed. Render with: sh scripts/og/render.sh -->
+<style>
+@font-face { font-family: Inter; src: url(../../public/fonts/Inter.woff2) format('woff2'); font-weight: 100 900; }
+@font-face { font-family: JBMono; src: url(../../public/fonts/JBMono.woff2) format('woff2'); font-weight: 100 800; }
+@font-face { font-family: Pixel; src: url(../../public/fonts/Pixelify.woff2) format('woff2'); font-weight: 400 700; }
+:root { --bg: #0e0a12; --text: #ede6d6; --muted: #a89aaf; --accent: #c9a227; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); }
+.og { position: relative; width: 1200px; height: 630px; overflow: hidden; background: var(--bg); color: var(--text); }
+.og > i { position: absolute; display: block; }
+.l { inset: 0; background: center bottom / cover no-repeat; }
+.sky { background-image: url(../../public/fx/layer-sky.svg); opacity: .85; }
+.castle { background-image: url(../../public/fx/layer-castle.svg); filter: brightness(4); top: 80px; }
+.fog { background-image: url(../../public/fx/layer-fog.svg); opacity: .4; top: 180px; }
+.moon { top: 64px; left: 600px; width: 88px; height: 88px; background: url(../../public/fx/moon.svg) center / contain no-repeat; image-rendering: pixelated; filter: drop-shadow(0 0 18px #c9a22755); }
+.shade { inset: 0; background: linear-gradient(90deg, #0e0a12f0 6%, #0e0a12b0 40%, #0e0a1240 62%, transparent 80%); }
+.frame { position: absolute; right: 80px; top: 75px; width: 360px; height: 480px; padding: 12px; border: 2px solid var(--accent); background: var(--bg); box-shadow: 0 0 0 6px var(--bg), 0 0 0 7px #c9a22760, 0 0 40px #c9a22730; }
+.frame img { display: block; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
+.copy { position: absolute; left: 80px; top: 170px; width: 620px; }
+h1 { font: 800 92px/1 Inter, sans-serif; letter-spacing: -0.035em; color: var(--text); text-shadow: 0 4px 0 #000a; }
+.role { margin-top: 34px; font: 500 26px/1.3 JBMono, monospace; color: var(--accent); }
+.org { margin-top: 10px; font: 400 26px/1.3 Pixel, monospace; letter-spacing: .04em; color: var(--accent); }
+.url { position: absolute; left: 82px; bottom: 56px; font: 400 20px JBMono, monospace; letter-spacing: .04em; color: var(--muted); }
+</style>
+</head>
+<body>
+<main class="og">
+  <i class="l sky"></i><i class="moon"></i><i class="l castle"></i><i class="l fog"></i><i class="shade"></i>
+  <section class="copy">
+    <h1>Cristian<br>Vargas</h1>
+    <p class="role">Offensive Application Security</p>
+    <p class="org">Fluid Attacks</p>
+  </section>
+  <div class="frame"><img src="../../public/fx/avatar-hunter-480.webp" alt=""></div>
+  <p class="url">cvargas.com</p>
+</main>
+</body>
+</html>
