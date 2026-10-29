@@ -1,31 +1,51 @@
 /* Web: entry beats. Only transform/opacity animate. Assets expected in /fx/ (Diseño). */
 .intro-ov{display:none}
-html.intro .intro-ov{display:grid;place-items:center;position:fixed;inset:0;z-index:50;background:#000;color:var(--accent);
-  animation:ov-out .35s ease 1.2s forwards;cursor:pointer}
-html.intro .intro-ov .moon{width:48px;height:48px;border-radius:50%;background:var(--text);box-shadow:-10px 0 0 0 #000 inset;margin:0 auto 16px;animation:fadein .4s both}
-html.intro .intro-ov .nm{font:28px var(--pixel);letter-spacing:.08em;overflow:hidden;white-space:nowrap;width:0;
-  animation:type .7s steps(15) .25s forwards, flicker .12s steps(2) 4 .95s}
+html.intro .intro-ov{display:grid;place-items:center;position:fixed;inset:0;z-index:50;background:var(--bg);color:var(--accent);
+  animation:ov-out .3s ease .9s forwards;cursor:pointer}
+html.intro .intro-ov .moon{width:96px;height:96px;margin:0 auto 16px;image-rendering:pixelated;animation:moonin .3s both}
+html.intro .intro-ov .nm{font:28px var(--pixel);color:var(--text);letter-spacing:.08em;overflow:hidden;white-space:nowrap;width:0;
+  animation:type .7s steps(15) .2s forwards}
+html.intro .intro-ov .nm-wrap::after{content:"";display:inline-block;width:.6em;height:1em;background:var(--accent);vertical-align:-2px;animation:blink .4s steps(2) infinite}
+html.intro .intro-ov .nm-wrap{display:flex;align-items:center;gap:4px}
 .intro-ov.gone{display:none!important}
-@keyframes type{to{width:15ch}} @keyframes fadein{from{opacity:0}}
+@keyframes type{to{width:15ch}} @keyframes moonin{from{opacity:0;transform:translateY(8px)}} @keyframes blink{50%{opacity:0}}
 @keyframes flicker{50%{opacity:.55}} @keyframes ov-out{to{opacity:0;visibility:hidden}}
 
 .killcount{font:13px var(--mono);color:var(--accent);margin:-8px 0 16px;letter-spacing:.02em}
 [data-theme=vanilla] .killcount{color:var(--muted)}
 
-.hero{position:relative}
-.sky{position:absolute;inset:-40px -100vw auto;height:320px;z-index:-1;pointer-events:none;overflow:hidden;
-  -webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
-.sky i{position:absolute;inset:0;background:center bottom/auto 100% repeat-x;will-change:transform}
-.sky .l1{background-image:url(/fx/sky.svg)} .sky .l2{background-image:url(/fx/castle.svg)} .sky .l3{background-image:url(/fx/fog.svg)}
+.hero{position:relative;isolation:isolate}
+.sky{position:absolute;inset:-40px -100vw auto;height:380px;opacity:.55;z-index:-1;pointer-events:none;overflow:hidden;
+  -webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
+.sky i{position:absolute;inset:0;background:center bottom/cover no-repeat;will-change:transform}
+.sky .l1{background-image:url(/fx/layer-sky.svg)} .sky .l2{background-image:url(/fx/layer-castle.svg)} .sky .l3{background-image:url(/fx/layer-fog.svg)}
 [data-theme=vanilla] .sky{display:none}
 
 @media (hover:hover) and (pointer:fine){
-  [data-theme=gothic] tbody tr:hover{animation:shake .25s steps(4)}
+  [data-theme=gothic] tbody tr:hover{animation:shake .18s linear}
   [data-theme=gothic] tbody tr:hover .bar i{animation:dmg .5s ease}
-  [data-theme=gothic] body{cursor:url(/fx/whip.png) 2 2, auto}
+  [data-theme=gothic] body{cursor:url(/fx/cursor-whip.svg) 0 0, auto}
+  [data-theme=gothic] a,[data-theme=gothic] button{cursor:pointer}
 }
 tr.hit .bar i{animation:dmg .5s ease}
-@keyframes shake{25%{transform:translateX(-2px)}75%{transform:translateX(2px)}}
-@keyframes dmg{0%{transform:scaleX(1);filter:brightness(2)}40%{transform:scaleX(1);background:#fff}100%{transform:scaleX(1)}}
+@keyframes shake{25%{transform:translateX(-2px)}50%{transform:translateX(2px)}75%{transform:translateX(-1px)}}
 .bar i{transform-origin:left}
 @media (prefers-reduced-motion:reduce){.sky i,tbody tr,.bar i{animation:none!important;transform:none!important}}
+
+/* HP damage: flash then refill (steps(6)) */
+.bar i::after{content:"";position:absolute;inset:0;background:#fff;opacity:0}
+[data-theme=gothic] tbody tr:hover .bar i::after,tr.hit .bar i::after{animation:flash .12s linear}
+@keyframes flash{from{opacity:1}to{opacity:0}}
+@keyframes dmg{0%,30%{transform:scaleX(1.25)}100%{transform:scaleX(1)}}
+[data-theme=gothic] tbody tr:hover .bar i,tr.hit .bar i{animation:dmg .42s steps(6)}
+/* sprite per vuln class */
+tbody tr{position:relative}
+tbody tr td.hp{position:relative}
+.spr{position:absolute;right:-40px;top:50%;width:32px;height:32px;margin-top:-16px;opacity:0;image-rendering:pixelated;pointer-events:none;transition:opacity .15s}
+[data-theme=gothic] tbody tr:hover .spr,[data-theme=gothic] tr.hit .spr{opacity:1}
+[data-theme=vanilla] .spr{display:none}
+@media (max-width:600px){tbody tr td.hp{position:static}.spr{right:12px;top:auto;bottom:10px;margin-top:0;width:28px;height:28px}}
+@media (min-width:601px) and (max-width:860px){.spr{right:-4px;width:24px;height:24px;margin-top:-12px}}
+.killcount .sep{color:var(--muted)}
+/* keep content above the parallax layer */
+section,footer{position:relative;z-index:1}
