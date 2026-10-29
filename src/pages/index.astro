@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import cves from '../data/cves.json';
+import ach from '../data/achievements.json';
+const sorted = [...cves].sort((a, b) => b.date.localeCompare(a.date));
+const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
+---
+<Base>
+<div class="wrap">
+<div class="topbar"><span>cvargas.com</span><button class="toggle" id="tg" type="button">☾ GOTHIC</button></div>
+<header class="hero">
+  <h1>Cristian Vargas <span class="moon">✝</span></h1>
+  <p class="role"><b>Offensive AppSec @ Fluid Attacks</b> · OSWE · CWEE · Remote, Colombia</p>
+  <nav class="links"><a href="https://www.linkedin.com/in/cvmiracle">linkedin/cvmiracle</a><a href="#contact">contact</a></nav>
+</header>
+
+<section id="cves">
+  <h2>CVEs &amp; Advisories <span class="amb">· Bestiary</span></h2>
+  <p class="sub">Vulnerabilities found and disclosed. CVSS 4.0 severity shown as HP.</p>
+  <div class="frame"><table>
+    <thead><tr><th>ID</th><th>Product</th><th>Class</th><th>Severity</th></tr></thead>
+    <tbody>
+      {sorted.map(c => (
+        <tr>
+          <td class="id"><a href={c.url}>{c.id}</a></td>
+          <td class="prod">{c.product}</td>
+          <td class="cls-td cls">{c.vuln}</td>
+          <td class={`hp ${cls[c.severity] ?? 'med'}`} title={`${c.severity} · CVSS 4.0 ${c.cvss}`}><span class="bar"><i style={`--w:${Math.round(c.cvss * 10)}%`}></i></span>{c.cvss}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table></div>
+</section>
+
+<section id="achievements">
+  <h2>Achievements <span class="amb">· Relics</span></h2>
+  <p class="sub">Certifications and competitions.</p>
+  <div class="relics">
+    {ach.map(a => (
+      <div class="frame relic"><div class="ico">{a.ico}</div><div><h3>{a.title}</h3><p>{a.detail}</p></div></div>
+    ))}
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact <span class="amb">· Save Room</span></h2>
+  <p class="sub">Open to remote AppSec / offensive security roles.</p>
+  <div class="frame contact">
+    <div><span>email</span><a href="#">(pending)</a></div>
+    <div><span>linkedin</span><a href="https://www.linkedin.com/in/cvmiracle">cvmiracle</a></div>
+    <div><span>github</span><a href="#">(pending)</a></div>
+  </div>
+</section>
+
+<footer><span>© 2026 Cristian Vargas</span><a href="/play/">↑↑↓↓←→←→BA</a></footer>
+</div>
+<script>
+  const b = document.getElementById('tg'), d = document.documentElement;
+  const lbl = () => { b.textContent = d.dataset.theme === 'vanilla' ? '▢ VANILLA' : '☾ GOTHIC'; };
+  lbl();
+  b.addEventListener('click', () => { d.dataset.theme = d.dataset.theme === 'vanilla' ? 'gothic' : 'vanilla'; try { localStorage.setItem('theme', d.dataset.theme); } catch {} lbl(); });
+  const k = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']; let i = 0;
+  addEventListener('keydown', e => { i = e.key === k[i] ? i + 1 : (e.key === k[0] ? 1 : 0); if (i === k.length) location.href = '/play/'; });
+</script>
+</Base>

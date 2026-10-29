@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>/play · Vuln Survivors</title><style>
+@font-face{font-family:Pixel;src:url(../fonts/Pixelify.ttf)}
+html,body{margin:0;background:#0E0A12;color:#EDE6D6;font-family:Pixel,monospace;overflow:hidden}
+canvas{display:block}#hud{position:fixed;top:10px;left:12px;font-size:16px}#hud a{color:#C9A227}
+#over{position:fixed;inset:0;display:none;place-items:center;text-align:center;background:rgba(14,10,18,.88)}
+#over h1{color:#B0213A;font-size:40px;margin:0}#over a{color:#C9A227}
+</style></head><body>
+<div id="hud">HP <span id="hp">100</span> · KILLS <span id="k">0</span> · TIME <span id="t">0</span>s · <a href="../">exit</a></div>
+<div id="over"><div><h1 id="msg">YOU DIED</h1><p>Move with WASD / arrows / touch. Survive 60s.</p><p><a href="" onclick="location.reload()">retry</a> · <a href="../#cves">see real CVEs</a></p></div></div>
+<canvas id="c"></canvas><script src="game.js"></script></body></html>
