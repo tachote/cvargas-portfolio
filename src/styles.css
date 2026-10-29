@@ -1241,3 +1241,7 @@ footer a {
 
 .all-writing{font:13px var(--mono);margin:var(--s3) 0 0}
 .all-writing a{color:var(--accent)}
+
+.talks .k.play{font:12px var(--pixel);color:var(--accent)}
+.talks a{flex-wrap:wrap;row-gap:0}
+.talks .ev{flex-basis:100%;order:3;font:11px var(--mono);color:var(--muted);margin-top:4px}
