@@ -1,8 +1,8 @@
 ---
 import '../styles.css';
 import '../fx.css';
-const { title = 'Cristian Vargas · Offensive AppSec', description = 'Offensive Application Security Engineer at Fluid Attacks. OSWE, CWEE. CVEs and advisories.', robots } = Astro.props;
-const ld = { "@context": "https://schema.org", "@type": "Person", name: "Cristian Vargas", jobTitle: "Application Security Engineer", worksFor: { "@type": "Organization", name: "Fluid Attacks" }, url: "https://cvargas.com", sameAs: ["https://www.linkedin.com/in/cvmiracle"] };
+import site from '../data/site.json';
+const { title = `${site.name} · Offensive AppSec`, description = `${site.role} at ${site.company}. CVEs, advisories and offensive security research.`, robots } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" data-theme="gothic">
@@ -18,9 +18,14 @@ const ld = { "@context": "https://schema.org", "@type": "Person", name: "Cristia
   <meta name="theme-color" content="#0E0A12" />
   <link rel="preload" href="/fonts/Inter.ttf" as="font" type="font/ttf" crossorigin />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+
 </head>
-<body>
+<body id="top" itemscope itemtype="https://schema.org/Person">
+  <meta itemprop="name" content={site.name} />
+  <meta itemprop="jobTitle" content={site.role} />
+  <link itemprop="url" href="https://cvargas.com/" />
+  <link itemprop="sameAs" href={site.linkedin} />
+  <link itemprop="sameAs" href={site.github} />
   <slot />
 </body>
 </html>

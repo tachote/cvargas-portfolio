@@ -1,3 +1,10 @@
 node_modules
 dist
 .astro
+
+test-results
+playwright-report
+
+# Private editorial preview captures must not be published.
+artifacts/*-blog-draft.png
+artifacts/soak-results.jsonl
