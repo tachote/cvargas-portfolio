@@ -1,0 +1,67 @@
+---
+import { cves } from '../data/cves';
+const PICK = ['CVE-2026-2293', 'CVE-2025-10655', 'CVE-2025-9862', 'CVE-2026-0540'];
+const mobs = PICK.map((id) => cves.find((c) => c.id === id)).filter(Boolean).map((c) => ({
+  id: c!.id, product: c!.product.replace(/\s*\(.*\)$/, ''), label: c!.label, sprite: c!.sprite, cvss: c!.cvss4,
+}));
+---
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Cristian Vargas · Enter the castle</title>
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="https://cvargas.com/" />
+<link rel="icon" href="/favicon.svg" />
+<style>
+@font-face{font-family:Pixel;src:url(/fonts/Pixelify.ttf);font-display:swap}
+@font-face{font-family:JBMono;src:url(/fonts/JBMono.ttf);font-display:swap}
+html,body{margin:0;height:100%;background:#0E0A12;color:#EDE6D6;overflow:hidden;font-family:JBMono,monospace}
+#c{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.title{position:fixed;inset:0;display:grid;place-items:center;text-align:center;background:radial-gradient(ellipse at 50% 35%,#22182A,#0E0A12 70%)}
+.title h1{font:400 clamp(32px,7vw,64px) Pixel,monospace;letter-spacing:.06em;margin:0 0 4px;color:#EDE6D6;text-shadow:4px 4px 0 #7A1628}
+.title p{margin:0 0 36px;color:#9A8FA3;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.title button{display:block;margin:10px auto;font:20px Pixel,monospace;background:none;border:0;color:#C9A227;cursor:pointer;padding:6px 12px}
+.title button:focus-visible,.title button:hover{outline:2px solid #C9A227}
+.title button.sk{font:13px JBMono,monospace;color:#9A8FA3}
+.title .moon{width:72px;image-rendering:pixelated;margin-bottom:18px}
+.hud{position:fixed;top:12px;right:14px;z-index:2;font:12px JBMono,monospace}
+.hud a{color:#9A8FA3}
+.hint{position:fixed;bottom:14px;left:0;right:0;text-align:center;font:12px JBMono,monospace;color:#9A8FA3;pointer-events:none}
+.pad{position:fixed;bottom:40px;z-index:2;display:none;gap:10px}
+.pad button{width:64px;height:64px;border:2px solid #3A2A44;background:#1A1220cc;color:#EDE6D6;font:22px Pixel,monospace;border-radius:0;touch-action:none}
+.pad.l{left:16px}.pad.r{right:16px}
+@media (hover:none){.pad{display:flex}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<canvas id="c" hidden></canvas>
+<div class="title" id="title">
+  <div>
+    <img class="moon" src="/fx/moon.svg" alt="" width="72" height="72" />
+    <h1>CRISTIAN VARGAS</h1>
+    <p>Offensive AppSec · Fluid Attacks</p>
+    <button id="start" autofocus>▶ START</button>
+    <button class="sk" id="skip">Skip → read portfolio</button>
+  </div>
+</div>
+<div class="hud" id="hud" hidden><a href="/">Skip (Esc) ›</a></div>
+<div class="hint" id="hint" hidden>← → move · Space / X whip · Esc skip</div>
+<div class="pad l" id="padl" hidden><button data-k="arrowleft" aria-label="Left">◀</button><button data-k="arrowright" aria-label="Right">▶</button></div>
+<div class="pad r" id="padr" hidden><button data-k="x" aria-label="Whip">✝</button></div>
+<script type="application/json" id="mobs" set:html={JSON.stringify(mobs)} />
+<script>
+  const go = () => { location.href = '/'; };
+  document.getElementById('skip')!.addEventListener('click', go);
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') go(); });
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) go();
+  const start = async () => {
+    const { run } = await import('../scripts/gate');
+    run(JSON.parse(document.getElementById('mobs')!.textContent!));
+  };
+  document.getElementById('start')!.addEventListener('click', start, { once: true });
+  if (location.hash === '#play') start();
+</script>
+</body>
+</html>

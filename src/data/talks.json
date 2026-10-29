@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Codex aplicado al AppSec",
+    "event": "Meetup LATAM Febrero 2026",
+    "host": "Fluid Attacks",
+    "url": "https://www.youtube.com/watch?v=qyf-AlgEy20",
+    "thumbnail": "https://i.ytimg.com/vi/qyf-AlgEy20/hqdefault.jpg",
+    "year": 2026,
+    "month": 2
+  },
+  {
+    "title": "Cómo obtener CAPenX",
+    "event": "Meetup LATAM",
+    "host": "Fluid Attacks",
+    "url": "https://www.youtube.com/watch?v=qYCFkj0RoNQ",
+    "thumbnail": "https://i.ytimg.com/vi/qYCFkj0RoNQ/hqdefault.jpg",
+    "year": null,
+    "month": null
+  },
+  {
+    "title": "Cómo obtener la certificación HTB CWEE",
+    "event": "Meetup Agosto",
+    "host": "Fluid Attacks",
+    "url": "https://www.youtube.com/watch?v=pTnKeSemuGE",
+    "thumbnail": "https://i.ytimg.com/vi/pTnKeSemuGE/hqdefault.jpg",
+    "year": null,
+    "month": 8
+  }
+]
