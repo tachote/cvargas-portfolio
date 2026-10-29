@@ -48,6 +48,6 @@ tbody tr td.hp{position:relative}
 .killcount .sep{color:var(--muted)}
 /* keep content above the parallax layer */
 section,footer{position:relative;z-index:1}
-.co{color:var(--muted)}
+.co{font:10px var(--mono);color:var(--muted);border:1px solid var(--border);padding:1px 4px;margin-left:6px;vertical-align:1px}
 .more{margin-top:12px}.more summary{font:12px var(--pixel);color:var(--accent);cursor:pointer;padding:6px 0}
 .more .frame{margin-top:8px}

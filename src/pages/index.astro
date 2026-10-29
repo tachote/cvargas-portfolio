@@ -28,9 +28,9 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
     <tbody>
       {top.map(c => (
         <tr>
-          <td class="id"><a href={c.advisory_url}>{c.id}</a></td>
+          <td class="id"><a href={c.advisory_url}>{c.id}</a>{c.co && <span class="co" title="Co-discovered">co-found</span>}</td>
           <td class="prod">{c.product}</td>
-          <td class="cls-td cls">{c.vuln_class}{c.co && <span class="co"> · co-discovered</span>}</td>
+          <td class="cls-td cls">{c.detail ?? c.vuln_class}</td>
           <td class={`hp ${cls[c.severity] ?? 'med'}`} title={`${c.severity} · CVSS 4.0 ${c.cvss4}`}><span class="bar"><i style={`--w:${Math.round(c.cvss4 * 10)}%`}></i></span>{c.cvss4}{c.sprite && <img class="spr" src={`/fx/sprites/${c.sprite}.svg`} alt="" width="32" height="32" loading="lazy" />}</td>
         </tr>
       ))}
@@ -43,9 +43,9 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
     <tbody>
       {rest.map(c => (
         <tr>
-          <td class="id"><a href={c.advisory_url}>{c.id}</a></td>
+          <td class="id"><a href={c.advisory_url}>{c.id}</a>{c.co && <span class="co" title="Co-discovered">co-found</span>}</td>
           <td class="prod">{c.product}</td>
-          <td class="cls-td cls">{c.vuln_class}{c.co && <span class="co"> · co-discovered</span>}</td>
+          <td class="cls-td cls">{c.detail ?? c.vuln_class}</td>
           <td class={`hp ${cls[c.severity] ?? 'med'}`} title={`${c.severity} · CVSS 4.0 ${c.cvss4}`}><span class="bar"><i style={`--w:${Math.round(c.cvss4 * 10)}%`}></i></span>{c.cvss4}{c.sprite && <img class="spr" src={`/fx/sprites/${c.sprite}.svg`} alt="" width="32" height="32" loading="lazy" />}</td>
         </tr>
       ))}
