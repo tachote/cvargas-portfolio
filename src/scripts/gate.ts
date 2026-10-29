@@ -16,7 +16,7 @@ export function run(data: Mob[]) {
 
   const GAP = 340, LEN = 260 + data.length * GAP + 260;
   const P = { x: 60, vx: 0, face: 1, atk: 0, cd: 0, hurt: 0 };
-  const mobs = data.map((m, i) => ({ ...m, x: 260 + i * GAP + GAP / 2, hp: 3, dead: 0, flash: 0, bob: Math.random() * 6 }));
+  const mobs = data.map((m, i) => ({ ...m, x: 260 + i * GAP + GAP / 2, hp: 1, dead: 0, flash: 0, bob: Math.random() * 6 }));
   const keys: Record<string, boolean> = {};
   const pops: { t: number; m: Mob; x: number }[] = [];
   const parts: { x: number; y: number; vx: number; vy: number; l: number }[] = [];
@@ -107,7 +107,7 @@ export function run(data: Mob[]) {
       if (im.complete) x.drawImage(im, m.x - sz / 2, gy - sz + by, sz, sz); else { x.fillStyle = '#B0213A'; x.fillRect(m.x - sz / 2, gy - sz, sz, sz); }
       x.globalAlpha = 1;
       x.fillStyle = '#EDE6D6'; x.font = `${3.2 * S}px JBMono, monospace`; x.fillText(m.label, m.x, gy - sz - 4 * S + by);
-      x.fillStyle = '#3A2A44'; x.fillRect(m.x - 8 * S, gy - sz - 2 * S + by, 16 * S, S); x.fillStyle = '#B0213A'; x.fillRect(m.x - 8 * S, gy - sz - 2 * S + by, 16 * S * (m.hp / 3), S);
+      x.fillStyle = '#3A2A44'; x.fillRect(m.x - 8 * S, gy - sz - 2 * S + by, 16 * S, S); x.fillStyle = '#B0213A'; x.fillRect(m.x - 8 * S, gy - sz - 2 * S + by, 16 * S * (m.hp / 1), S);
     }
     hero(P.x, gy);
     // particles
