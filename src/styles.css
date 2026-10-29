@@ -1,18 +1,18 @@
 @font-face {
   font-family: Inter;
-  src: url(/fonts/Inter.ttf);
+  src: url(/fonts/Inter.woff2) format('woff2');
   font-weight: 100 900;
   font-display: swap;
 }
 @font-face {
   font-family: JBMono;
-  src: url(/fonts/JBMono.ttf);
+  src: url(/fonts/JBMono.woff2) format('woff2');
   font-weight: 100 800;
   font-display: swap;
 }
 @font-face {
   font-family: Pixel;
-  src: url(/fonts/Pixelify.ttf);
+  src: url(/fonts/Pixelify.woff2) format('woff2');
   font-weight: 400 700;
   font-display: swap;
 }
