@@ -50,7 +50,7 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
 
   <main>
   <section id="cves" aria-labelledby="cves-title">
-    <div class="section-kicker"><Icon name="sword" size={16}/><span>Bestiary</span><span class="section-line"></span><span>{String(cves.length).padStart(2, '0')} ENTRIES</span></div>
+    <div class="section-kicker"><Icon name="sword" size={16}/><span class="section-line"></span><span>{String(cves.length).padStart(2, '0')} ENTRIES</span></div>
     <h2 id="cves-title">CVEs &amp; Advisories <span class="amb">· Bestiary</span></h2>
     <p class="sub">Real software. Disclosed vulnerabilities. Research you can verify.</p>
     {featured && <a href={featured.advisory_url} class="featured-research">
@@ -84,7 +84,7 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
   </section>
 
   <section id="writing" aria-labelledby="writing-title">
-    <div class="section-kicker"><Icon name="book" size={16}/><span>Grimoire</span><span class="section-line"></span></div>
+    <div class="section-kicker"><Icon name="book" size={16}/><span class="section-line"></span></div>
     <h2 id="writing-title">Writing &amp; Talks <span class="amb">· Grimoire</span></h2><p class="sub">Research, secure code review and lessons from the field.</p>
     {featuredWriting && <a class="writing-feature" href={featuredWriting.url}><div class="book-art" aria-hidden="true"><Icon name="book" size={52}/><span>THE GRIMOIRE</span></div><div><p class="eyebrow">Featured {kind[featuredWriting.kind]} · {featuredWriting.lang}</p><h3>{featuredWriting.title}</h3>{featuredWriting.host && <p>{featuredWriting.host}</p>}<span class="read-link">{featuredWriting.kind === 'talk' ? 'Watch talk' : 'Read article'} <Icon name="arrow" size={16}/></span></div></a>}
     <ul class="grim">{items.filter(it => it !== featuredWriting).map(it => <li><span class="k">{kind[it.kind]}</span><a href={it.url}>{it.title}<span aria-hidden="true">↗</span></a><span class="d">{it.lang}{it.year ? ` / ${it.year}` : ''}</span></li>)}</ul>
@@ -104,7 +104,7 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
   </section>
 
   <section id="contact" class="save-room" aria-labelledby="contact-title">
-    <div class="section-kicker"><Icon name="flame" size={16}/><span>Save Room</span><span class="section-line"></span></div>
+    <div class="section-kicker"><Icon name="flame" size={16}/><span class="section-line"></span></div>
     <div class="save-emblem" aria-hidden="true"><Icon name="flame" size={30}/></div>
     <h2 id="contact-title">Contact <span class="amb">· Save Room</span></h2>
     <p class="contact-headline">A good place to<br/>start a conversation.</p>

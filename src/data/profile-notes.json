@@ -1,12 +1,5 @@
 {
-  "english": {
-    "level": "C2",
-    "score": "72/100",
-    "issuer": "EF SET",
-    "issued": "2024-09",
-    "verify_url": "https://cert.efset.org/JyJiAh",
-    "label": "English · C2 · EF SET"
-  },
+  "english": null,
   "ownership": "Flip edita JSON de datos; Web edita código/astro.",
   "medium": "https://medium.com/@deeptester"
 }
