@@ -1,0 +1,12 @@
+---
+import { render } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+import { posts } from '../../lib/posts';
+export async function getStaticPaths() {
+  return (await posts()).map((p) => ({ params: { slug: p.id }, props: { p } }));
+}
+const { p } = Astro.props;
+const { Content } = await render(p);
+const mins = Math.max(1, Math.round((p.body ?? '').split(/\s+/).length / 220));
+---
+<BlogPost frontmatter={{ ...p.data, description: p.data.summary }} mins={mins}><Content /></BlogPost>

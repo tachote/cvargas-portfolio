@@ -2,11 +2,12 @@
   {
     "kind": "writeup",
     "title": "HTTP Verb Tampering in NestJS: Bypassing Middleware with HEAD Requests",
-    "url": "https://medium.com/@deeptester/http-verb-tampering-in-nestjs-bypassing-middleware-with-head-requests-e70b968b15c2",
+    "url": "/blog/http-verb-tampering-nestjs/",
     "year": 2026,
     "lang": "EN",
     "tier": "top",
-    "cve": "CVE-2026-2293"
+    "cve": "CVE-2026-2293",
+    "draft": true
   },
   {
     "kind": "talk",
@@ -19,19 +20,21 @@
   },
   {
     "kind": "post",
-    "title": "How can Windsurf/Cursor help you with your secure code review?",
-    "url": "https://medium.com/@deeptester/how-can-windsurf-cursor-help-you-with-your-secure-code-review-d93394a4d719",
+    "title": "How Windsurf and Cursor help with secure code review",
+    "url": "/blog/windsurf-cursor-secure-code-review/",
     "year": 2025,
     "lang": "EN",
-    "tier": "top"
+    "tier": "top",
+    "draft": true
   },
   {
     "kind": "post",
-    "title": "CWEE or OSWE, which one choose?",
-    "url": "https://medium.com/@deeptester/cwee-or-oswe-which-one-choose-2987443a0e0a",
+    "title": "CWEE or OSWE — which one to choose?",
+    "url": "/blog/cwee-or-oswe/",
     "year": 2025,
     "lang": "EN",
-    "tier": "other"
+    "tier": "other",
+    "draft": true
   },
   {
     "kind": "talk",

@@ -1,7 +1,7 @@
 ---
 import '../styles.css';
 import '../fx.css';
-const { title = 'Cristian Vargas · Offensive AppSec', description = 'Offensive Application Security Engineer at Fluid Attacks. OSWE, CWEE. CVEs and advisories.' } = Astro.props;
+const { title = 'Cristian Vargas · Offensive AppSec', description = 'Offensive Application Security Engineer at Fluid Attacks. OSWE, CWEE. CVEs and advisories.', robots } = Astro.props;
 const ld = { "@context": "https://schema.org", "@type": "Person", name: "Cristian Vargas", jobTitle: "Application Security Engineer", worksFor: { "@type": "Organization", name: "Fluid Attacks" }, url: "https://cvargas.com", sameAs: ["https://www.linkedin.com/in/cvmiracle"] };
 ---
 <!doctype html>
@@ -9,7 +9,8 @@ const ld = { "@context": "https://schema.org", "@type": "Person", name: "Cristia
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title}</title>
+  {robots && <meta name="robots" content={robots} />}
+<title>{title}</title>
   <meta name="description" content={description} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />

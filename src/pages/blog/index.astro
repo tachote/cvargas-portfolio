@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import { posts } from '../../lib/posts';
+const list = await posts();
+---
+<Base title="Blog · Cristian Vargas" description="AppSec write-ups by Cristian Vargas.">
+  <div class="wrap blog">
+    <div class="topbar"><a href="/#writing">← Grimoire</a><a href="/">cvargas.com</a></div>
+    <h1>Blog</h1>
+    <ul class="troph grim">
+      {list.map((p) => (
+        <li><span class="k">Post</span><a href={`/blog/${p.id}/`}>{p.data.title}</a><span class="d">{p.data.draft && <span class="lang">DRAFT</span>}{p.data.date.slice(0, 4)}</span></li>
+      ))}
+    </ul>
+  </div>
+</Base>

@@ -1,20 +1,30 @@
 [
   {
     "title": "HTTP Verb Tampering in NestJS: Bypassing Middleware with HEAD Requests",
-    "url": "https://medium.com/@deeptester/http-verb-tampering-in-nestjs-bypassing-middleware-with-head-requests-e70b968b15c2",
+    "url": "/blog/http-verb-tampering-nestjs/",
     "date": "2026-02-09",
-    "year": 2026
+    "year": 2026,
+    "slug": "http-verb-tampering-nestjs",
+    "draft": true,
+    "archived_from": "https://medium.com/@deeptester/http-verb-tampering-in-nestjs-bypassing-middleware-with-head-requests-e70b968b15c2",
+    "related_cve": "CVE-2026-2293"
   },
   {
-    "title": "How can Windsurf/Cursor help you with your secure code review?",
-    "url": "https://medium.com/@deeptester/how-can-windsurf-cursor-help-you-with-your-secure-code-review-d93394a4d719",
+    "title": "How Windsurf and Cursor help with secure code review",
+    "url": "/blog/windsurf-cursor-secure-code-review/",
     "date": "2025-07-30",
-    "year": 2025
+    "year": 2025,
+    "slug": "windsurf-cursor-secure-code-review",
+    "draft": true,
+    "archived_from": "https://medium.com/@deeptester/how-can-windsurf-cursor-help-you-with-your-secure-code-review-d93394a4d719"
   },
   {
-    "title": "CWEE or OSWE, which one choose?",
-    "url": "https://medium.com/@deeptester/cwee-or-oswe-which-one-choose-2987443a0e0a",
+    "title": "CWEE or OSWE — which one to choose?",
+    "url": "/blog/cwee-or-oswe/",
     "date": "2025-03-25",
-    "year": 2025
+    "year": 2025,
+    "slug": "cwee-or-oswe",
+    "draft": true,
+    "archived_from": "https://medium.com/@deeptester/cwee-or-oswe-which-one-choose-2987443a0e0a"
   }
 ]

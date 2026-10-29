@@ -1,0 +1,56 @@
+---
+import Base from './Base.astro';
+const { frontmatter } = Astro.props;
+import '../fx.css';
+const { title, description, date, related_cve, draft } = frontmatter;
+const mins = Astro.props.mins ?? 1;
+const pretty = new Date(date + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<Base title={`${title} · Cristian Vargas`} description={description || title} robots={draft ? 'noindex' : undefined}>
+  <div class="wrap blog">
+    <div class="topbar">
+      <a href="/#writing">← Grimoire</a>
+      <a href="/">cvargas.com</a>
+    </div>
+    {draft && <p class="draft-banner">Draft — pending Cristian's review before publish.</p>}
+    <article>
+      <header class="blog-head">
+        <p class="blog-meta">
+          <time datetime={date}>{pretty}</time> · {mins} min read
+          {related_cve && <> · <a class="cvechip" href="/#cves">{related_cve}</a></>}
+        </p>
+        <h1>{title}</h1>
+        {description && <p class="sub">{description}</p>}
+      </header>
+      <div class="blog-body">
+        <slot />
+      </div>
+    </article>
+    <p class="back"><a href="/#writing">← Back to Grimoire</a></p>
+    <footer>
+      <span>Cristian Vargas</span>
+      <a href="/#writing">Writing &amp; Talks</a>
+    </footer>
+  </div>
+</Base>
+<style is:global>
+.blog .draft-banner{font:12px var(--mono);color:var(--bg);background:var(--accent);padding:8px 12px;margin:0 0 var(--s3)}
+.blog{max-width:680px}
+.blog .cvechip{border:1px solid var(--border);padding:1px 6px;color:var(--accent);text-decoration:none}
+.blog .back{font:13px var(--mono);margin:var(--s5) 0 var(--s3)}
+.blog-head{margin-bottom:var(--s4)}
+.blog-head h1{font:700 clamp(24px,5vw,34px)/1.15 var(--font);margin:0 0 var(--s2);letter-spacing:-.02em}
+.blog-meta{font:12px var(--mono);color:var(--muted);margin:0 0 var(--s2)}
+.blog-body{font:400 18px/1.7 var(--font);background:var(--surface);padding:var(--s4);border:1px solid var(--border)}
+.blog-body h2{font:400 20px/1.3 Pixel,var(--font);color:var(--accent);margin:var(--s5) 0 var(--s2)}
+.blog-body h3{font:600 16px/1.3 var(--font);margin:var(--s4) 0 var(--s2)}
+.blog-body p{margin:0 0 var(--s3)}
+.blog-body ul,.blog-body ol{margin:0 0 var(--s3);padding-left:1.25em}
+.blog-body li{margin:0 0 6px}
+.blog-body blockquote{margin:0 0 var(--s3);padding:var(--s2) var(--s3);border-left:3px solid var(--accent);background:var(--surface);color:var(--muted);font-size:15px}
+.blog-body pre{margin:0 0 var(--s3);padding:var(--s3);overflow:auto;background:#120C18;border:2px solid var(--border);box-shadow:4px 4px 0 #000;font:12px/1.5 var(--mono)}
+.blog-body code{font:13px var(--mono);color:var(--accent)}
+.blog-body pre code{color:var(--text);font-size:12px}
+.blog-body a{color:var(--accent)}
+.blog-body hr{border:0;border-top:1px solid var(--border);margin:var(--s5) 0}
+</style>
