@@ -3,56 +3,36 @@
     "ico": "♛",
     "title": "1st · OAS Cyber Americas Cup",
     "detail": "2026 · with Fluid Attacks",
-    "tier": "top",
-    "linkedin_honors": false
+    "tier": "top"
   },
   {
     "ico": "♛",
-    "title": "1st · Ekoparty CTF",
-    "detail": "2026 · 2x consecutive · Fluid Attacks",
-    "tier": "top",
-    "linkedin_honors": false
-  },
-  {
-    "ico": "♛",
-    "title": "1st · Kaspersky CTF — NA/SA/Caribbean regional",
+    "title": "1st · Kaspersky CTF — NA/SA/Caribbean",
     "detail": "2026 · qualified SAS CTF final, Bali · Fluid Attacks",
-    "tier": "top",
-    "linkedin_honors": false
+    "tier": "top"
+  },
+  {
+    "ico": "♛",
+    "title": "1st · Ekoparty CTF ×2",
+    "detail": "2025–2026 · consecutive · Fluid Attacks",
+    "tier": "top"
   },
   {
     "ico": "♛",
     "title": "1st · DragonJAR CTF",
     "detail": "2025",
-    "tier": "top",
-    "linkedin_honors": false
+    "tier": "top"
   },
   {
     "ico": "♜",
     "title": "2nd · DragonJAR CTF",
     "detail": "2026",
-    "tier": "other",
-    "linkedin_honors": false
-  },
-  {
-    "ico": "♛",
-    "title": "1st · Fluid Attacks CTF — LATAM Challenge",
-    "detail": "Edition 2025-1 · individual",
-    "tier": "top",
-    "linkedin_honors": false
+    "tier": "other"
   },
   {
     "ico": "♜",
-    "title": "2nd · Fluid Attacks CTF — LATAM Challenge",
-    "detail": "Edition 2026-1 · individual",
-    "tier": "other",
-    "linkedin_honors": false
-  },
-  {
-    "ico": "♛",
-    "title": "#1 overall · Fluid Attacks CTF Hall of Fame",
-    "detail": "accumulated rankings · cvargas · 13,200 pts",
-    "tier": "top",
-    "source": "fluidattacks.com/ctf"
+    "title": "Fluid Attacks CTF: Hall of Fame #1 · 1st Ed.1 · 2nd Ed.2",
+    "detail": "LATAM Challenge · individual · cvargas",
+    "tier": "other"
   }
 ]
