@@ -62,19 +62,19 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   </details>)}
 </section>
 
-<section id="competitions">
-  <h2>Competitions <span class="amb">· Trophies</span></h2>
+<section id="awards">
+  <h2>Awards <span class="amb">· Trophies</span></h2>
   <p class="sub">CTF and cyber competition results.</p>
   <div class="relics">
-    {achTop.map((a) => (
-      <div class="frame relic"><div class="ico">{a.ico}</div><div><h3>{a.title}</h3><p>{a.detail}</p></div></div>
+    {achTop.slice(0, 1).map((a) => (
+      <div class="frame relic hero-relic"><div class="ico">{a.ico}</div><div><h3>{a.title}</h3><p>{a.detail}</p></div></div>
     ))}
   </div>
-  {achRest.length > 0 && (<ul class="troph">
-    {achRest.map((a) => (
-      <li class="lo"><span class="ico">{a.ico}</span><b>{a.title}</b><span class="d">{a.detail}</span></li>
+  <ul class="troph">
+    {[...achTop.slice(1), ...achRest].map((a) => (
+      <li class={a.tier === 'top' ? '' : 'lo'}><span class="ico">{a.ico}</span><b>{a.title}</b><span class="d">{a.detail}</span></li>
     ))}
-  </ul>)}
+  </ul>
 </section>
 
 <section id="certifications">

@@ -64,7 +64,12 @@ section,footer{position:relative;z-index:1}
 .troph .d{font:12px var(--mono);color:var(--muted);text-align:right}
 .troph li.lo b,.troph li.lo .ico{color:var(--muted);font-weight:400}
 @media (max-width:600px){.troph li{grid-template-columns:22px 1fr}.troph .d{grid-column:2;text-align:left}}
-#certifications .relics{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+
 .troph{margin-top:var(--s3,16px)}
 
-#competitions .relics{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:600px){#competitions .relics{grid-template-columns:1fr}}
+
+#awards .relics{grid-template-columns:1fr}
+.hero-relic{border-color:var(--accent)}
+.hero-relic h3{font-size:18px;color:var(--accent)}
+#certifications .relics{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:600px){#certifications .relics{grid-template-columns:1fr}}
