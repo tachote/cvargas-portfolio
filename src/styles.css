@@ -313,14 +313,6 @@ h2 .amb {
   text-decoration: none;
   overflow: hidden;
 }
-.featured-research::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 30px;
-  border-top: 2px solid var(--accent);
-}
 .featured-top {
   display: flex;
   align-items: center;
@@ -760,20 +752,6 @@ tbody tr:hover {
   padding: 22px 17px 0;
   position: relative;
 }
-.relic::before,
-.relic::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 3px;
-  height: 3px;
-  background: #c9a22770;
-}
-.relic::after {
-  left: auto;
-  right: 5px;
-}
 .relic-emblem {
   color: var(--accent);
   margin-bottom: 17px;
@@ -855,21 +833,6 @@ tbody tr:hover {
     radial-gradient(ellipse at 50% 0, #c9a2270d, transparent 65%), #130d17;
   margin-bottom: 0;
   position: relative;
-}
-.save-room::before,
-.save-room::after {
-  content: "✦";
-  position: absolute;
-  top: -13px;
-  left: 19px;
-  color: var(--accent);
-  font-size: 17px;
-  background: var(--bg);
-  padding: 0 7px;
-}
-.save-room::after {
-  left: auto;
-  right: 19px;
 }
 .save-emblem {
   color: var(--accent);

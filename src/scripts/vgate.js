@@ -14,11 +14,41 @@ function loadStylesheet() {
   return stylesheetPromise;
 }
 
+// Original pixel art from /fx (Diseño). Preloaded once; the canvas falls back to vector shapes until decoded.
+const SPRITE_FILES = { XSS: 'xss', SQLi: 'sqli', SSRF: 'ssrf', IDOR: 'idor', 'Auth bypass': 'authbypass' };
+const HERO_SHEET_W = 64, HERO_FRAME_W = 16, HERO_FRAME_H = 20; // viewBox units of gate/hero.svg (4 frames)
+let artCache;
+function loadImage(src) {
+  const img = new Image();
+  img.decoding = 'async';
+  img.src = src;
+  const ready = img.decode ? img.decode().then(() => img, () => null) : new Promise(r => { img.onload = () => r(img); img.onerror = () => r(null); });
+  return { img, ready };
+}
+function loadArt() {
+  if (artCache) return artCache;
+  const enemies = {};
+  for (const [name, file] of Object.entries(SPRITE_FILES)) enemies[name] = loadImage(`/fx/sprites/${file}.svg`);
+  artCache = { enemies, hero: loadImage('/fx/gate/hero.svg'), tile: loadImage('/fx/gate/corridor-tile.svg') };
+  return artCache;
+}
+const usable = img => img && img.complete && img.naturalWidth > 0;
+function whiteSilhouette(img) {
+  const c = document.createElement('canvas');
+  c.width = img.naturalWidth; c.height = img.naturalHeight;
+  const x = c.getContext('2d');
+  x.drawImage(img, 0, 0); x.globalCompositeOperation = 'source-in'; x.fillStyle = '#EDE6D6'; x.fillRect(0, 0, c.width, c.height);
+  return c;
+}
+
 /** An original, opt-in survivor arena. All rendering stays on canvas or in external CSS. */
 export async function openGate(CVES, ST = {}) {
   if (!CVES?.length || document.getElementById('gate') || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  await loadStylesheet();
+  const art = loadArt();
+  await Promise.all([loadStylesheet(), Promise.race([Promise.all([art.hero.ready, art.tile.ready, ...Object.values(art.enemies).map(e => e.ready)]), new Promise(r => setTimeout(r, 1500))])]);
+  const flash = {};
+  for (const [name, e] of Object.entries(art.enemies)) if (usable(e.img)) flash[name] = whiteSilhouette(e.img);
   if (document.getElementById('gate') || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const controller = new AbortController();
@@ -279,7 +309,7 @@ export async function openGate(CVES, ST = {}) {
   function finish(won) {
     show('result');
     if (kills > best) { best = kills; try { localStorage.setItem('cv-night-best', String(best)); } catch { /* Optional best score. */ } }
-    $('.g-result-kicker').textContent = won ? 'THE ARCHIVE IS SECURE' : 'EVERY HUNT TEACHES SOMETHING';
+    $('.g-result-kicker').textContent = won ? 'THE CASTLE IS SECURE' : 'THE NIGHT IS NOT OVER';
     $('.g-screen.g-result h2').textContent = won ? 'You held the night.' : 'The breach got through.';
     $('.g-result-description').textContent = won ? (bossDefeated ? 'Dawn breaks. The critical threat is contained.' : 'Dawn breaks. Your watch is complete.') : 'Try a new build. Keep moving, collect gems and dash through danger.';
     $('.g-result-stats').replaceChildren();
@@ -335,7 +365,8 @@ export async function openGate(CVES, ST = {}) {
     }
     if (time >= 75 && !bossSpawned) { bossSpawned = true; spawn(true); announce('Critical threat incoming. Keep moving and concentrate your fire.'); effects.push({ type: 'warning', life: 3, max: 3, text: 'CRITICAL THREAT INCOMING' }); }
     shotClock -= dt;
-    if (shotClock <= 0) { fire(); shotClock = player.rate; }
+    if (shotClock <= 0) { fire(); shotClock = player.rate; player.whip = .16; }
+    player.whip = Math.max(0, (player.whip || 0) - dt);
     novaClock -= dt;
     if (player.nova && novaClock <= 0) {
       const radius = 125 + player.nova * 20;
@@ -395,25 +426,21 @@ export async function openGate(CVES, ST = {}) {
   function floor() {
     ctx.fillStyle = color.bg; ctx.fillRect(0, 0, w, h);
     const px = player?.x || 0, py = player?.y || 0;
-    const cell = 96, ox = w / 2 - px, oy = h / 2 - py;
-    for (let gy = Math.floor(-oy / cell) - 1; gy < Math.ceil((h - oy) / cell) + 1; gy++) {
-      for (let gx = Math.floor(-ox / cell) - 1; gx < Math.ceil((w - ox) / cell) + 1; gx++) {
-        const x = Math.floor(gx * cell + ox), y = Math.floor(gy * cell + oy), seed = Math.abs(gx * 73 + gy * 37);
-        ctx.fillStyle = (gx + gy) % 2 ? '#17111D' : '#1A131F'; ctx.fillRect(x + 1, y + 1, cell - 2, cell - 2);
-        ctx.strokeStyle = '#251B2D'; ctx.lineWidth = 1; ctx.strokeRect(x + 7, y + 7, cell - 14, cell - 14);
-        if (seed % 7 === 0) { ctx.fillStyle = '#30223A'; ctx.fillRect(x + 25, y + 33, 16, 3); ctx.fillRect(x + 38, y + 36, 3, 12); }
-        if (gx % 4 === 0 && gy % 4 === 0) {
-          const flicker = .75 + Math.sin(time * 7 + seed) * .15;
-          const glow = ctx.createRadialGradient(x + 48, y + 48, 2, x + 48, y + 48, 65);
-          glow.addColorStop(0, `rgba(201,162,39,${.13 * flicker})`); glow.addColorStop(1, 'rgba(201,162,39,0)'); ctx.fillStyle = glow; ctx.fillRect(x - 18, y - 18, 132, 132);
-          ctx.fillStyle = '#3A2A44'; ctx.fillRect(x + 39, y + 46, 18, 12); ctx.fillStyle = '#EDE6D6'; ctx.fillRect(x + 44, y + 37, 7, 15);
-          ctx.fillStyle = '#C9A227'; ctx.fillRect(x + 45, y + 30, 5, 8); ctx.fillStyle = '#F2D78A'; ctx.fillRect(x + 46, y + 32, 3, 5);
-        }
-      }
-    }
+    const tile = art.tile.img, cell = 96, ox = w / 2 - px, oy = h / 2 - py;
+    if (!usable(tile)) return;
+    const x0 = Math.floor(-ox / cell) - 1, y0 = Math.floor(-oy / cell) - 1, x1 = Math.ceil((w - ox) / cell), y1 = Math.ceil((h - oy) / cell);
+    for (let gy = y0; gy <= y1; gy++) for (let gx = x0; gx <= x1; gx++) ctx.drawImage(tile, Math.floor(gx * cell + ox), Math.floor(gy * cell + oy), cell, cell);
+    // dim the corridor so threats and gems read clearly
+    ctx.fillStyle = 'rgba(14,10,18,.58)'; ctx.fillRect(0, 0, w, h);
   }
   function drawEnemy(enemy) {
     const x = Math.round(enemy.x), y = Math.round(enemy.y), size = enemy.boss ? 2.4 : 1, pulse = Math.sin(time * 5 + enemy.seed) * 2;
+    const sprite = art.enemies[enemy.kind.name]?.img;
+    if (usable(sprite)) {
+      const px = enemy.boss ? 96 : Math.max(32, Math.round(enemy.r * 2.6 / 8) * 8), half = px / 2;
+      ctx.fillStyle = 'rgba(0,0,0,.45)'; ctx.beginPath(); ctx.ellipse(x, y + half * .8, half * .75, half * .25, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.drawImage(enemy.hit && flash[enemy.kind.name] ? flash[enemy.kind.name] : sprite, Math.round(x - half), Math.round(y - half + pulse), px, px);
+    } else {
     ctx.save(); ctx.translate(x, y + pulse); ctx.scale(size, size);
     ctx.fillStyle = 'rgba(0,0,0,.4)'; ctx.beginPath(); ctx.ellipse(0, 11, 17, 6, 0, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = enemy.hit ? color.cream : enemy.kind.color;
@@ -431,15 +458,31 @@ export async function openGate(CVES, ST = {}) {
     ctx.fillStyle = color.bg; ctx.fillRect(-7, -3, 5, 5); ctx.fillRect(3, -3, 5, 5);
     ctx.fillStyle = color.cream; ctx.fillRect(-5, -3, 2, 2); ctx.fillRect(5, -3, 2, 2);
     ctx.restore();
+    }
     if (enemy.boss || enemy.hit > 0) { ctx.fillStyle = '#30223A'; ctx.fillRect(x - enemy.r, y - enemy.r - 12, enemy.r * 2, 4); ctx.fillStyle = enemy.boss ? color.red : enemy.kind.color; ctx.fillRect(x - enemy.r, y - enemy.r - 12, enemy.r * 2 * Math.max(0, enemy.hp) / enemy.maxHp, 4); }
-    if (enemy.boss) { ctx.font = '11px JBMono,monospace'; ctx.textAlign = 'center'; ctx.fillStyle = color.cream; ctx.fillText('CRITICAL THREAT', x, y - 64); }
-    else if (distance(enemy, player) < 210) { ctx.font = '9px JBMono,monospace'; ctx.textAlign = 'center'; ctx.fillStyle = enemy.kind.color; ctx.fillText(enemy.kind.name, x, y + enemy.r + 15); }
+    if (enemy.boss) { ctx.font = '14px Pixel,monospace'; ctx.textAlign = 'center'; ctx.fillStyle = color.red; ctx.fillText('CRITICAL THREAT', x + 2, y - 62); ctx.fillStyle = color.cream; ctx.fillText('CRITICAL THREAT', x, y - 64); }
+    else if (distance(enemy, player) < 210) { ctx.font = '11px Pixel,monospace'; ctx.textAlign = 'center'; ctx.fillStyle = enemy.kind.color; ctx.fillText(enemy.kind.name, x, y + (enemy.boss ? 60 : enemy.r + 20)); }
   }
   function drawPlayer() {
     ctx.save(); ctx.translate(Math.round(player.x), Math.round(player.y)); ctx.scale(player.f, 1);
+    const whipT = Math.max(0, player.whip || 0);
     ctx.fillStyle = 'rgba(0,0,0,.5)'; ctx.beginPath(); ctx.ellipse(0, 16, 18, 6, 0, 0, Math.PI * 2); ctx.fill();
     if (player.invincible > 0) { ctx.strokeStyle = player.dashing ? color.gold : 'rgba(201,162,39,.35)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(0, 0, 25, 0, Math.PI * 2); ctx.stroke(); }
     const moving = Object.keys(keys).length || stick;
+    const sheet = art.hero.img;
+    if (usable(sheet)) {
+      // Source rects are in the image's natural pixels; the SVG is authored on a 64-unit-wide sheet.
+      const k = sheet.naturalWidth / HERO_SHEET_W, frame = whipT > 0 ? 3 : moving ? 1 + (Math.floor(time * 8) % 2) : 0;
+      const blink = player.invincible > 0 && !player.dashing && Math.floor(time * 12) % 2;
+      ctx.globalAlpha = blink ? .55 : 1;
+      ctx.drawImage(sheet, frame * HERO_FRAME_W * k, 0, HERO_FRAME_W * k, HERO_FRAME_H * k, -24, -40, HERO_FRAME_W * 3, HERO_FRAME_H * 3);
+      ctx.globalAlpha = 1;
+      if (whipT > 0) { // golden whip arc from the hand
+        ctx.strokeStyle = color.gold; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(14, -8, 26, -1.2 + (1 - whipT / .16) * .6, .5 + (1 - whipT / .16) * .6); ctx.stroke();
+      }
+      ctx.restore();
+      return;
+    }
     const walk = moving ? Math.sin(time * 17) * 3 : 0;
     ctx.fillStyle = '#673447'; ctx.beginPath(); ctx.moveTo(-10, -5); ctx.lineTo(8, -6); ctx.lineTo(14, 18); ctx.lineTo(-17, 16 + walk); ctx.closePath(); ctx.fill();
     ctx.fillStyle = '#33233F'; ctx.fillRect(-9, -4, 18, 19);
@@ -456,9 +499,10 @@ export async function openGate(CVES, ST = {}) {
     if (player) {
       ctx.save(); ctx.translate(w / 2 - player.x, h / 2 - player.y);
       gems.forEach(gem => {
-        const tint = gem.heal ? '#D57486' : gem.large ? color.gold : color.blue;
-        diamond(gem.x, gem.y + Math.sin(time * 3 + gem.x) * 2, gem.large ? 8 : 5, tint);
-        ctx.fillStyle = color.cream; ctx.fillRect(gem.x - 1, gem.y - 2, 2, 2);
+        const gy = gem.y + Math.sin(time * 3 + gem.x) * 2, size = gem.large ? 9 : 6;
+        if (gem.heal) { diamond(gem.x, gy, size, '#D57486'); }
+        else { diamond(gem.x + 1, gy + 1, size, '#5B461A'); diamond(gem.x, gy, size, color.gold); diamond(gem.x - 1, gy - 1, size * .45, '#F2D78A'); }
+        ctx.fillStyle = color.cream; ctx.fillRect(gem.x - 2, gy - 3, 2, 2);
       });
       enemies.filter(enemy => enemy.hp > 0).sort((a, b) => a.y - b.y).forEach(drawEnemy);
       if (player.orbit) {

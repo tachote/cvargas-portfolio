@@ -32,7 +32,7 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
     <nav aria-label="Main navigation"><a href="#cves">Research</a><a href="#writing">Writing</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
   </div>
   <header class="hero">
-    <div class="sky" aria-hidden="true"></div>
+    <div class="sky" aria-hidden="true"><i class="l1"></i><i class="moon"></i><i class="l2"></i><i class="l3"></i></div>
     <div class="hero-txt">
       <p class="eyebrow">Offensive security · {site.location}</p>
       <h1>{site.name.split(' ')[0]}<br/><span>{site.name.split(' ').slice(1).join(' ')}<span class="name-mark" aria-hidden="true">✦</span></span></h1>
@@ -50,7 +50,7 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
 
   <main>
   <section id="cves" aria-labelledby="cves-title">
-    <div class="section-kicker"><Icon name="sword" size={16}/><span>Research archive</span><span class="section-line"></span><span>{String(cves.length).padStart(2, '0')} ENTRIES</span></div>
+    <div class="section-kicker"><Icon name="sword" size={16}/><span>Bestiary</span><span class="section-line"></span><span>{String(cves.length).padStart(2, '0')} ENTRIES</span></div>
     <h2 id="cves-title">CVEs &amp; Advisories <span class="amb">· Bestiary</span></h2>
     <p class="sub">Real software. Disclosed vulnerabilities. Research you can verify.</p>
     {featured && <a href={featured.advisory_url} class="featured-research">
@@ -58,57 +58,58 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
       <div class="featured-main"><div><p class="case-id">{featured.id}{featured.co && ' · Co-discovered'}</p><h3>{featured.product.split(' ')[0]}</h3><p>{featured.detail ?? featured.vuln_class}</p></div><div class="specimen" aria-hidden="true"><span class="specimen-ring"></span><Icon name="shield" size={49}/></div></div>
       <div class="featured-bottom"><span>{featured.label} <span class="muted">/ {featured.code_name}</span></span><span>Read advisory <Icon name="arrow" size={16}/></span></div>
     </a>}
-    <div class="archive-caption"><span>Disclosure index</span><span>CVSS 4.0</span></div>
+    <div class="archive-caption"><span>Creatures catalogued</span><span>CVSS 4.0</span></div>
     <div class="frame table-frame"><table>
       <caption class="sr-only">Disclosed vulnerabilities, affected products, vulnerability classes and severity scores</caption>
       <thead><tr><th scope="col">ID / Advisory</th><th scope="col">Product</th><th scope="col">Class</th><th scope="col">Severity</th></tr></thead>
       <tbody>{top.map(c => <tr>
         <th scope="row" class="id"><a href={c.advisory_url}>{c.id}</a>{c.co && <span class="co">co-found</span>}</th>
         <td class="prod" title={c.product}>{c.product.split(' ')[0]}{c.product.includes(' ') && <span class="prod-version">{c.product.slice(c.product.indexOf(' ') + 1)}</span>}</td>
-        <td class="cls-td" title={c.detail ?? c.vuln_class}>{c.label}</td>
+        <td class="cls-td" title={c.detail ?? c.vuln_class}>{c.sprite && <img class="spr" src={`/fx/sprites/${c.sprite}.svg`} alt="" width="20" height="20" loading="lazy" decoding="async" />}{c.label}</td>
         <td class={`hp ${cls[c.severity]}`}><meter min="0" max="10" value={c.cvss4} aria-label={`${c.id}: ${c.severity}, CVSS 4.0 ${c.cvss4}`}></meter><span>{c.cvss4.toFixed(1)}</span><span class="sr-only"> {c.severity}</span></td>
       </tr>)}</tbody>
     </table></div>
-    {rest.length > 0 && <details class="more"><summary>Explore all {cves.length} disclosures <span aria-hidden="true">+</span></summary>
+    {rest.length > 0 && <details class="more"><summary>Reveal the full bestiary ({cves.length}) <span aria-hidden="true">+</span></summary>
       <div class="frame table-frame"><table><caption class="sr-only">Additional disclosed vulnerabilities</caption><thead><tr><th scope="col">ID / Advisory</th><th scope="col">Product</th><th scope="col">Class</th><th scope="col">Severity</th></tr></thead><tbody>{rest.map(c => <tr>
-        <th scope="row" class="id"><a href={c.advisory_url}>{c.id}</a>{c.co && <span class="co">co-found</span>}</th><td class="prod" title={c.product}>{c.product.split(' ')[0]}{c.product.includes(' ') && <span class="prod-version">{c.product.slice(c.product.indexOf(' ') + 1)}</span>}</td><td class="cls-td" title={c.detail ?? c.vuln_class}>{c.label}</td><td class={`hp ${cls[c.severity]}`}><meter min="0" max="10" value={c.cvss4} aria-label={`${c.id}: ${c.severity}, CVSS 4.0 ${c.cvss4}`}></meter><span>{c.cvss4.toFixed(1)}</span><span class="sr-only"> {c.severity}</span></td>
+        <th scope="row" class="id"><a href={c.advisory_url}>{c.id}</a>{c.co && <span class="co">co-found</span>}</th><td class="prod" title={c.product}>{c.product.split(' ')[0]}{c.product.includes(' ') && <span class="prod-version">{c.product.slice(c.product.indexOf(' ') + 1)}</span>}</td><td class="cls-td" title={c.detail ?? c.vuln_class}>{c.sprite && <img class="spr" src={`/fx/sprites/${c.sprite}.svg`} alt="" width="20" height="20" loading="lazy" decoding="async" />}{c.label}</td><td class={`hp ${cls[c.severity]}`}><meter min="0" max="10" value={c.cvss4} aria-label={`${c.id}: ${c.severity}, CVSS 4.0 ${c.cvss4}`}></meter><span>{c.cvss4.toFixed(1)}</span><span class="sr-only"> {c.severity}</span></td>
       </tr>)}</tbody></table></div>
     </details>}
   </section>
 
   <section id="awards" aria-labelledby="awards-title">
-    <div class="section-kicker"><Icon name="crown" size={16}/><span>Competition record</span><span class="section-line"></span></div>
+    <div class="section-kicker"><Icon name="crown" size={16}/><span>Trophy Hall</span><span class="section-line"></span></div>
     <h2 id="awards-title">Awards <span class="amb">· Trophies</span></h2><p class="sub">CTF and cyber competition results.</p>
     {achTop.slice(0, 1).map(a => <div class="trophy-feature"><div class="trophy-emblem"><Icon name="crown" size={40}/></div><div><p class="eyebrow">Featured achievement</p><h3>{a.title}</h3><p>{a.detail}</p></div><span class="trophy-flourish" aria-hidden="true">✦</span></div>)}
     <ul class="troph">{[...achTop.slice(1), ...achRest].map(a => <li class={a.tier === 'top' ? '' : 'lo'}><span class="ico"><Icon name="crown" size={17}/></span><div><h3>{a.title}</h3><p>{a.detail}</p></div></li>)}</ul>
   </section>
 
   <section id="writing" aria-labelledby="writing-title">
-    <div class="section-kicker"><Icon name="book" size={16}/><span>Field notes &amp; conversations</span><span class="section-line"></span></div>
+    <div class="section-kicker"><Icon name="book" size={16}/><span>Grimoire</span><span class="section-line"></span></div>
     <h2 id="writing-title">Writing &amp; Talks <span class="amb">· Grimoire</span></h2><p class="sub">Research, secure code review and lessons from the field.</p>
     {featuredWriting && <a class="writing-feature" href={featuredWriting.url}><div class="book-art" aria-hidden="true"><Icon name="book" size={52}/><span>THE GRIMOIRE</span></div><div><p class="eyebrow">Featured {kind[featuredWriting.kind]} · {featuredWriting.lang}</p><h3>{featuredWriting.title}</h3>{featuredWriting.host && <p>{featuredWriting.host}</p>}<span class="read-link">{featuredWriting.kind === 'talk' ? 'Watch talk' : 'Read article'} <Icon name="arrow" size={16}/></span></div></a>}
     <ul class="grim">{items.filter(it => it !== featuredWriting).map(it => <li><span class="k">{kind[it.kind]}</span><a href={it.url}>{it.title}<span aria-hidden="true">↗</span></a><span class="d">{it.lang}{it.year ? ` / ${it.year}` : ''}</span></li>)}</ul>
   </section>
 
   <section id="skills" aria-labelledby="skills-title">
-    <div class="section-kicker"><Icon name="diamond" size={16}/><span>Character sheet</span><span class="section-line"></span></div>
+    <div class="section-kicker"><Icon name="diamond" size={16}/><span>Attributes · self-assessed</span><span class="section-line"></span></div>
     <h2 id="skills-title">Skills <span class="amb">· Attributes</span></h2><p class="sub">{skills.self_assessed ? `Self-assessed, 1–${SK}.` : `Scale 1–${SK}.`} Evidence alongside each attribute.</p>
     <ul class="attrs">{skills.stats.map(st => <li><span class="al">{st.label}</span><span class="ab" role="img" aria-label={`${st.level} of ${SK}`}>{Array.from({ length: SK }, (_, i) => <i class={i < st.level ? 'on' : ''}></i>)}</span><span class="an">{st.level}<span>/{SK}</span></span>{st.evidence && <span class="ae">{st.evidence}</span>}</li>)}</ul>
   </section>
 
   <section id="certifications" aria-labelledby="certifications-title">
-    <div class="section-kicker"><Icon name="shield" size={16}/><span>Credentials</span><span class="section-line"></span></div>
+    <div class="section-kicker"><Icon name="shield" size={16}/><span>Relic Chamber</span><span class="section-line"></span></div>
     <h2 id="certifications-title">Certifications <span class="amb">· Relics</span></h2><p class="sub">Offensive web and AppSec certifications.</p>
     <div class="relics">{topC.map(c => <article class="relic"><div class="relic-emblem"><Icon name={certIcon[c.name] ?? 'shield'} size={30}/></div><h3>{c.verify_url ? <a href={c.verify_url}>{c.name}<span aria-hidden="true">↗</span></a> : c.name}</h3><p>{c.full.replace(/\s*\([^)]*\)$/, '')}</p><div class="relic-meta"><span>{c.year}</span>{c.verify_url && <a href={c.verify_url} aria-label={`Verify ${c.name}`}>Verified credential ↗</a>}</div></article>)}</div>
     <p class="inv-h">Inventory <span>· {inv.length} more</span></p><ul class="inv">{inv.map(c => <li title={c.full}>{c.verify_url ? <a href={c.verify_url}>{c.name}</a> : c.name}</li>)}</ul>
   </section>
 
   <section id="contact" class="save-room" aria-labelledby="contact-title">
+    <div class="section-kicker"><Icon name="flame" size={16}/><span>Save Room</span><span class="section-line"></span></div>
     <div class="save-emblem" aria-hidden="true"><Icon name="flame" size={30}/></div>
     <h2 id="contact-title">Contact <span class="amb">· Save Room</span></h2>
     <p class="contact-headline">A good place to<br/>start a conversation.</p>
     <p class="sub">For research, talks or disclosure coordination, reach out on LinkedIn.</p>
-    <a class="button primary" href={site.email ? `mailto:${site.email}` : site.linkedin}>{site.email ? 'Send an email' : 'Let’s connect on LinkedIn'}<Icon name="arrow" size={18}/></a>
+    <a class="button primary" href={site.email ? `mailto:${site.email}` : site.linkedin}>{site.email ? 'Send an email' : 'Rest at the save point, then reach out on LinkedIn.'}<Icon name="arrow" size={18}/></a>
     <div class="contact-links">{site.github && <a href={site.github}><Icon name="github" size={16}/> GitHub ↗</a>}{site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}{eng && <a href={eng.verify_url}>{eng.label} ↗</a>}</div>
   </section>
   </main>
@@ -117,6 +118,8 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
 <script>
   import { cves } from '../data/cves.ts';
   import skills from '../data/skills.json';
+  import { initParallax } from '../scripts/parallax.js';
+  initParallax();
   const pb = document.getElementById('play');
   const status = document.getElementById('game-load-status');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
