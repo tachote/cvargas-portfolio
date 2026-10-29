@@ -27,6 +27,24 @@
   "confirmed": false
  },
  {
+  "name": "C-AI/MLPen",
+  "full": "Certified AI/ML Pentester (SecOps)",
+  "issuer": null,
+  "year": null,
+  "tier": "other",
+  "verify_url": null,
+  "confirmed": false
+ },
+ {
+  "name": "C-AgAIPen",
+  "full": "Certified Agentic AI Pentester (SecOps)",
+  "issuer": null,
+  "year": null,
+  "tier": "other",
+  "verify_url": null,
+  "confirmed": false
+ },
+ {
   "name": "CRB",
   "full": "Code Review Badge (CRB)",
   "issuer": "PentesterLab",
@@ -110,24 +128,6 @@
  {
   "name": "C-APIPEN",
   "full": "Certified API Pentester (SecOps)",
-  "issuer": null,
-  "year": null,
-  "tier": "other",
-  "verify_url": null,
-  "confirmed": false
- },
- {
-  "name": "C-AI/MLPen",
-  "full": "Certified AI/ML Pentester (SecOps)",
-  "issuer": null,
-  "year": null,
-  "tier": "other",
-  "verify_url": null,
-  "confirmed": false
- },
- {
-  "name": "C-AgAIPen",
-  "full": "Certified Agentic AI Pentester (SecOps)",
   "issuer": null,
   "year": null,
   "tier": "other",
