@@ -2,10 +2,40 @@
   "scale": 10,
   "self_assessed": true,
   "stats": [
-    { "label": "Web", "level": 8, "evidence": "11 CVEs · OSWE · CWEE · BSCP" },
-    { "label": "Mobile", "level": 8, "evidence": "eMAPT" },
-    { "label": "Research", "level": 7, "evidence": "Fluid Attacks advisories" },
-    { "label": "Binary Exploitation", "level": 3, "evidence": null },
-    { "label": "Crypto", "level": 2, "evidence": null }
+    {
+      "label": "AI",
+      "level": 9,
+      "evidence": "C-AI/MLPen · C-AgAIPen · Talk: Codex aplicado al AppSec"
+    },
+    {
+      "label": "Web",
+      "level": 8,
+      "evidence": "11 CVEs · OSWE · CWEE · BSCP"
+    },
+    {
+      "label": "Mobile",
+      "level": 8,
+      "evidence": "eMAPT"
+    },
+    {
+      "label": "Research",
+      "level": 7,
+      "evidence": "Fluid Attacks advisories"
+    },
+    {
+      "label": "Cloud",
+      "level": 7,
+      "evidence": "CCSP-AWS"
+    },
+    {
+      "label": "Binary Exploitation",
+      "level": 3,
+      "evidence": null
+    },
+    {
+      "label": "Crypto",
+      "level": 2,
+      "evidence": null
+    }
   ]
 }
