@@ -109,13 +109,14 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
     <p class="contact-headline">A good place to<br/>start a conversation.</p>
     <p class="sub">Open to remote AppSec / offensive security roles.</p>
     <a class="button primary" href={site.email ? `mailto:${site.email}` : site.linkedin}>{site.email ? 'Send an email' : 'Let’s connect on LinkedIn'}<Icon name="arrow" size={18}/></a>
-    <div class="contact-links"><a href={site.github}><Icon name="github" size={16}/> GitHub ↗</a>{site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}{eng && <a href={eng.verify_url}>{eng.label} ↗</a>}</div>
+    <div class="contact-links">{site.github && <a href={site.github}><Icon name="github" size={16}/> GitHub ↗</a>}{site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}{eng && <a href={eng.verify_url}>{eng.label} ↗</a>}</div>
   </section>
   </main>
   <footer><a class="wordmark" href="/">{site.domain}</a><span>© {new Date().getFullYear()} {site.name}</span><a href="#top" aria-label="Back to top">Back to top ↑</a></footer>
 </div>
 <script>
   import { cves } from '../data/cves.ts';
+  import skills from '../data/skills.json';
   const pb = document.getElementById('play');
   const status = document.getElementById('game-load-status');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -127,7 +128,7 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
     pb?.setAttribute('aria-busy', 'true');
     try {
       const m = await import('../scripts/vgate.js');
-      if (!motion.matches) await m.openGate(cves.map(({ id, product, label, cvss4, advisory_url }) => ({ id, product, vuln_class: label, cvss4, advisory_url })));
+      if (!motion.matches) await m.openGate(cves.map(({ id, product, label, cvss4, advisory_url }) => ({ id, product, vuln_class: label, cvss4, advisory_url })), { scale: skills.scale ?? 10, attrs: skills.stats.map((st) => [st.label, st.level]) });
     } catch {
       if (status) status.textContent = 'The arena could not load. Please try again.';
       pb?.focus();

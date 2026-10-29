@@ -7,6 +7,6 @@
   "tagline": "Finding vulnerabilities in software people depend on, like NestJS, Fastify, DOMPurify and Ghost.",
   "linkedin": "https://www.linkedin.com/in/cvmiracle",
   "github": "https://github.com/tachote",
-  "email": "hello@cvargas.com",
+  "email": null,
   "featured_cve": "CVE-2026-2293"
 }

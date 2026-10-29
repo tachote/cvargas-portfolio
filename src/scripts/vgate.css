@@ -20,7 +20,8 @@ html.gate-open,html.gate-open body{overflow:hidden}
 #gate .g-intro-art::before{top:-2px;left:-2px;border-right:0;border-bottom:0}
 #gate .g-intro-art::after{bottom:-2px;right:-2px;border-left:0;border-top:0}
 #gate .g-intro-art img{display:block;width:100%;height:auto;image-rendering:pixelated}
-#gate .g-intro-art span{display:block;text-align:center;font:8px JBMono,monospace;color:var(--g-gold);letter-spacing:.1em;padding-top:18px}
+#gate .g-attrs{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:5px}#gate .g-attrs li{display:flex;justify-content:space-between;align-items:center;gap:8px;font:8px JBMono,monospace;color:#CDBFD6}#gate .g-attrs span{padding:0;color:inherit;text-align:left}#gate .g-bar{display:flex;gap:2px}#gate .g-bar i{width:6px;height:8px;background:#3A2C44}#gate .g-bar i.on{background:var(--g-gold)}
+#gate .g-intro-art > span{display:block;text-align:center;font:8px JBMono,monospace;color:var(--g-gold);letter-spacing:.1em;padding-top:18px}
 #gate .g-eyebrow{font:10px JBMono,monospace;letter-spacing:.17em;color:var(--g-gold);margin:0 0 20px}
 #gate h1{font:700 clamp(54px,7vw,92px)/.92 Inter,system-ui,sans-serif;letter-spacing:-.07em;margin:0 0 24px;color:var(--g-text)}
 #gate h1 em{display:inline-block;margin-left:.1em;font-style:normal;color:var(--g-gold)}

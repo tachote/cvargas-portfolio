@@ -48,6 +48,17 @@ export async function openGate(CVES, ST = {}) {
     <div class="g-screen g-result" hidden><p class="g-eyebrow g-result-kicker"></p><h2 tabindex="-1"></h2><p class="g-result-description"></p><div class="g-result-stats"></div><p class="g-disclosure">Game score only. The advisories below are real research from this portfolio.</p><div class="g-advisories"></div><div class="g-result-actions"><button type="button" class="g-again g-primary">HUNT AGAIN ↗</button><button type="button" class="g-back g-secondary">Back to the portfolio</button></div></div>
     <div class="g-bottom" hidden><span class="g-loadout">ARC BOLT · I</span><span class="g-desktop-help">WASD / ARROWS · SPACE TO DASH · P TO PAUSE</span><button type="button" class="g-dash">DASH <span>READY</span></button></div>
     <div class="g-announcement" role="status" aria-live="polite"></div>`;
+  if (ST.attrs?.length) {
+    const sc = ST.scale || 10, ul = document.createElement('ul');
+    ul.className = 'g-attrs';
+    ST.attrs.forEach(([label, lv]) => {
+      const li = document.createElement('li'), l = document.createElement('span'), b = document.createElement('span');
+      l.textContent = label; b.className = 'g-bar'; b.setAttribute('aria-label', `${lv} of ${sc}`);
+      for (let i = 0; i < sc; i++) { const c = document.createElement('i'); if (i < lv) c.className = 'on'; b.append(c); }
+      li.append(l, b); ul.append(li);
+    });
+    root.querySelector('.g-intro-art').append(ul);
+  }
 
   const backgroundNodes = [...document.body.children].map(node => [node, node.inert]);
   backgroundNodes.forEach(([node]) => { node.inert = true; });
