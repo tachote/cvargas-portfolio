@@ -6,8 +6,7 @@
     "year": 2026,
     "slug": "http-verb-tampering-nestjs",
     "draft": true,
-    "archived_from": "https://medium.com/@deeptester/http-verb-tampering-in-nestjs-bypassing-middleware-with-head-requests-e70b968b15c2",
-    "related_cve": "CVE-2026-2293"
+    "archived_from": "https://medium.com/@deeptester/http-verb-tampering-in-nestjs-bypassing-middleware-with-head-requests-e70b968b15c2"
   },
   {
     "title": "How Windsurf and Cursor help with secure code review",

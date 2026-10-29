@@ -5,7 +5,7 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(), date: z.string(), summary: z.string().optional(),
     lang: z.string().default('en'), medium_url: z.string().optional(),
-    related_cve: z.string().optional(), draft: z.boolean().default(false),
+    related_cve: z.string().nullish(), draft: z.boolean().default(false),
   }),
 });
 export const collections = { blog };

@@ -76,3 +76,12 @@ section,footer{position:relative;z-index:1}
 .grim li.lo a{color:var(--muted);font-weight:400}
 .grim .lang{font:10px var(--mono);border:1px solid var(--border);padding:0 4px;margin-right:8px;color:var(--muted)}
 @media (max-width:600px){.grim li{grid-template-columns:64px 1fr}.grim .d{grid-column:2}}
+/* code highlight (Prism classes), Diseño palette */
+.blog-body pre{background:var(--surface-2)}
+.blog-body pre code,.token{color:var(--text)}
+.token.keyword,.token.atrule,.token.important,.token.selector,.token.tag{color:var(--accent)}
+.token.string,.token.char,.token.attr-value,.token.url,.token.inserted{color:#6E8F5A}
+.token.number,.token.boolean,.token.constant,.token.regex,.token.deleted{color:var(--blood)}
+.token.comment,.token.prolog,.token.doctype{color:var(--muted);font-style:italic}
+.token.function,.token.class-name,.token.builtin{color:#D9542B}
+.token.punctuation,.token.operator{color:var(--text)}
