@@ -1238,3 +1238,6 @@ footer a {
   .contact-links a { min-height: 36px; font-size: 11px; }
   .relic-meta { font-size: 11px; }
 }
+
+.all-writing{font:13px var(--mono);margin:var(--s3) 0 0}
+.all-writing a{color:var(--accent)}

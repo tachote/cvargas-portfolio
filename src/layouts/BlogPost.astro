@@ -2,7 +2,7 @@
 import Base from './Base.astro';
 const { frontmatter } = Astro.props;
 import '../fx.css';
-const { title, date, related_cve, draft } = frontmatter;
+const { title, date, related_cve, draft, medium_url } = frontmatter;
 const description = frontmatter.description ?? frontmatter.summary;
 const mins = Astro.props.mins ?? 1;
 const pretty = new Date(date + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -26,11 +26,12 @@ const pretty = new Date(date + 'T12:00:00').toLocaleDateString('en-US', { year: 
       <div class="blog-body">
         <slot />
       </div>
+      {medium_url && <p class="origin">Originally published on <a href={medium_url}>Medium ↗</a></p>}
     </article>
     <p class="back"><a href="/#writing">← Back to Grimoire</a></p>
     <footer>
       <span>Cristian Vargas</span>
-      <a href="/#writing">Writing &amp; Talks</a>
+      <a href="/blog/">Writing</a>
     </footer>
   </main>
 </Base>
@@ -38,6 +39,7 @@ const pretty = new Date(date + 'T12:00:00').toLocaleDateString('en-US', { year: 
 .blog .draft-banner{font:12px var(--mono);color:var(--bg);background:var(--accent);padding:8px 12px;margin:0 0 var(--s3)}
 .blog{max-width:680px}
 .blog .cvechip{border:1px solid var(--border);padding:1px 6px;color:var(--accent);text-decoration:none}
+.blog .origin{font:12px var(--mono);color:var(--muted);margin:var(--s3) 0 0}.blog .origin a{color:var(--accent)}
 .blog .back{font:13px var(--mono);margin:var(--s5) 0 var(--s3)}
 .blog-head{margin-bottom:var(--s4)}
 .blog-head h1{font:700 clamp(24px,5vw,34px)/1.15 var(--font);margin:0 0 var(--s2);letter-spacing:-.02em}

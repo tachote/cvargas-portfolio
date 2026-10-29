@@ -3,6 +3,7 @@ import '../styles.css';
 import '../fx.css';
 import site from '../data/site.json';
 const { title = `${site.name} · Offensive AppSec`, description = `${site.role} at ${site.company}. CVEs, advisories and offensive security research.`, robots } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://cvargas.com').href;
 ---
 <!doctype html>
 <html lang="en" data-theme="gothic">
@@ -12,6 +13,8 @@ const { title = `${site.name} · Offensive AppSec`, description = `${site.role} 
   {robots && <meta name="robots" content={robots} />}
 <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:url" content={canonical} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />

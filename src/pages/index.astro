@@ -29,7 +29,7 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
   <a class="skip-link" href="#cves">Skip to research</a>
   <div class="topbar">
     <a class="wordmark" href="/" aria-label={`${site.name} home`}><Icon name="sword" size={19}/>{site.domain}</a>
-    <nav aria-label="Main navigation"><a href="#cves">Research</a><a href="#writing">Writing</a><a href="/blog/">Blog</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="#cves">Research</a><a href="#writing">Writing</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
   </div>
   <header class="hero">
     <div class="sky" aria-hidden="true"><i class="l1"></i><i class="moon"></i><i class="l2"></i><i class="l3"></i></div>
@@ -88,6 +88,7 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
     <h2 id="writing-title">Writing &amp; Talks <span class="amb">· Grimoire</span></h2><p class="sub">Research, secure code review and lessons from the field.</p>
     {featuredWriting && <a class="writing-feature" href={featuredWriting.url}><div class="book-art" aria-hidden="true"><Icon name="book" size={52}/><span>THE GRIMOIRE</span></div><div><p class="eyebrow">Featured {kind[featuredWriting.kind]} · {featuredWriting.lang}</p><h3>{featuredWriting.title}</h3>{featuredWriting.host && <p>{featuredWriting.host}</p>}<span class="read-link">{featuredWriting.kind === 'talk' ? 'Watch talk' : 'Read article'} <Icon name="arrow" size={16}/></span></div></a>}
     <ul class="grim">{items.filter(it => it !== featuredWriting).map(it => <li><span class="k">{kind[it.kind]}</span><a href={it.url}>{it.title}<span aria-hidden="true">↗</span></a><span class="d">{it.lang}{it.year ? ` / ${it.year}` : ''}</span></li>)}</ul>
+    {live.size > 0 && <p class="all-writing"><a href="/blog/">All writing →</a></p>}
   </section>
 
   <section id="skills" aria-labelledby="skills-title">
