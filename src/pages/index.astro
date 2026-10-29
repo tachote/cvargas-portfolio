@@ -19,7 +19,6 @@ const TOP = 6, top = cves.slice(0, TOP), rest = cves.slice(TOP);
 const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
 ---
 <Base>
-<div class="intro-ov" id="intro" aria-hidden="true"><div><img class="moon" src="/fx/moon.svg" alt="" width="96" height="96" /><div class="nm-wrap"><div class="nm">CRISTIAN VARGAS</div></div></div></div>
 <div class="wrap">
 <div class="topbar"><span>cvargas.com</span></div>
 <header class="hero">
@@ -27,7 +26,7 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   <h1>Cristian Vargas <span class="moon">✝</span></h1>
   <p class="role"><b>Offensive Application Security Engineer @ Fluid Attacks</b> · Remote, Colombia</p>
   <p class="tagline">Finding vulnerabilities in software people depend on, like NestJS, Fastify, DOMPurify and Ghost.</p>
-  <nav class="links"><a href="https://www.linkedin.com/in/cvmiracle">linkedin/cvmiracle</a><a href="#contact">contact</a></nav>
+  <nav class="links"><a href="https://www.linkedin.com/in/cvmiracle">linkedin/cvmiracle</a><a href="#contact">contact</a><button type="button" id="play" class="playbtn" hidden>▶ Play</button></nav>
 </header>
 
 <section id="cves">
@@ -121,10 +120,10 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
 <script>
   const k = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']; let i = 0;
   addEventListener('keydown', e => { i = e.key === k[i] ? i + 1 : (e.key === k[0] ? 1 : 0); if (i === k.length) location.href = '/play/'; });
-  const ov = document.getElementById('intro');
-  const skip = () => ov.classList.add('gone');
-  ['keydown', 'pointerdown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, skip, { once: true, passive: true }));
-  ov.addEventListener('animationend', e => { if (e.animationName === 'ov-out') skip(); });
+  import { cves as GCV } from '../data/cves.ts';
+  const pb = document.getElementById('play');
+  const play = () => import('../scripts/vgate.js').then((m) => m.openGate(GCV.map(({ id, product, label, cvss4 }) => ({ id, product, vuln_class: label, cvss4 }))));
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { pb.hidden = false; pb.addEventListener('click', play); if (location.hash === '#play') play(); }
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const ls = [...document.querySelectorAll('.sky i')], f = [0.1, 0.25, 0.4], mxr = [0, 8, 14]; let tx = 0, cx = 0, raf = 0;
     const draw = () => { raf = 0; cx += (tx - cx) * 0.08; const y = scrollY; ls.forEach((l, j) => l.style.transform = `translate3d(${cx * mxr[j]}px, ${y * f[j]}px, 0)`); if (Math.abs(tx - cx) > 0.001) q(); };

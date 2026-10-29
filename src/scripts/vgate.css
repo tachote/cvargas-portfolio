@@ -1,0 +1,24 @@
+#gate{position:fixed;inset:0;z-index:9999;background:#0E0A12;color:#EDE6D6;font-family:Pixel,monospace;overflow:hidden;touch-action:none}
+#gate canvas{position:absolute;inset:0;display:block;cursor:crosshair}
+#gate .g-title{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:14px;background:radial-gradient(ellipse at center,#1A1220,#0E0A12 70%);z-index:2}
+#gate h1{margin:0;font-size:clamp(44px,10vw,104px);line-height:.9;letter-spacing:.04em;color:#EDE6D6;text-shadow:4px 4px 0 #B0213A,8px 8px 0 #22182A}
+#gate .g-title p{margin:0;color:#9A8FA3;font-size:16px}
+#gate .g-start{justify-self:center;margin-top:18px;font:inherit;font-size:22px;color:#C9A227;background:none;border:2px solid #C9A227;padding:10px 22px;cursor:pointer;animation:gblink 1s steps(2) infinite}
+#gate .g-start:hover,#gate .g-start:focus-visible{background:#C9A227;color:#0E0A12;animation:none;outline:none}
+#gate small{color:#9A8FA3;font-size:12px}
+#gate .g-skip{position:absolute;top:16px;right:16px;font:14px JBMono,monospace;color:#EDE6D6;background:rgba(26,18,32,.85);border:1px solid #3A2A44;padding:8px 12px;cursor:pointer;z-index:3}
+#gate .g-skip:hover{border-color:#C9A227;color:#C9A227}
+#gate .g-hud{position:absolute;top:16px;left:16px;display:none;gap:18px;font-size:18px;color:#C9A227;z-index:2}
+#gate .g-hud b{color:#EDE6D6}
+#gate .g-log{position:absolute;left:16px;bottom:16px;margin:0;padding:0;list-style:none;font:12px JBMono,monospace;color:#EDE6D6;display:grid;gap:4px;z-index:2}
+#gate .g-log b{display:inline-block;width:3.2ch}#gate .g-log li{min-width:260px;background:rgba(26,18,32,.85);border-left:2px solid #C9A227;padding:4px 8px;animation:gin .25s ease-out}
+#gate.playing .g-title{display:none}#gate.playing .g-hud{display:flex}
+#gate .g-doors{position:absolute;inset:0;display:flex;pointer-events:none;z-index:4}
+#gate .g-doors i{flex:1;background:repeating-linear-gradient(90deg,#1A1220 0 46px,#22182A 46px 48px);border:3px solid #3A2A44;transform:scaleX(0);transition:transform .45s cubic-bezier(.7,0,.3,1)}
+#gate .g-doors i:first-child{transform-origin:left}#gate .g-doors i:last-child{transform-origin:right}
+#gate.open .g-doors i{transform:scaleX(1);animation:gopen .5s .55s cubic-bezier(.7,0,.3,1) forwards}
+#gate.open .g-doors i:first-child{--d:-101%}#gate.open .g-doors i:last-child{--d:101%}
+#gate.open{animation:gfade .25s .85s forwards}
+@keyframes gopen{from{transform:scaleX(1)}to{transform:translateX(var(--d))}}
+@keyframes gfade{to{opacity:0}}@keyframes gblink{50%{opacity:.25}}@keyframes gin{from{opacity:0;transform:translateX(-8px)}}
+@media (max-width:600px){#gate .g-log{display:none}}
