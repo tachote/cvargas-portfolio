@@ -101,7 +101,7 @@ const kind = { writeup: 'Write-up', post: 'Article', talk: 'Talk' };
   </section>
 
   <section id="skills" aria-labelledby="skills-title">
-    <div class="section-kicker"><Icon name="diamond" size={16}/><span>Attributes · self-assessed</span><span class="section-line"></span></div>
+    <div class="section-kicker"><Icon name="diamond" size={16}/><span>Self-assessed</span><span class="section-line"></span></div>
     <h2 id="skills-title">Skills <span class="amb">· Attributes</span></h2><p class="sub">{skills.self_assessed ? `Self-assessed, 1–${SK}.` : `Scale 1–${SK}.`} Evidence alongside each attribute.</p>
     <ul class="attrs">{skills.stats.map(st => <li><span class="al">{st.label}</span><span class="ab" role="img" aria-label={`${st.level} of ${SK}`}>{Array.from({ length: SK }, (_, i) => <i class={i < st.level ? 'on' : ''}></i>)}</span><span class="an">{st.level}<span>/{SK}</span></span>{st.evidence && <span class="ae">{st.evidence}</span>}</li>)}</ul>
   </section>

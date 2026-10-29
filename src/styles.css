@@ -1243,5 +1243,8 @@ footer a {
 .all-writing a{color:var(--accent)}
 
 .talks .k.play{font:12px var(--pixel);color:var(--accent)}
+/* tight icon column like .troph: the title sits right after the ▶ */
+.grim.talks li{grid-template-columns:auto minmax(0,1fr) auto}
+@media (max-width: 600px){.grim.talks li{grid-template-columns:auto minmax(0,1fr)}}
 .talks a{flex-wrap:wrap;row-gap:0}
 .talks .ev{flex-basis:100%;order:3;font:11px var(--mono);color:var(--muted);margin-top:4px}
