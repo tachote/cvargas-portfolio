@@ -30,3 +30,5 @@
 #gate .g-card dl{display:grid;grid-template-columns:1fr auto;gap:4px 8px;margin:0;font:13px JBMono,monospace}
 #gate .g-card dt{color:#9A8FA3}#gate .g-card dd{margin:0;color:#EDE6D6;text-align:right}
 @media (max-width:600px){#gate .g-card{display:none}}
+#gate .g-card .g-bar{color:#C9A227;font-size:9px;letter-spacing:1px;align-self:center}#gate .g-card .g-bar s{color:#3A2A44;text-decoration:none}
+#gate .g-card{width:240px}

@@ -4,6 +4,8 @@ import { cves } from '../data/cves.ts';
 import ach from '../data/achievements.json';
 import certs from '../data/certs.json';
 import grim from '../data/grimoire.json';
+import skills from '../data/skills.json';
+const SK = skills.scale ?? 10;
 const KIND: Record<string, string> = { writeup: 'Write-up', post: 'Post', talk: 'Talk' };
 import { posts } from '../lib/posts';
 const live = new Set((await posts()).map((p) => `/blog/${p.id}`));
@@ -27,7 +29,7 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   <h1>Cristian Vargas <span class="moon">✝</span></h1>
   <p class="role"><b>Offensive Application Security Engineer @ Fluid Attacks</b> · Remote, Colombia</p>
   <p class="tagline">Finding vulnerabilities in software people depend on, like NestJS, Fastify, DOMPurify and Ghost.</p>
-  <nav class="links"><a href="https://www.linkedin.com/in/cvmiracle">linkedin/cvmiracle</a><a href="#contact">contact</a><button type="button" id="play" class="playbtn" hidden data-stats={JSON.stringify({ cves: cves.length, trophies: ach.length, relics: topC.length + inv.length })}>▶ PRESS START</button></nav>
+  <nav class="links"><a href="https://www.linkedin.com/in/cvmiracle">linkedin/cvmiracle</a><a href="#contact">contact</a><button type="button" id="play" class="playbtn" hidden data-stats={JSON.stringify({ cves: cves.length, scale: SK, attrs: skills.stats.map((st) => [st.label, st.level]) })}>▶ PRESS START</button></nav>
   </div>
   <figure class="avatar"><img src="/fx/avatar-hunter-240.webp" srcset="/fx/avatar-hunter-240.webp 1x, /fx/avatar-hunter-480.webp 2x" width="180" height="209" alt="Cristian Vargas, pixel-art hunter" fetchpriority="high" /></figure>
 </header>
@@ -87,6 +89,16 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   <ul class="troph grim">
     {items.map((it) => (
       <li class={it.tier === 'top' ? '' : 'lo'}><span class="k">{KIND[it.kind] ?? it.kind}</span><a href={it.url} rel="noopener">{it.title}</a><span class="d">{it.lang && it.lang !== 'EN' && <span class="lang">{it.lang}</span>}{it.year ?? ''}</span></li>
+    ))}
+  </ul>
+</section>
+
+<section id="skills">
+  <h2>Skills <span class="amb">· Attributes</span></h2>
+  <p class="sub">{skills.self_assessed ? `Self-assessed, 1–${SK}.` : `Scale 1–${SK}.`}</p>
+  <ul class="attrs">
+    {skills.stats.map((st) => (
+      <li><span class="al">{st.label}</span><span class="ab" role="img" aria-label={`${st.level} of ${SK}`}>{Array.from({ length: SK }, (_, i) => <i class={i < st.level ? 'on' : ''}></i>)}</span><span class="an">{st.level}</span>{st.evidence && <span class="ae">{st.evidence}</span>}</li>
     ))}
   </ul>
 </section>

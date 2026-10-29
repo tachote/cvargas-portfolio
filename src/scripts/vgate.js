@@ -15,7 +15,7 @@ root.innerHTML=`<canvas></canvas>
 <div class="g-doors"><i></i><i></i></div>
 <div class="g-hud"><span>KILLS <b id="g-k">0</b>/${CVES.length}</span><span id="g-t">20</span></div>
 <ol class="g-log" aria-live="polite"></ol>
-<div class="g-title"><div class="g-row"><aside class="g-card"><p class="g-lv">HUNTER · Lv. 24</p><img src="/fx/avatar-hunter-240.webp" width="120" height="139" alt=""><dl><dt>CVEs</dt><dd>${ST.cves??CVES.length}</dd><dt>Trophies</dt><dd>${ST.trophies??"–"}</dd><dt>Relics</dt><dd>${ST.relics??"–"}</dd></dl></aside><div><h1>CRISTIAN<br>VARGAS</h1><p>Offensive AppSec · Bestiary of ${CVES.length} CVEs</p><button class="g-start">▶ START</button><small>WASD / arrows · drag on mobile</small></div></div></div>
+<div class="g-title"><div class="g-row"><aside class="g-card"><p class="g-lv">HUNTER · Lv. 24</p><img src="/fx/avatar-hunter-240.webp" width="120" height="139" alt=""><dl><dt>CVEs</dt><dd>${ST.cves??CVES.length}</dd>${(ST.attrs||[]).map(([l,v])=>`<dt>${l.replace("Binary Exploitation","Binary")}</dt><dd class="g-bar">${"■".repeat(v)}<s>${"■".repeat((ST.scale||10)-v)}</s></dd>`).join("")}</dl></aside><div><h1>CRISTIAN<br>VARGAS</h1><p>Offensive AppSec · Bestiary of ${CVES.length} CVEs</p><button class="g-start">▶ START</button><small>WASD / arrows · drag on mobile</small></div></div></div>
 <button class="g-skip">Skip (Esc) → CV</button>`;
 document.body.appendChild(root);
 const c=root.querySelector('canvas'),x=c.getContext('2d'),log=root.querySelector('.g-log'),kEl=root.querySelector('#g-k'),tEl=root.querySelector('#g-t');

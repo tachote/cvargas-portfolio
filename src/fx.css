@@ -96,3 +96,10 @@ body{overflow-x:clip}
 .hero .avatar:before{top:-2px;left:-2px;border-right:0;border-bottom:0}.hero .avatar:after{bottom:-2px;right:-2px;border-left:0;border-top:0}
 .hero .avatar img{display:block;width:100%;height:auto;image-rendering:pixelated}
 @media (max-width:600px){.hero{grid-template-columns:minmax(0,1fr) 96px;gap:12px}.hero .avatar{width:96px;padding:4px}}
+.attrs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.attrs li{display:grid;grid-template-columns:160px auto 24px minmax(0,1fr);gap:12px;align-items:center;font:13px var(--mono)}
+.attrs .al{color:var(--muted)}
+.attrs .ab{display:flex;gap:3px}.attrs .ab i{width:10px;height:12px;background:var(--border)}.attrs .ab i.on{background:var(--accent)}
+.attrs .an{color:var(--text);text-align:right}
+.attrs .ae{color:var(--muted);font-size:12px}
+@media (max-width:600px){.attrs li{grid-template-columns:1fr auto 20px;row-gap:2px}.attrs .ae{grid-column:1/-1}.attrs .ab i{width:8px}}
