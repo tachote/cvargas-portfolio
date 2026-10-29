@@ -15,10 +15,10 @@ html.intro .intro-ov .nm-wrap{display:flex;align-items:center;gap:4px}
 [data-theme=vanilla] .killcount{color:var(--muted)}
 
 .hero{position:relative;isolation:isolate}
-.sky{position:absolute;inset:-40px -100vw auto;height:380px;opacity:.55;z-index:-1;pointer-events:none;overflow:hidden;
+.sky{position:absolute;top:-40px;left:calc(50% - 50vw);width:100vw;height:380px;opacity:.55;z-index:-1;pointer-events:none;overflow:hidden;
   -webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
 .sky i{position:absolute;inset:0;background:center bottom/cover no-repeat;will-change:transform}
-.sky .l1{background-image:url(/fx/layer-sky.svg)} .sky .l2{background-image:url(/fx/layer-castle.svg)} .sky .l3{background-image:url(/fx/layer-fog.svg)}
+.sky .l1{background-image:url(/fx/layer-sky.svg)} .sky .l2{background-image:url(/fx/layer-castle.svg)} .sky .l3{background-image:url(/fx/layer-fog.svg);opacity:.35}
 [data-theme=vanilla] .sky{display:none}
 
 @media (hover:hover) and (pointer:fine){
@@ -41,11 +41,10 @@ tr.hit .bar i{animation:dmg .5s ease}
 /* sprite per vuln class */
 tbody tr{position:relative}
 tbody tr td.hp{position:relative}
-.spr{position:absolute;right:-40px;top:50%;width:32px;height:32px;margin-top:-16px;opacity:0;image-rendering:pixelated;pointer-events:none;transition:opacity .15s}
+.spr{display:inline-block;vertical-align:middle;margin-left:8px;width:20px;height:20px;opacity:0;image-rendering:pixelated;pointer-events:none;transition:opacity .15s}
 [data-theme=gothic] tbody tr:hover .spr,[data-theme=gothic] tr.hit .spr{opacity:1}
 [data-theme=vanilla] .spr{display:none}
-@media (max-width:600px){tbody tr td.hp{position:static}.spr{right:12px;top:auto;bottom:10px;margin-top:0;width:28px;height:28px}}
-@media (min-width:601px) and (max-width:860px){.spr{right:-4px;width:24px;height:24px;margin-top:-12px}}
+
 .killcount .sep{color:var(--muted)}
 /* keep content above the parallax layer */
 section,footer{position:relative;z-index:1}
