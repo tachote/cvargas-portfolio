@@ -64,3 +64,5 @@ section,footer{position:relative;z-index:1}
 .troph .d{font:12px var(--mono);color:var(--muted);text-align:right}
 .troph li.lo b,.troph li.lo .ico{color:var(--muted);font-weight:400}
 @media (max-width:600px){.troph li{grid-template-columns:22px 1fr}.troph .d{grid-column:2;text-align:left}}
+#certifications .relics{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.troph{margin-top:var(--s3,16px)}
