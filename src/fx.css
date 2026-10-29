@@ -57,3 +57,10 @@ section,footer{position:relative;z-index:1}
 .inv a{color:inherit;text-decoration:underline dotted;text-underline-offset:3px}
 .inv a:hover{color:var(--accent)}
 @media (min-width:760px){.relics{grid-template-columns:repeat(4,1fr)}}@media (max-width:759px){.relics{grid-template-columns:1fr 1fr}}
+.troph{list-style:none;margin:0;padding:0;border-top:1px solid var(--border)}
+.troph li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:8px 2px;border-bottom:1px solid var(--border)}
+.troph .ico{font:16px var(--pixel);color:var(--accent);text-align:center}
+.troph b{font:600 14px var(--font)}
+.troph .d{font:12px var(--mono);color:var(--muted);text-align:right}
+.troph li.lo b,.troph li.lo .ico{color:var(--muted);font-weight:400}
+@media (max-width:600px){.troph li{grid-template-columns:22px 1fr}.troph .d{grid-column:2;text-align:left}}

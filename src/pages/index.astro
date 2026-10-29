@@ -64,13 +64,19 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   <h2>Achievements <span class="amb">· Relics</span></h2>
   <p class="sub">Certifications and competitions.</p>
   <div class="relics">
-    {ach.map(a => (
+    {ach.slice(0, 1).map(a => (
       <div class="frame relic"><div class="ico">{a.ico}</div><div><h3>{a.title}</h3><p>{a.detail}</p></div></div>
     ))}
     {topC.map((c) => (
       <div class="frame relic"><div class="ico">{ICO[c.name] ?? '✦'}</div><div><h3>{c.verify_url ? <a href={c.verify_url}>{c.name}</a> : c.name}</h3><p>{c.full.replace(/\s*\([^)]*\)$/, '')}{c.year ? ` · ${c.year}` : ''}</p></div></div>
     ))}
   </div>
+  <p class="inv-h">Trophies · {ach.length - 1} more competitions</p>
+  <ul class="troph">
+    {ach.slice(1).map((a) => (
+      <li class={a.tier === 'top' ? '' : 'lo'}><span class="ico">{a.ico}</span><b>{a.title}</b><span class="d">{a.detail}</span></li>
+    ))}
+  </ul>
   <p class="inv-h">Inventory · {inv.length} more certifications</p>
   <ul class="inv">
     {inv.map((c) => (
