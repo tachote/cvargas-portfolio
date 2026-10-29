@@ -2,51 +2,51 @@
   {
     "id": "CVE-2026-2293",
     "product": "NestJS (@nestjs/platform-fastify) 11.1.13",
-    "vuln": "Auth/authz middleware bypass (path normalization)",
-    "short": "Authz Bypass",
+    "vuln_class": "Auth/authz middleware bypass (path normalization)",
     "severity": "High",
-    "cvss": 8.2,
+    "cvss4": 8.2,
     "date": "2026-02-27",
-    "url": "https://fluidattacks.com/advisories/neton"
+    "advisory_url": "https://fluidattacks.com/advisories/neton",
+    "credit": "sole"
   },
   {
     "id": "CVE-2025-15056",
     "product": "Quill 2.0.3",
-    "vuln": "XSS in HTML export",
-    "short": "XSS",
+    "vuln_class": "XSS in HTML export",
     "severity": "Medium",
-    "cvss": 5.1,
+    "cvss4": 5.1,
     "date": "2026-01-13",
-    "url": "https://fluidattacks.com/advisories/diomedes"
+    "advisory_url": "https://fluidattacks.com/advisories/diomedes",
+    "credit": "sole"
   },
   {
     "id": "CVE-2025-10655",
     "product": "Frappe Helpdesk 1.14.0",
-    "vuln": "SQL injection",
-    "short": "SQLi",
+    "vuln_class": "SQL injection",
     "severity": "High",
-    "cvss": 8.6,
+    "cvss4": 8.6,
     "date": "2025-12-09",
-    "url": "https://fluidattacks.com/advisories/dyango"
+    "advisory_url": "https://fluidattacks.com/advisories/dyango",
+    "credit": "sole"
   },
   {
     "id": "CVE-2025-11461",
     "product": "Frappe CRM 1.53.1",
-    "vuln": "SQL injection (multiple)",
-    "short": "SQLi",
+    "vuln_class": "SQL injection (multiple)",
     "severity": "High",
-    "cvss": 7.1,
+    "cvss4": 7.1,
     "date": "2025-11-26",
-    "url": "https://fluidattacks.com/advisories/oz"
+    "advisory_url": "https://fluidattacks.com/advisories/oz",
+    "credit": "sole"
   },
   {
     "id": "CVE-2025-10695",
     "product": "OpenSupports 4.11.0",
-    "vuln": "Unauthenticated SSRF",
-    "short": "SSRF",
+    "vuln_class": "Unauthenticated SSRF",
     "severity": "Medium",
-    "cvss": 6.9,
+    "cvss4": 6.9,
     "date": "2025-10-03",
-    "url": "https://fluidattacks.com/advisories/freer"
+    "advisory_url": "https://fluidattacks.com/advisories/freer",
+    "credit": "sole"
   }
 ]

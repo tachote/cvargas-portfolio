@@ -1,13 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
-import cves from '../data/cves.json';
+import { cves } from '../data/cves.ts';
 import ach from '../data/achievements.json';
-const sorted = [...cves].sort((a, b) => b.date.localeCompare(a.date));
-const label = { 'SQLi': 'SQLi', 'SSRF': 'SSRF', 'Authz Bypass': 'auth bypass', 'XSS': 'XSS' };
 const counts = {};
-for (const c of cves) { const k = label[c.short] ?? c.short; counts[k] = (counts[k] ?? 0) + 1; }
+for (const c of cves) counts[c.label] = (counts[c.label] ?? 0) + 1;
+const TOP = 6, top = cves.slice(0, TOP), rest = cves.slice(TOP);
 const kill = [`${cves.length} CVEs`, ...Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n} ${k}`)];
-const spr = { 'SQLi': 'sqli', 'XSS': 'xss', 'SSRF': 'ssrf', 'Authz Bypass': 'authbypass' };
 const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
 ---
 <Base>
@@ -28,16 +26,32 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   <div class="frame"><table>
     <thead><tr><th>ID</th><th>Product</th><th>Class</th><th>Severity</th></tr></thead>
     <tbody>
-      {sorted.map(c => (
+      {top.map(c => (
         <tr>
-          <td class="id"><a href={c.url}>{c.id}</a></td>
+          <td class="id"><a href={c.advisory_url}>{c.id}</a></td>
           <td class="prod">{c.product}</td>
-          <td class="cls-td cls">{c.vuln}</td>
-          <td class={`hp ${cls[c.severity] ?? 'med'}`} title={`${c.severity} · CVSS 4.0 ${c.cvss}`}><span class="bar"><i style={`--w:${Math.round(c.cvss * 10)}%`}></i></span>{c.cvss}{spr[c.short] && <img class="spr" src={`/fx/sprites/${spr[c.short]}.svg`} alt="" width="32" height="32" loading="lazy" />}</td>
+          <td class="cls-td cls">{c.vuln_class}{c.credit === 'co-discovered' && <span class="co"> · co-discovered</span>}</td>
+          <td class={`hp ${cls[c.severity] ?? 'med'}`} title={`${c.severity} · CVSS 4.0 ${c.cvss4}`}><span class="bar"><i style={`--w:${Math.round(c.cvss4 * 10)}%`}></i></span>{c.cvss4}{c.sprite && <img class="spr" src={`/fx/sprites/${c.sprite}.svg`} alt="" width="32" height="32" loading="lazy" />}</td>
         </tr>
       ))}
     </tbody>
   </table></div>
+  {rest.length > 0 && (
+  <details class="more"><summary>Show all {cves.length}</summary>
+  <div class="frame"><table>
+    <thead><tr><th>ID</th><th>Product</th><th>Class</th><th>Severity</th></tr></thead>
+    <tbody>
+      {rest.map(c => (
+        <tr>
+          <td class="id"><a href={c.advisory_url}>{c.id}</a></td>
+          <td class="prod">{c.product}</td>
+          <td class="cls-td cls">{c.vuln_class}{c.credit === 'co-discovered' && <span class="co"> · co-discovered</span>}</td>
+          <td class={`hp ${cls[c.severity] ?? 'med'}`} title={`${c.severity} · CVSS 4.0 ${c.cvss4}`}><span class="bar"><i style={`--w:${Math.round(c.cvss4 * 10)}%`}></i></span>{c.cvss4}{c.sprite && <img class="spr" src={`/fx/sprites/${c.sprite}.svg`} alt="" width="32" height="32" loading="lazy" />}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table></div>
+  </details>)}
 </section>
 
 <section id="achievements">
