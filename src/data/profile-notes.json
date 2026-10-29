@@ -5,7 +5,7 @@
     "issuer": "EF SET",
     "issued": "2024-09",
     "verify_url": "https://cert.efset.org/JyJiAh",
-    "placement": "hero or contact, not certs list"
+    "label": "English · C2 · EF SET"
   },
-  "certs_policy": "No confirmed:false. No course badges (Cisco Ethical Hacker). No credential_id on UI. EF SET -> english field."
+  "ownership": "Flip edita JSON de datos; Web edita código/astro."
 }

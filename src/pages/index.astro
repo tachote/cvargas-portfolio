@@ -3,11 +3,10 @@ import Base from '../layouts/Base.astro';
 import { cves } from '../data/cves.ts';
 import ach from '../data/achievements.json';
 import certs from '../data/certs.json';
-import notes from '../data/profile-notes.json';
 const ICO: Record<string,string> = { OSWE: '⚔', CWEE: '⛨', BSCP: '✠' };
 const topC = certs.filter((c) => c.tier === 'top');
 const inv = certs.filter((c) => c.tier === 'other' && c.confirmed && !(c as any).hidden);
-const eng = notes.english;
+const eng = certs.find((c) => c.tier === 'lang');
 const counts = {};
 for (const c of cves) counts[c.label] = (counts[c.label] ?? 0) + 1;
 const TOP = 6, top = cves.slice(0, TOP), rest = cves.slice(TOP);
@@ -85,7 +84,7 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   <div class="frame contact">
     <div><span>email</span><a href="#">(pending)</a></div>
     <div><span>linkedin</span><a href="https://www.linkedin.com/in/cvmiracle">cvmiracle</a></div>
-    {eng && <div><span>english</span>{eng.verify_url ? <a href={eng.verify_url}>{eng.level} · {eng.issuer}</a> : `${eng.level} · ${eng.issuer}`}</div>}
+    {eng && <div><span>english</span>{eng.verify_url ? <a href={eng.verify_url}>C2 · {eng.issuer}</a> : `C2 · ${eng.issuer}`}</div>}
     <div><span>github</span><a href="#">(pending)</a></div>
   </div>
 </section>
