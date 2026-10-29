@@ -1,7 +1,9 @@
 [
- {
-  "ico": "♛",
-  "title": "1st · OAS Cyber Americas Cup",
-  "detail": "2026 · with Fluid Attacks"
- }
+  {
+    "ico": "♛",
+    "title": "1st · OAS Cyber Americas Cup",
+    "detail": "2026 · with Fluid Attacks",
+    "tier": "top",
+    "linkedin_honors": false
+  }
 ]
