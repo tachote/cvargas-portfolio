@@ -1,0 +1,11 @@
+{
+  "english": {
+    "level": "C2",
+    "score": "72/100",
+    "issuer": "EF SET",
+    "issued": "2024-09",
+    "verify_url": "https://cert.efset.org/JyJiAh",
+    "placement": "hero or contact, not certs list"
+  },
+  "certs_policy": "No confirmed:false. No course badges (Cisco Ethical Hacker). No credential_id on UI. EF SET -> english field."
+}
