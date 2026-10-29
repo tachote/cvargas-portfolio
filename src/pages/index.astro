@@ -3,14 +3,21 @@ import Base from '../layouts/Base.astro';
 import cves from '../data/cves.json';
 import ach from '../data/achievements.json';
 const sorted = [...cves].sort((a, b) => b.date.localeCompare(a.date));
+const label = { 'SQLi': 'SQLi', 'SSRF': 'SSRF', 'Authz Bypass': 'auth bypass', 'XSS': 'XSS' };
+const counts = {};
+for (const c of cves) { const k = label[c.short] ?? c.short; counts[k] = (counts[k] ?? 0) + 1; }
+const kill = [`${cves.length} CVEs`, ...Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n} ${k}`)].join(' · ');
 const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
 ---
 <Base>
+<div class="intro-ov" id="intro" aria-hidden="true"><div><div class="moon"></div><div class="nm">CRISTIAN VARGAS</div></div></div>
 <div class="wrap">
 <div class="topbar"><span>cvargas.com</span><button class="toggle" id="tg" type="button">☾ GOTHIC</button></div>
 <header class="hero">
+  <div class="sky" aria-hidden="true"><i class="l1"></i><i class="l2"></i><i class="l3"></i></div>
   <h1>Cristian Vargas <span class="moon">✝</span></h1>
   <p class="role"><b>Offensive AppSec @ Fluid Attacks</b> · OSWE · CWEE · Remote, Colombia</p>
+  <p class="killcount">{kill}</p>
   <nav class="links"><a href="https://www.linkedin.com/in/cvmiracle">linkedin/cvmiracle</a><a href="#contact">contact</a></nav>
 </header>
 
@@ -61,5 +68,20 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   b.addEventListener('click', () => { d.dataset.theme = d.dataset.theme === 'vanilla' ? 'gothic' : 'vanilla'; try { localStorage.setItem('theme', d.dataset.theme); } catch {} lbl(); });
   const k = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']; let i = 0;
   addEventListener('keydown', e => { i = e.key === k[i] ? i + 1 : (e.key === k[0] ? 1 : 0); if (i === k.length) location.href = '/play/'; });
+  const ov = document.getElementById('intro');
+  const skip = () => ov.classList.add('gone');
+  ['keydown', 'pointerdown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, skip, { once: true, passive: true }));
+  ov.addEventListener('animationend', e => { if (e.animationName === 'ov-out') skip(); });
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const ls = [...document.querySelectorAll('.sky i')], f = [0.1, 0.25, 0.4]; let mx = 0, my = 0, raf = 0;
+    const draw = () => { raf = 0; const y = scrollY; ls.forEach((l, j) => l.style.transform = `translate3d(${mx * f[j] * 20}px, ${y * f[j] + my * f[j] * 10}px, 0)`); };
+    const q = () => { if (!raf) raf = requestAnimationFrame(draw); };
+    addEventListener('scroll', q, { passive: true });
+    if (matchMedia('(pointer: fine)').matches) addEventListener('pointermove', e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; q(); }, { passive: true });
+    if (!matchMedia('(hover: hover)').matches) {
+      const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('hit'); io.unobserve(en.target); } }), { threshold: .6 });
+      document.querySelectorAll('tbody tr').forEach(r => io.observe(r));
+    }
+  }
 </script>
 </Base>

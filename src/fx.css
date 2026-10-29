@@ -1,0 +1,31 @@
+/* Web: entry beats. Only transform/opacity animate. Assets expected in /fx/ (Diseño). */
+.intro-ov{display:none}
+html.intro .intro-ov{display:grid;place-items:center;position:fixed;inset:0;z-index:50;background:#000;color:var(--accent);
+  animation:ov-out .35s ease 1.2s forwards;cursor:pointer}
+html.intro .intro-ov .moon{width:48px;height:48px;border-radius:50%;background:var(--text);box-shadow:-10px 0 0 0 #000 inset;margin:0 auto 16px;animation:fadein .4s both}
+html.intro .intro-ov .nm{font:28px var(--pixel);letter-spacing:.08em;overflow:hidden;white-space:nowrap;width:0;
+  animation:type .7s steps(15) .25s forwards, flicker .12s steps(2) 4 .95s}
+.intro-ov.gone{display:none!important}
+@keyframes type{to{width:15ch}} @keyframes fadein{from{opacity:0}}
+@keyframes flicker{50%{opacity:.55}} @keyframes ov-out{to{opacity:0;visibility:hidden}}
+
+.killcount{font:13px var(--mono);color:var(--accent);margin:-8px 0 16px;letter-spacing:.02em}
+[data-theme=vanilla] .killcount{color:var(--muted)}
+
+.hero{position:relative}
+.sky{position:absolute;inset:-40px -100vw auto;height:320px;z-index:-1;pointer-events:none;overflow:hidden;
+  -webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+.sky i{position:absolute;inset:0;background:center bottom/auto 100% repeat-x;will-change:transform}
+.sky .l1{background-image:url(/fx/sky.svg)} .sky .l2{background-image:url(/fx/castle.svg)} .sky .l3{background-image:url(/fx/fog.svg)}
+[data-theme=vanilla] .sky{display:none}
+
+@media (hover:hover) and (pointer:fine){
+  [data-theme=gothic] tbody tr:hover{animation:shake .25s steps(4)}
+  [data-theme=gothic] tbody tr:hover .bar i{animation:dmg .5s ease}
+  [data-theme=gothic] body{cursor:url(/fx/whip.png) 2 2, auto}
+}
+tr.hit .bar i{animation:dmg .5s ease}
+@keyframes shake{25%{transform:translateX(-2px)}75%{transform:translateX(2px)}}
+@keyframes dmg{0%{transform:scaleX(1);filter:brightness(2)}40%{transform:scaleX(1);background:#fff}100%{transform:scaleX(1)}}
+.bar i{transform-origin:left}
+@media (prefers-reduced-motion:reduce){.sky i,tbody tr,.bar i{animation:none!important;transform:none!important}}
