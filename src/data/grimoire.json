@@ -1,0 +1,54 @@
+[
+  {
+    "kind": "writeup",
+    "title": "HTTP Verb Tampering in NestJS: Bypassing Middleware with HEAD Requests",
+    "url": "https://medium.com/@deeptester/http-verb-tampering-in-nestjs-bypassing-middleware-with-head-requests-e70b968b15c2",
+    "year": 2026,
+    "lang": "EN",
+    "tier": "top",
+    "cve": "CVE-2026-2293"
+  },
+  {
+    "kind": "talk",
+    "title": "Codex aplicado al AppSec",
+    "url": "https://www.youtube.com/watch?v=qyf-AlgEy20",
+    "year": 2026,
+    "lang": "ES",
+    "tier": "top",
+    "host": "Fluid Attacks · Meetup LATAM"
+  },
+  {
+    "kind": "post",
+    "title": "How can Windsurf/Cursor help you with your secure code review?",
+    "url": "https://medium.com/@deeptester/how-can-windsurf-cursor-help-you-with-your-secure-code-review-d93394a4d719",
+    "year": 2025,
+    "lang": "EN",
+    "tier": "top"
+  },
+  {
+    "kind": "post",
+    "title": "CWEE or OSWE, which one choose?",
+    "url": "https://medium.com/@deeptester/cwee-or-oswe-which-one-choose-2987443a0e0a",
+    "year": 2025,
+    "lang": "EN",
+    "tier": "other"
+  },
+  {
+    "kind": "talk",
+    "title": "Cómo obtener CAPenX",
+    "url": "https://www.youtube.com/watch?v=qYCFkj0RoNQ",
+    "year": null,
+    "lang": "ES",
+    "tier": "other",
+    "host": "Fluid Attacks · Meetup LATAM"
+  },
+  {
+    "kind": "talk",
+    "title": "Cómo obtener la certificación HTB CWEE",
+    "url": "https://www.youtube.com/watch?v=pTnKeSemuGE",
+    "year": null,
+    "lang": "ES",
+    "tier": "other",
+    "host": "Fluid Attacks · Meetup Agosto"
+  }
+]

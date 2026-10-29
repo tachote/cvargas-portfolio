@@ -3,6 +3,15 @@ import Base from '../layouts/Base.astro';
 import { cves } from '../data/cves.ts';
 import ach from '../data/achievements.json';
 import certs from '../data/certs.json';
+import talks from '../data/talks.json';
+import blogs from '../data/blogs.json';
+const FEAT = ['e70b968b15c2', 'qyf-AlgEy20', 'd93394a4d719'];
+const items = [
+  ...blogs.map((b) => ({ kind: 'Post', title: b.title, url: b.url, year: b.year, lang: '' })),
+  ...talks.map((t) => ({ kind: 'Talk', title: t.title, url: t.url, year: t.year, lang: 'ES' })),
+];
+const rank = (u: string) => { const i = FEAT.findIndex((f) => u.includes(f)); return i < 0 ? 99 : i; };
+items.sort((a, b) => rank(a.url) - rank(b.url) || (b.year ?? 0) - (a.year ?? 0));
 const ICO: Record<string,string> = { OSWE: '⚔', CWEE: '⛨', BSCP: '✠' };
 const achTop = ach.filter((a) => a.tier === 'top');
 const achRest = ach.filter((a) => a.tier !== 'top');
@@ -70,6 +79,16 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
   <ul class="troph">
     {[...achTop.slice(1), ...achRest].map((a) => (
       <li class={a.tier === 'top' ? '' : 'lo'}><span class="ico">{a.ico}</span><b>{a.title}</b><span class="d">{a.detail}</span></li>
+    ))}
+  </ul>
+</section>
+
+<section id="writing">
+  <h2>Writing &amp; Talks <span class="amb">· Grimoire</span></h2>
+  <p class="sub">Research write-ups and conference talks.</p>
+  <ul class="troph grim">
+    {items.map((it) => (
+      <li class={rank(it.url) < 99 ? '' : 'lo'}><span class="k">{it.kind}</span><a href={it.url} rel="noopener">{it.title}</a><span class="d">{it.lang && <span class="lang">{it.lang}</span>}{it.year ?? ''}</span></li>
     ))}
   </ul>
 </section>
