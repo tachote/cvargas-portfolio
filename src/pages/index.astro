@@ -2,6 +2,10 @@
 import Base from '../layouts/Base.astro';
 import { cves } from '../data/cves.ts';
 import ach from '../data/achievements.json';
+import certs from '../data/certs.json';
+const ICO: Record<string,string> = { OSWE: '⚔', CWEE: '⛨', BSCP: '✠' };
+const topC = certs.filter((c) => c.tier === 'top');
+const inv = certs.filter((c) => c.tier !== 'top');
 const counts = {};
 for (const c of cves) counts[c.label] = (counts[c.label] ?? 0) + 1;
 const TOP = 6, top = cves.slice(0, TOP), rest = cves.slice(TOP);
@@ -61,7 +65,16 @@ const cls = { Critical: 'crit', High: 'high', Medium: 'med', Low: 'low' };
     {ach.map(a => (
       <div class="frame relic"><div class="ico">{a.ico}</div><div><h3>{a.title}</h3><p>{a.detail}</p></div></div>
     ))}
+    {topC.map((c) => (
+      <div class="frame relic"><div class="ico">{ICO[c.name] ?? '✦'}</div><div><h3>{c.verify_url ? <a href={c.verify_url}>{c.name}</a> : c.name}</h3><p>{c.full.replace(/\s*\([^)]*\)$/, '')}{c.year ? ` · ${c.year}` : ''}</p></div></div>
+    ))}
   </div>
+  <p class="inv-h">Inventory · {inv.length} more certifications</p>
+  <ul class="inv">
+    {inv.map((c) => (
+      <li title={c.full}>{c.verify_url ? <a href={c.verify_url}>{c.name}</a> : c.name}</li>
+    ))}
+  </ul>
 </section>
 
 <section id="contact">

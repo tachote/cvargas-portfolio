@@ -1,5 +1,7 @@
 [
-  { "ico": "♛", "title": "1st · OAS Cyber Americas Cup", "detail": "2026 · with Fluid Attacks" },
-  { "ico": "⚔", "title": "OSWE", "detail": "OffSec Web Expert" },
-  { "ico": "⛨", "title": "CWEE", "detail": "HTB Certified Web Exploitation Expert" }
+ {
+  "ico": "♛",
+  "title": "1st · OAS Cyber Americas Cup",
+  "detail": "2026 · with Fluid Attacks"
+ }
 ]

@@ -1,0 +1,137 @@
+[
+ {
+  "name": "OSWE",
+  "full": "OffSec Web Expert (OSWE)",
+  "issuer": "OffSec",
+  "year": 2024,
+  "tier": "top",
+  "verify_url": "https://credential.net/75f211cc-6409-4f4a-a584-d7d78bc0fd61",
+  "confirmed": true
+ },
+ {
+  "name": "BSCP",
+  "full": "Burp Suite Certified Practitioner (BSCP)",
+  "issuer": "PortSwigger",
+  "year": 2023,
+  "tier": "top",
+  "verify_url": "https://portswigger.net/web-security/e/c/aca189f934f78ffb",
+  "confirmed": true
+ },
+ {
+  "name": "CWEE",
+  "full": "HTB Certified Web Exploitation Expert",
+  "issuer": null,
+  "year": null,
+  "tier": "top",
+  "verify_url": null,
+  "confirmed": false
+ },
+ {
+  "name": "CRB",
+  "full": "Code Review Badge (CRB)",
+  "issuer": "PentesterLab",
+  "year": 2024,
+  "tier": "other",
+  "verify_url": "https://pentesterlab.com/badges/codereview",
+  "confirmed": true
+ },
+ {
+  "name": "CAPenX",
+  "full": "Certified AppSec Pentesting eXpert (CAPenX)",
+  "issuer": "The SecOps Group",
+  "year": 2024,
+  "tier": "other",
+  "verify_url": null,
+  "confirmed": true
+ },
+ {
+  "name": "CSWAE",
+  "full": "C)SWAE: Certified Secure Web Application Engineer",
+  "issuer": "Mile2",
+  "year": 2024,
+  "tier": "other",
+  "verify_url": null,
+  "confirmed": true
+ },
+ {
+  "name": "CCSP-AWS",
+  "full": "Certified Cloud Security Practitioner–AWS (CCSP-AWS)",
+  "issuer": "The SecOps Group",
+  "year": 2023,
+  "tier": "other",
+  "verify_url": null,
+  "confirmed": true
+ },
+ {
+  "name": "CASA",
+  "full": "Certified API Security Analyst (CASA)",
+  "issuer": "APIsec University",
+  "year": 2023,
+  "tier": "other",
+  "verify_url": "https://credly.com/badges/8a4f9662-8980-4a50-b1d6-297042e2ee7b",
+  "confirmed": true
+ },
+ {
+  "name": "Ethical Hacker",
+  "full": "Ethical Hacker",
+  "issuer": "Cisco",
+  "year": 2023,
+  "tier": "other",
+  "verify_url": "https://credly.com/badges/faff5a47-9c8e-4fe0-9b4a-78385c8d998a",
+  "confirmed": true
+ },
+ {
+  "name": "CAP",
+  "full": "Certified AppSec Practitioner (CAP)",
+  "issuer": "The SecOps Group",
+  "year": 2023,
+  "tier": "other",
+  "verify_url": null,
+  "confirmed": true
+ },
+ {
+  "name": "eMAPT",
+  "full": "eLearnSecurity Mobile Application Penetration Tester (eMAPT)",
+  "issuer": "eLearnSecurity / INE",
+  "year": 2023,
+  "tier": "other",
+  "verify_url": "https://verified.elearnsecurity.com/certificates/6ce012db-7849-440d-8783-163dd5ebd7bf",
+  "confirmed": true
+ },
+ {
+  "name": "PWPE",
+  "full": "Practical Web Pentest Expert (TCM)",
+  "issuer": null,
+  "year": null,
+  "tier": "other",
+  "verify_url": null,
+  "confirmed": false
+ },
+ {
+  "name": "C-APIPEN",
+  "full": "Certified API Pentester (SecOps)",
+  "issuer": null,
+  "year": null,
+  "tier": "other",
+  "verify_url": null,
+  "confirmed": false
+ },
+ {
+  "name": "C-AI/MLPen",
+  "full": "Certified AI/ML Pentester (SecOps)",
+  "issuer": null,
+  "year": null,
+  "tier": "other",
+  "verify_url": null,
+  "confirmed": false
+ },
+ {
+  "name": "C-AgAIPen",
+  "full": "Certified Agentic AI Pentester (SecOps)",
+  "issuer": null,
+  "year": null,
+  "tier": "other",
+  "verify_url": null,
+  "confirmed": false
+ }
+]
