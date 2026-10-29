@@ -1,0 +1,939 @@
+{
+  "title": "The Disclosure Requiem",
+  "mix": {
+    "defaultVolume": 0.52,
+    "defaultEffectsVolume": 0.52,
+    "effectsGain": 0.8,
+    "masterGain": 0.55,
+    "voiceLimit": 64,
+    "lowVoiceLimit": 40,
+    "cueReserve": 8,
+    "schedulerMs": 80,
+    "lookAhead": 0.14,
+    "maxCatchupSteps": 8,
+    "reverbSeconds": 2.4,
+    "wetGain": 0.24,
+    "subduedGain": 0.58,
+    "intenseAt": 0.55,
+    "compressor": {
+      "threshold": -22,
+      "knee": 18,
+      "ratio": 3.5,
+      "attack": 0.012,
+      "release": 0.3
+    },
+    "defaultDuration": 1800
+  },
+  "stages": {
+    "cathedral": {
+      "transpose": 0,
+      "subtitle": "Organ, choir and cathedral bells"
+    },
+    "library": {
+      "transpose": -2,
+      "subtitle": "Whispered choir and silver strings"
+    },
+    "foundry": {
+      "transpose": 2,
+      "subtitle": "Iron percussion and burning strings"
+    },
+    "void": {
+      "transpose": -5,
+      "subtitle": "Low choir and the final procession"
+    },
+    "spire": {
+      "transpose": 3,
+      "subtitle": "High strings, cloud bells and the IAM procession"
+    }
+  },
+  "scenes": {
+    "lobby": {
+      "title": "The Sealed Archive",
+      "subtitle": "A quiet oath before the breach",
+      "bpm": 66,
+      "beats": 4,
+      "subdivisions": 2,
+      "layers": {
+        "pad": 0.052,
+        "choir": 0.018,
+        "bass": 0.07,
+        "strings": 0,
+        "bell": 0.052,
+        "drums": 0,
+        "cymbal": 0
+      },
+      "ostinato": [
+        0,
+        2,
+        1,
+        2,
+        0,
+        3,
+        1,
+        2
+      ],
+      "bars": [
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            65
+          ],
+          "melody": [
+            74,
+            null,
+            null,
+            77,
+            76,
+            null,
+            74,
+            null
+          ]
+        },
+        {
+          "chord": [
+            46,
+            53,
+            58,
+            62
+          ],
+          "melody": [
+            70,
+            null,
+            74,
+            null,
+            null,
+            77,
+            74,
+            null
+          ]
+        },
+        {
+          "chord": [
+            43,
+            50,
+            58,
+            62
+          ],
+          "melody": [
+            79,
+            null,
+            77,
+            null,
+            74,
+            null,
+            70,
+            null
+          ]
+        },
+        {
+          "chord": [
+            45,
+            52,
+            57,
+            61
+          ],
+          "melody": [
+            73,
+            null,
+            76,
+            null,
+            69,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            65
+          ],
+          "melody": [
+            77,
+            null,
+            76,
+            null,
+            74,
+            null,
+            null,
+            69
+          ]
+        },
+        {
+          "chord": [
+            48,
+            55,
+            60,
+            64
+          ],
+          "melody": [
+            72,
+            null,
+            null,
+            76,
+            79,
+            null,
+            76,
+            null
+          ]
+        },
+        {
+          "chord": [
+            46,
+            53,
+            58,
+            62
+          ],
+          "melody": [
+            74,
+            null,
+            70,
+            null,
+            69,
+            null,
+            65,
+            null
+          ]
+        },
+        {
+          "chord": [
+            45,
+            52,
+            57,
+            61
+          ],
+          "melody": [
+            69,
+            null,
+            73,
+            null,
+            76,
+            null,
+            73,
+            null
+          ]
+        }
+      ]
+    },
+    "hunt": {
+      "title": "Oath of the Vulnerability Hunter",
+      "subtitle": "Strings gather beneath the organ",
+      "bpm": 98,
+      "beats": 4,
+      "subdivisions": 2,
+      "layers": {
+        "pad": 0.043,
+        "choir": 0.016,
+        "bass": 0.12,
+        "strings": 0.032,
+        "bell": 0.053,
+        "drums": 0.1,
+        "cymbal": 0.008
+      },
+      "ostinato": [
+        0,
+        2,
+        1,
+        2,
+        0,
+        3,
+        1,
+        2
+      ],
+      "bars": [
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            65
+          ],
+          "melody": [
+            74,
+            null,
+            77,
+            76,
+            74,
+            null,
+            69,
+            null
+          ]
+        },
+        {
+          "chord": [
+            46,
+            53,
+            58,
+            62
+          ],
+          "melody": [
+            70,
+            null,
+            74,
+            null,
+            77,
+            76,
+            74,
+            null
+          ]
+        },
+        {
+          "chord": [
+            43,
+            50,
+            58,
+            62
+          ],
+          "melody": [
+            79,
+            null,
+            77,
+            74,
+            70,
+            null,
+            74,
+            null
+          ]
+        },
+        {
+          "chord": [
+            45,
+            52,
+            57,
+            61
+          ],
+          "melody": [
+            73,
+            null,
+            76,
+            73,
+            69,
+            null,
+            null,
+            73
+          ]
+        },
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            65
+          ],
+          "melody": [
+            77,
+            null,
+            81,
+            79,
+            77,
+            76,
+            74,
+            null
+          ]
+        },
+        {
+          "chord": [
+            48,
+            55,
+            60,
+            64
+          ],
+          "melody": [
+            72,
+            null,
+            76,
+            null,
+            79,
+            77,
+            76,
+            null
+          ]
+        },
+        {
+          "chord": [
+            46,
+            53,
+            58,
+            62
+          ],
+          "melody": [
+            77,
+            null,
+            74,
+            70,
+            69,
+            null,
+            70,
+            74
+          ]
+        },
+        {
+          "chord": [
+            45,
+            52,
+            57,
+            61
+          ],
+          "melody": [
+            76,
+            null,
+            73,
+            69,
+            73,
+            null,
+            76,
+            null
+          ]
+        }
+      ]
+    },
+    "intense": {
+      "title": "A Thousand Unpatched Gates",
+      "subtitle": "The full choir answers the horde",
+      "bpm": 112,
+      "beats": 4,
+      "subdivisions": 2,
+      "layers": {
+        "pad": 0.047,
+        "choir": 0.022,
+        "bass": 0.14,
+        "strings": 0.045,
+        "bell": 0.058,
+        "drums": 0.14,
+        "cymbal": 0.012
+      },
+      "ostinato": [
+        0,
+        2,
+        1,
+        2,
+        0,
+        3,
+        1,
+        2
+      ],
+      "bars": [
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            65
+          ],
+          "melody": [
+            81,
+            79,
+            77,
+            null,
+            76,
+            77,
+            74,
+            null
+          ]
+        },
+        {
+          "chord": [
+            46,
+            53,
+            58,
+            62
+          ],
+          "melody": [
+            77,
+            76,
+            74,
+            null,
+            70,
+            74,
+            77,
+            null
+          ]
+        },
+        {
+          "chord": [
+            43,
+            50,
+            58,
+            62
+          ],
+          "melody": [
+            79,
+            77,
+            74,
+            null,
+            70,
+            69,
+            67,
+            null
+          ]
+        },
+        {
+          "chord": [
+            45,
+            52,
+            57,
+            61
+          ],
+          "melody": [
+            73,
+            76,
+            81,
+            null,
+            80,
+            76,
+            73,
+            null
+          ]
+        },
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            65
+          ],
+          "melody": [
+            86,
+            null,
+            81,
+            79,
+            77,
+            null,
+            76,
+            74
+          ]
+        },
+        {
+          "chord": [
+            48,
+            55,
+            60,
+            64
+          ],
+          "melody": [
+            84,
+            null,
+            79,
+            77,
+            76,
+            null,
+            72,
+            76
+          ]
+        },
+        {
+          "chord": [
+            46,
+            53,
+            58,
+            62
+          ],
+          "melody": [
+            82,
+            null,
+            77,
+            76,
+            74,
+            70,
+            69,
+            null
+          ]
+        },
+        {
+          "chord": [
+            45,
+            52,
+            57,
+            61
+          ],
+          "melody": [
+            81,
+            null,
+            76,
+            73,
+            69,
+            73,
+            76,
+            73
+          ]
+        }
+      ]
+    },
+    "boss": {
+      "title": "The Privileged Process",
+      "subtitle": "War drums beneath a harmonic-minor requiem",
+      "bpm": 124,
+      "beats": 4,
+      "subdivisions": 2,
+      "layers": {
+        "pad": 0.05,
+        "choir": 0.026,
+        "bass": 0.16,
+        "strings": 0.052,
+        "bell": 0.06,
+        "drums": 0.18,
+        "cymbal": 0.014
+      },
+      "ostinato": [
+        0,
+        2,
+        3,
+        2,
+        0,
+        1,
+        3,
+        1
+      ],
+      "bars": [
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            65
+          ],
+          "melody": [
+            74,
+            73,
+            74,
+            77,
+            81,
+            null,
+            80,
+            77
+          ]
+        },
+        {
+          "chord": [
+            49,
+            56,
+            61,
+            65
+          ],
+          "melody": [
+            73,
+            72,
+            73,
+            77,
+            80,
+            null,
+            77,
+            73
+          ]
+        },
+        {
+          "chord": [
+            43,
+            50,
+            58,
+            62
+          ],
+          "melody": [
+            79,
+            77,
+            74,
+            70,
+            69,
+            null,
+            70,
+            74
+          ]
+        },
+        {
+          "chord": [
+            45,
+            52,
+            57,
+            61
+          ],
+          "melody": [
+            73,
+            null,
+            76,
+            80,
+            81,
+            80,
+            76,
+            73
+          ]
+        },
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            65
+          ],
+          "melody": [
+            86,
+            null,
+            81,
+            80,
+            77,
+            76,
+            74,
+            null
+          ]
+        },
+        {
+          "chord": [
+            48,
+            55,
+            60,
+            64
+          ],
+          "melody": [
+            84,
+            null,
+            79,
+            77,
+            76,
+            72,
+            76,
+            null
+          ]
+        },
+        {
+          "chord": [
+            46,
+            53,
+            58,
+            62
+          ],
+          "melody": [
+            82,
+            81,
+            77,
+            null,
+            76,
+            74,
+            70,
+            null
+          ]
+        },
+        {
+          "chord": [
+            45,
+            52,
+            57,
+            61
+          ],
+          "melody": [
+            81,
+            80,
+            76,
+            73,
+            69,
+            73,
+            76,
+            80
+          ]
+        }
+      ]
+    },
+    "victory": {
+      "title": "Full Disclosure at Dawn",
+      "subtitle": "The archive remembers the fallen gates",
+      "bpm": 78,
+      "beats": 4,
+      "subdivisions": 2,
+      "layers": {
+        "pad": 0.05,
+        "choir": 0.028,
+        "bass": 0.1,
+        "strings": 0,
+        "bell": 0.07,
+        "drums": 0.055,
+        "cymbal": 0
+      },
+      "ostinato": [
+        0,
+        2,
+        1,
+        2,
+        0,
+        3,
+        1,
+        2
+      ],
+      "bars": [
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            66
+          ],
+          "melody": [
+            74,
+            null,
+            78,
+            null,
+            81,
+            null,
+            86,
+            null
+          ]
+        },
+        {
+          "chord": [
+            43,
+            50,
+            59,
+            62
+          ],
+          "melody": [
+            83,
+            null,
+            81,
+            null,
+            79,
+            null,
+            74,
+            null
+          ]
+        },
+        {
+          "chord": [
+            46,
+            53,
+            58,
+            62
+          ],
+          "melody": [
+            82,
+            null,
+            81,
+            null,
+            77,
+            null,
+            74,
+            null
+          ]
+        },
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            66
+          ],
+          "melody": [
+            78,
+            null,
+            81,
+            null,
+            86,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "defeat": {
+      "title": "The Last Stack Frame",
+      "subtitle": "An ember remains in the save room",
+      "bpm": 54,
+      "beats": 4,
+      "subdivisions": 2,
+      "layers": {
+        "pad": 0.04,
+        "choir": 0.017,
+        "bass": 0.065,
+        "strings": 0,
+        "bell": 0.04,
+        "drums": 0,
+        "cymbal": 0
+      },
+      "ostinato": [
+        0,
+        2,
+        1,
+        2,
+        0,
+        3,
+        1,
+        2
+      ],
+      "bars": [
+        {
+          "chord": [
+            50,
+            57,
+            62,
+            65
+          ],
+          "melody": [
+            77,
+            null,
+            null,
+            null,
+            76,
+            null,
+            74,
+            null
+          ]
+        },
+        {
+          "chord": [
+            46,
+            53,
+            58,
+            62
+          ],
+          "melody": [
+            74,
+            null,
+            70,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "chord": [
+            43,
+            50,
+            58,
+            62
+          ],
+          "melody": [
+            70,
+            null,
+            69,
+            null,
+            67,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "chord": [
+            45,
+            52,
+            57,
+            61
+          ],
+          "melody": [
+            69,
+            null,
+            73,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  }
+}

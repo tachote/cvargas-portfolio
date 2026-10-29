@@ -1,0 +1,25 @@
+---
+import Icon from './Icon.astro';
+import portfolio from '../data/portfolio-ui.json';
+import score from '../data/portfolio-music.json';
+const copy = portfolio.music;
+---
+<aside class="portfolio-music" data-portfolio-music hidden aria-label={copy.label}>
+  <button class="pm-toggle" type="button" aria-pressed="false" aria-label={copy.play}>
+    <Icon name="music" size={16}/><span class="pm-label">{copy.off}</span>
+    <span class="pm-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </button>
+  <details class="pm-settings">
+    <summary aria-label={copy.settings}><span aria-hidden="true">⋯</span></summary>
+    <div class="pm-panel">
+      <p class="pm-track">{score.title}</p><p class="pm-description">{score.subtitle}</p>
+      <label for="portfolio-volume">{copy.volume}<output for="portfolio-volume">{score.defaultVolume}%</output></label>
+      <input id="portfolio-volume" type="range" min="0" max="100" step="1" value={score.defaultVolume}/>
+      <p class="pm-hint">{copy.pausedHint}</p>
+    </div>
+  </details>
+  <span class="pm-status sr-only" role="status" aria-live="polite"></span>
+</aside>
+<script>
+  import '../scripts/portfolio-music.js';
+</script>

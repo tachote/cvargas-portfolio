@@ -32,7 +32,7 @@ Owner: Diseño. Read this before changing UI. If a task conflicts with a rule he
 
 ## Layout
 - Single column, max ~720px (blog articles 680px, Inter 18/1.7). Hero has a 220px right column for the framed avatar; on ≤600px it shrinks to 96px next to the name.
-- Section order: Hero → CVEs & Advisories · Bestiary → Awards · Trophies → Writing & Talks · Grimoire → Skills · Attributes → Certifications · Relics → Contact · Save Room.
+- Section order: Hero → CVEs & Advisories · Bestiary → Awards · Trophies → Writing · Grimoire → Talks · Transmissions → Skills · Attributes → Certifications · Relics → Contact · Save Room.
 - Skills: 10 pixel pips per row (filled `--accent`, empty `--border`), number, `--muted` evidence; "Self-assessed, 1–10" caption.
 - Mobile: CVE table becomes stacked cards. No horizontal scroll (`body{overflow-x:clip}`).
 

@@ -1,0 +1,19 @@
+{
+  "title": "Moonlit Archive",
+  "subtitle": "Gothic ambience · Original score",
+  "tempo": 64,
+  "beatsPerBar": 4,
+  "defaultVolume": 28,
+  "maxGain": 0.65,
+  "reverbSeconds": 1.8,
+  "bars": [
+    { "chord": [50, 57, 62, 65], "melody": [74, null, 77, 76] },
+    { "chord": [46, 53, 58, 62], "melody": [74, null, 70, null] },
+    { "chord": [43, 50, 58, 62], "melody": [67, 69, 70, null] },
+    { "chord": [45, 52, 57, 61], "melody": [73, null, 76, null] },
+    { "chord": [50, 57, 62, 65], "melody": [77, 76, 74, null] },
+    { "chord": [48, 55, 60, 64], "melody": [72, null, 76, 74] },
+    { "chord": [46, 53, 58, 62], "melody": [70, null, 69, null] },
+    { "chord": [45, 52, 57, 61], "melody": [73, 76, 73, null] }
+  ]
+}

@@ -1,0 +1,23 @@
+---
+import site from '../data/site.json';
+import entrance from '../data/portfolio-entrance.json';
+import '../castle-entrance.css';
+const [firstName, ...surname] = site.name.split(' ');
+---
+<aside id="castle-entrance" class="castle-entrance" aria-label={entrance.label} hidden>
+  <div class="castle-entrance-scene" aria-hidden="true">
+    <div class="castle-entrance-stars"></div>
+    <div class="castle-entrance-orbit"></div>
+    <img class="castle-entrance-moon" src="/fx/portfolio-moon.svg" width="512" height="512" alt="" decoding="async" />
+    <img class="castle-entrance-castle" src="/fx/portfolio-castle.svg" width="1600" height="900" alt="" decoding="async" />
+    <div class="castle-entrance-mist castle-entrance-mist-near"></div>
+    <div class="castle-entrance-mist castle-entrance-mist-far"></div>
+  </div>
+  <button class="castle-entrance-skip" type="button" data-entrance-skip>{entrance.skip}<span aria-hidden="true">↗</span></button>
+  <div class="castle-entrance-title" aria-hidden="true">
+    <p class="castle-entrance-eyebrow"><span></span>{entrance.eyebrow}<span></span></p>
+    <p class="castle-entrance-name"><span>{firstName}</span><strong>{surname.join(' ')}</strong></p>
+    <p class="castle-entrance-role">{site.role}</p>
+  </div>
+  <button class="castle-entrance-enter" type="button" data-entrance-skip>{entrance.enter}<span aria-hidden="true">↓</span></button>
+</aside>

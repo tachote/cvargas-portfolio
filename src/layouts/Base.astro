@@ -1,7 +1,9 @@
 ---
 import '../styles.css';
 import '../fx.css';
+import '../portfolio-epic.css';
 import site from '../data/site.json';
+import MusicPlayer from '../components/MusicPlayer.astro';
 const { title = `${site.name} · Offensive AppSec`, description = `${site.role} at ${site.company}. CVEs, advisories and offensive security research.`, robots } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://cvargas.com').href;
 ---
@@ -34,7 +36,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://cvargas.com
   <meta itemprop="jobTitle" content={site.role} />
   <link itemprop="url" href="https://cvargas.com/" />
   <link itemprop="sameAs" href={site.linkedin} />
-  <link itemprop="sameAs" href={site.github} />
+  {site.github && <link itemprop="sameAs" href={site.github} />}
   <slot />
+  <MusicPlayer />
 </body>
 </html>

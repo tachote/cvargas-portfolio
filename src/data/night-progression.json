@@ -1,0 +1,18 @@
+{
+  "weapons": [
+    { "id": "whip", "target": 0, "label": "Available from the start." },
+    { "id": "knife", "target": 0, "label": "Available from the start." },
+    { "id": "wand", "target": 0, "label": "Available from the start." },
+    { "id": "orbit", "stat": "kills", "target": 100, "label": "Defeat {target} vulnerabilities." },
+    { "id": "pool", "stat": "kills", "target": 25, "label": "Defeat {target} vulnerabilities." },
+    { "id": "rune", "stat": "maxLevel", "target": 10, "label": "Reach level {target}." },
+    { "id": "lightning", "stat": "bosses", "target": 1, "label": "Defeat {target} boss." },
+    { "id": "axe", "stat": "kills", "target": 75, "label": "Defeat {target} vulnerabilities." },
+    { "id": "cross", "stat": "relics", "target": 1, "label": "Collect {target} stage relic." },
+    { "id": "pentagram", "stat": "goldFevers", "target": 1, "label": "Trigger {target} bounty frenzy." },
+    { "id": "fireball", "stat": "evolutions", "target": 1, "label": "Discover {target} weapon evolution." },
+    { "id": "birds", "stat": "rescues", "target": 1, "label": "Complete {target} rescue." },
+    { "id": "aegis", "stat": "maxLevel", "target": 15, "label": "Reach level {target}." },
+    { "id": "lancet", "stat": "maxLevel", "target": 20, "label": "Reach level {target}." }
+  ]
+}

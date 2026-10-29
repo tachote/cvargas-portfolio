@@ -1,42 +1,34 @@
 /* Original gothic atmosphere. Background movement is CSS-only and optional. */
+/* Original architectural art stays decorative; copy and avatar sit above it. */
 .sky {
   position: absolute;
   z-index: -1;
   pointer-events: none;
   left: calc(50% - 50vw);
-  top: -45px;
+  top: -76px;
   width: 100vw;
-  height: 520px;
+  height: 670px;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(#000 55%, transparent 100%);
-  mask-image: linear-gradient(#000 55%, transparent 100%);
-  opacity: 0.75;
+  opacity: .83;
+  mask-image: linear-gradient(#000 70%, transparent);
 }
-.sky i {
-  position: absolute;
-  inset: 0 0 -60px;
-  background: center bottom / cover no-repeat;
-  will-change: transform;
-}
-.sky .l1 { background-image: url(/fx/layer-sky.svg); }
-.sky .l2 { background-image: url(/fx/layer-castle.svg); filter: brightness(4); }
-.sky .l3 { background-image: url(/fx/layer-fog.svg); opacity: 0.45; }
-.sky .moon {
-  inset: auto;
-  top: 70px;
-  left: calc(50% + 20px);
-  width: 72px;
-  height: 72px;
-  background: url(/fx/moon.svg) center / contain no-repeat;
-  image-rendering: pixelated;
-  filter: drop-shadow(0 0 18px #c9a22740);
-}
-/* keeps the hero copy at AA contrast over the castle */
 .sky::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #0e0a12d0 8%, #0e0a1280 42%, transparent 72%);
+  background: linear-gradient(90deg, #0e0a12d9 9%, #0e0a1273 44%, transparent 76%), linear-gradient(0deg,#0e0a12,transparent 30%);
+}
+.hero-vault {
+  display: block;
+  width: max(1440px, 100%);
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
 }
 .hero-side {
   text-align: center;
@@ -127,18 +119,37 @@
 .playbtn:hover {
   color: #f4d778;
 }
+.playbtn::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  left: 0;
+  top: 15px;
+  box-shadow: 0 0 9px #c9a22770;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .playbtn::before {
+    animation: lantern 3s ease-in-out infinite;
+  }
+  @keyframes lantern {
+    50% {
+      opacity: 0.4;
+    }
+  }
+}
 @media (max-width: 600px) {
   .sky {
     top: 0;
     height: 440px;
+    background-size:
+      auto,
+      1100px 440px;
+    background-position:
+      center,
+      58% top;
     opacity: 0.6;
-  }
-  .sky .moon {
-    top: 22px;
-    left: auto;
-    right: 132px;
-    width: 48px;
-    height: 48px;
   }
   .avatar {
     padding: 7px 7px 6px;
@@ -164,6 +175,9 @@
     letter-spacing: 0.02em;
   }
   .playbtn svg {
+    display: none;
+  }
+  .playbtn::before {
     display: none;
   }
   .game-hint {
@@ -226,85 +240,34 @@
   .playbtn { min-height: 48px; }
 }
 
-/* ── Visual pass: pixel plates, brackets, type, sprites, cursor, scanlines ── */
-:root {
-  /* 4px corners cut in two 2px steps */
-  --step: polygon(0 4px, 2px 4px, 2px 2px, 4px 2px, 4px 0, calc(100% - 4px) 0, calc(100% - 4px) 2px, calc(100% - 2px) 2px, calc(100% - 2px) 4px, 100% 4px, 100% calc(100% - 4px), calc(100% - 2px) calc(100% - 4px), calc(100% - 2px) calc(100% - 2px), calc(100% - 4px) calc(100% - 2px), calc(100% - 4px) 100%, 4px 100%, 4px calc(100% - 2px), 2px calc(100% - 2px), 2px calc(100% - 4px), 0 calc(100% - 4px));
-  --gold-px: linear-gradient(var(--accent), var(--accent));
-  /* 6px gold corner brackets that follow the stepped corner */
-  --brackets:
-    var(--gold-px) left 4px top 0 / 6px 2px no-repeat, var(--gold-px) left 0 top 4px / 2px 6px no-repeat, var(--gold-px) left 2px top 2px / 2px 2px no-repeat,
-    var(--gold-px) right 4px top 0 / 6px 2px no-repeat, var(--gold-px) right 0 top 4px / 2px 6px no-repeat, var(--gold-px) right 2px top 2px / 2px 2px no-repeat,
-    var(--gold-px) left 4px bottom 0 / 6px 2px no-repeat, var(--gold-px) left 0 bottom 4px / 2px 6px no-repeat, var(--gold-px) left 2px bottom 2px / 2px 2px no-repeat,
-    var(--gold-px) right 4px bottom 0 / 6px 2px no-repeat, var(--gold-px) right 0 bottom 4px / 2px 6px no-repeat, var(--gold-px) right 2px bottom 2px / 2px 2px no-repeat;
-}
-/* Plate = stepped background + 1px border painted in ::before (clip-path would also clip a box-shadow,
-   so the hard shadow is a drop-shadow filter on the unclipped host). */
-.button, .playbtn,
-.featured-research, .writing-feature, .relic, .trophy-feature, .save-room, .table-frame {
-  --pbd: var(--border);
-  --pfill: linear-gradient(var(--surface), var(--surface));
-  --brk: linear-gradient(transparent, transparent);
-  position: relative;
-  isolation: isolate;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-  filter: drop-shadow(2px 2px 0 #000);
-}
-.button::before, .playbtn::before,
-.featured-research::before, .writing-feature::before, .relic::before, .trophy-feature::before, .save-room::before, .table-frame::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: var(--brk), var(--pfill) 1px 1px / calc(100% - 2px) calc(100% - 2px) no-repeat, var(--pbd);
-  clip-path: var(--step);
-}
-.featured-research, .writing-feature, .relic, .trophy-feature, .save-room, .table-frame { --brk: var(--brackets); }
-.button.primary { --pbd: var(--accent); --pfill: linear-gradient(var(--accent), var(--accent)); background: none; }
-.button.primary:hover { --pbd: #dfbb47; --pfill: linear-gradient(#dfbb47, #dfbb47); background: none; }
-.playbtn { --pbd: var(--accent); --pfill: linear-gradient(#1a1220, #140e19); padding: 11px 16px 10px; }
-.playbtn:hover { --pfill: linear-gradient(#2a1d24, #1a1220); }
-.featured-research { --pbd: #695434; --pfill: linear-gradient(110deg, #221826, var(--surface) 75%); }
-.featured-research:hover, .writing-feature:hover { --pbd: var(--accent); }
-.relic { --pfill: linear-gradient(170deg, var(--surface), #140e19); }
-.trophy-feature { --pbd: #c9a22750; --pfill: linear-gradient(115deg, #231b1d, #150f19); border: 1px solid transparent; }
-.save-room { --pbd: #695434; --pfill: radial-gradient(ellipse at 50% 0, #241a19, #130d17 65%); }
-.table-frame { --pbd: #3a2a44; --pfill: linear-gradient(#140e19, #140e19); }
-.save-room .section-kicker { text-align: left; }
 
-/* Type: H2 term in Inter, subtitle in Pixel at 1.15em */
-h2 .amb, .save-room h2 .amb { font: 400 1.15em/1 var(--pixel); letter-spacing: 0.02em; }
-
-/* Vuln-class sprite as the row's class icon */
-.cls-td { white-space: nowrap; }
-.spr { width: 20px; height: 20px; margin-right: 8px; vertical-align: -6px; image-rendering: pixelated; }
-@media (max-width: 600px) { .spr { width: 18px; height: 18px; vertical-align: -5px; } }
-
-/* Whip cursor: hero and links only, fine pointers, motion allowed */
-@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .hero { cursor: url(/fx/cursor-whip.svg) 0 0, auto; }
-  a { cursor: url(/fx/cursor-whip.svg) 0 0, pointer; }
+/* A gilded niche around the original hunter portrait. */
+.avatar {
+  padding: 17px 16px 14px;
+  border-color: #a487547d;
+  box-shadow: inset 0 0 0 5px var(--bg), inset 0 0 0 6px #a083463d, 0 12px 38px #0008;
+}
+.avatar::before,.avatar::after { color: var(--gold-soft); text-shadow: 0 0 13px #c9a22740; }
+.avatar-arch { border-color: #9f83584f; }
+.avatar-arch::before { border-color: #c9a22726; inset: 4px; }
+.avatar figcaption { color: #c6b6a0; font-size: 8px; line-height: 1.6; gap: 6px; margin-top: 14px; }
+.avatar figcaption span { font-size: 5px; }
+.playbtn { color: var(--gold-soft); font-size: 14px; padding: 10px 13px 0; margin-top: 18px; letter-spacing: .12em; }
+.game-hint { font: 9px/1.65 var(--mono); color: #b2a1ba; margin-top: 7px; }
+.playbtn::before { top: 17px; }
+@media (max-width: 600px) {
+  .sky { top: -57px; height: 570px; opacity: .64; background: none; }
+  .sky::after { background: linear-gradient(90deg,#0e0a12ad, #0e0a123b),linear-gradient(0deg,#0e0a12,transparent 40%); }
+  .hero-vault { width: 1090px; object-position: center top; left: 0; }
+  .avatar { padding: 8px 7px 7px; box-shadow: inset 0 0 0 3px var(--bg), inset 0 0 0 4px #a083463d, 0 8px 22px #0008; }
+  .avatar::before,.avatar::after { font-size: 9px; top: -7px; }
+  .avatar-arch { padding-top: 4px; }
+  .avatar figcaption { display: none; }
+  .playbtn { font-size: 10px; letter-spacing: .025em; padding: 10px 0 0; margin-top: 10px; min-height: 48px; }
+  .game-hint { font-size: 8px; line-height: 1.7; margin-top: 5px; }
+  .game-load-status { font-size: 9px; }
 }
 
-/* CRT scanlines at 4% */
-@media (prefers-reduced-motion: no-preference) {
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 60;
-    pointer-events: none;
-    opacity: 0.04;
-    background: repeating-linear-gradient(to bottom, #ede6d6 0 1px, transparent 1px 3px);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .sky i { transform: none !important; will-change: auto; }
-}
-
-/* 404 */
-.lost { padding-top: 12vh; padding-bottom: 12vh; }
-.lost-spr { display: block; width: 64px; height: 64px; margin: 0 auto 18px; image-rendering: pixelated; filter: drop-shadow(0 0 12px #c9a22740); }
+/* Preserve the production not-found page from the upstream deployment. */
+.lost { padding-top:12vh; padding-bottom:12vh; }
+.lost-spr { display:block; width:64px; height:64px; margin:0 auto 18px; image-rendering:pixelated; filter:drop-shadow(0 0 12px #c9a22740); }

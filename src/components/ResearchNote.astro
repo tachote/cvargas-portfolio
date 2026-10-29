@@ -1,0 +1,8 @@
+---
+import portfolio from '../data/portfolio-ui.json';
+const { label, detail, id } = Astro.props;
+---
+{detail ? <details class="research-note">
+  <summary aria-label={`${portfolio.research.detailLabel}: ${label}, ${id}`}>{label}<span aria-hidden="true">+</span></summary>
+  <p>{detail}</p>
+</details> : label}

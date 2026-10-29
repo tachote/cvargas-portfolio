@@ -1,0 +1,71 @@
+{
+  "title": "The Disclosure Protocol",
+  "description": "A separate operation in three chapters. Fixed loadouts, explicit objectives and an isolated research budget.",
+  "config": {
+    "version": 1,
+    "maxGold": 1000000000,
+    "maxRuns": 1000000000,
+    "maxRank": 5,
+    "maxAscensions": 10,
+    "upgradeBaseCost": 100,
+    "upgradeCostScale": 1.6,
+    "rankPowers": ["might", "health", "growth", "armor", "cooldown"],
+    "ascensionPower": "might"
+  },
+  "ui": {
+    "chapterComplete": "OBJECTIVE VERIFIED / operation chapter complete.",
+    "chapterFailed": "CONTRACT EXPIRED / the objective was not demonstrated in time.",
+    "locked": "Complete the previous chapter.",
+    "upgradeName": "Research budget upgrade",
+    "upgradeDescription": "Each rank installs one operation-only power: Might, Integrity, Growth, Armor, then Automation.",
+    "ascensionName": "New audit cycle",
+    "ascensionDescription": "Restart these chapters with an additional operation-only Might rank. Chapter progress, budget and purchased ranks reset; previous first-clear portfolio bounties stay claimed."
+  },
+  "chapters": [
+    {
+      "id": "foothold",
+      "name": "Initial Foothold",
+      "description": "Enumerate the attack surface with a constrained arsenal. Demonstrate enough impact to open the next scope.",
+      "objectiveText": "Defeat 100 vulnerabilities before extraction.",
+      "characterId": "hunter",
+      "stageId": "cathedral",
+      "duration": 240,
+      "weaponLimit": 2,
+      "arcanaId": "critical",
+      "operationGold": 120,
+      "mainBounty": 75,
+      "goals": [{ "stat": "kills", "target": 100, "label": "Vulnerabilities defeated" }]
+    },
+    {
+      "id": "weaponization",
+      "name": "Weaponize the Primitive",
+      "description": "Read the forbidden source and turn small primitives into a working build. Your budget belongs to this operation.",
+      "objectiveText": "Reach level 18 inside the repository.",
+      "characterId": "researcher",
+      "stageId": "library",
+      "duration": 300,
+      "weaponLimit": 3,
+      "arcanaId": "blood",
+      "operationGold": 180,
+      "mainBounty": 125,
+      "goals": [{ "stat": "level", "target": 18, "label": "Operator level" }]
+    },
+    {
+      "id": "disclosure",
+      "name": "Coordinated Disclosure",
+      "description": "Prove the chain against a privileged process, recover the source relic and leave with reproducible evidence.",
+      "objectiveText": "Recover the stage relic and defeat a boss.",
+      "characterId": "reverser",
+      "stageId": "foundry",
+      "duration": 420,
+      "weaponLimit": 4,
+      "arcanaId": "blood",
+      "operationGold": 300,
+      "mainBounty": 250,
+      "goals": [
+        { "stat": "relics", "target": 1, "label": "Source relic recovered" },
+        { "stat": "bosses", "target": 1, "label": "Boss defeated" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "music": {
+    "label": "Portfolio music",
+    "off": "MUSIC OFF",
+    "on": "MUSIC ON",
+    "paused": "PAUSED",
+    "muted": "MUTED",
+    "play": "Play ambient music",
+    "mute": "Mute ambient music",
+    "settings": "Music settings",
+    "volume": "Volume",
+    "unavailable": "Music could not start. Try again.",
+    "pausedHint": "Music pauses while the game is open or the tab is hidden."
+  },
+  "navigation": {
+    "label": "Explore the portfolio",
+    "eyebrow": "Field guide",
+    "progressLabel": "Portfolio reading progress",
+    "chapters": [
+      {
+        "id": "cves",
+        "label": "Research",
+        "subtitle": "Bestiary",
+        "kicker": "Research archive",
+        "icon": "sword"
+      },
+      {
+        "id": "awards",
+        "label": "Awards",
+        "subtitle": "Trophies",
+        "kicker": "Competition record",
+        "icon": "crown"
+      },
+      {
+        "id": "writing",
+        "label": "Writing",
+        "subtitle": "Grimoire",
+        "kicker": "Articles & field notes",
+        "icon": "book"
+      },
+      {
+        "id": "talks",
+        "label": "Talks",
+        "subtitle": "Transmissions",
+        "kicker": "Talks & conversations",
+        "icon": "broadcast"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "subtitle": "Attributes",
+        "kicker": "Character sheet",
+        "icon": "diamond"
+      },
+      {
+        "id": "certifications",
+        "label": "Credentials",
+        "subtitle": "Relics",
+        "kicker": "Credentials",
+        "icon": "shield"
+      },
+      {
+        "id": "contact",
+        "label": "Contact",
+        "subtitle": "Save Room",
+        "kicker": "Continue the conversation",
+        "icon": "flame"
+      }
+    ]
+  },
+  "research": {
+    "searchLabel": "Search the archive",
+    "searchPlaceholder": "Product, CVE, vulnerability or advisory\u2026",
+    "searchHint": "Search every disclosure, including the extended index.",
+    "classLabel": "Vulnerability class",
+    "detailLabel": "Vulnerability details",
+    "allClasses": "All classes",
+    "reset": "Reset filters",
+    "emptyTitle": "No matching disclosures.",
+    "emptyHint": "Try a product name, CVE ID or a different vulnerability class.",
+    "clear": "Clear search and filters",
+    "results": "{shown} of {total} disclosures",
+    "more": "Explore all {total} disclosures",
+    "filteredMore": "Extended index \u00b7 {shown} matching",
+    "archiveLabel": "Disclosure index",
+    "scoreLabel": "CVSS 4.0"
+  },
+  "art": {
+    "avatarAlt": "Cristian Vargas depicted as a pixel-art vulnerability hunter"
+  },
+  "writing": {
+    "title": "Writing",
+    "description": "Research, secure code review and lessons from the field.",
+    "featuredLabel": "Featured",
+    "readLabel": "Read article",
+    "artLabel": "THE GRIMOIRE",
+    "mediumEyebrow": "Field notes",
+    "mediumTitle": "The Grimoire",
+    "mediumDescription": "Follow the writing beyond this archive.",
+    "mediumLabel": "Read on Medium",
+    "allLabel": "All writing"
+  },
+  "talks": {
+    "title": "Talks",
+    "description": "AppSec conversations, practical workflows and certification journeys.",
+    "featuredLabel": "Featured talk",
+    "watchLabel": "Watch talk",
+    "artLabel": "TRANSMISSION",
+    "kindLabel": "Talk"
+  }
+}

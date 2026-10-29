@@ -1,0 +1,4496 @@
+{
+  "version": 1,
+  "title": "Patch the Night",
+  "subtitle": "Offensive research. Automatic fire. One more run.",
+  "config": {
+    "weaponSlots": 6,
+    "passiveSlots": 6,
+    "weaponMaxLevel": 8,
+    "passiveMaxLevel": 5,
+    "arcanaSlots": 3,
+    "choiceCount": 3,
+    "luckyChoiceCount": 4,
+    "luckyChoiceChance": 0.12,
+    "maxStep": 0.05,
+    "maxTick": 0.5,
+    "maxEnemies": 320,
+    "maxProjectiles": 280,
+    "maxPickups": 360,
+    "maxEffects": 180,
+    "maxProps": 72,
+    "maxHazards": 24,
+    "maxEvents": 80,
+    "maxNotices": 5,
+    "cellSize": 40,
+    "despawnRadius": 750,
+    "pickupMergeRadius": 18,
+    "xpMagnetSpeed": 210,
+    "pickupRadius": 7,
+    "baseXpNeed": 3,
+    "xpLinear": 2.5,
+    "xpQuadratic": 0.055,
+    "rerolls": 3,
+    "skips": 3,
+    "banishes": 3,
+    "reviveHp": 0.6,
+    "reviveInvulnerable": 3,
+    "reviveBlast": 160,
+    "reviveDamage": 250,
+    "reviveDuration": 0.65,
+    "critChance": 0.05,
+    "critMultiplier": 2,
+    "damageMinimum": 1,
+    "hitInvulnerable": 0.8,
+    "contactInterval": 0.6,
+    "hitTextInterval": 0.09,
+    "enemyKnockback": 4,
+    "effectDuration": 0.28,
+    "killEffectDuration": 0.25,
+    "killEffectRadius": 11,
+    "textDuration": 0.65,
+    "textRise": 12,
+    "chestGold": 35,
+    "chestThreeChance": 0.18,
+    "chestFiveChance": 0.04,
+    "chestEvolutionMinimum": {
+      "quick": 120,
+      "standard": 600,
+      "endless": 600
+    },
+    "modes": {
+      "quick": 600,
+      "standard": 1800,
+      "endless": 0
+    },
+    "arcanaTimes": {
+      "quick": [
+        180,
+        360
+      ],
+      "standard": [
+        660,
+        1260
+      ],
+      "endless": [
+        660,
+        1260
+      ]
+    },
+    "hurrySpeed": 2,
+    "hyperSpeed": 1.2,
+    "hyperEnemySpeed": 1.1,
+    "hyperGold": 1.5,
+    "enemyHpPerMinute": 0.05,
+    "enemyDamagePerMinute": 0.025,
+    "enemySpeedPerMinute": 0.003,
+    "enemyXpPerMinute": 0.012,
+    "spawnBaseInterval": 0.85,
+    "spawnMinimumInterval": 0.12,
+    "spawnProgressPressure": 0.58,
+    "spawnRingPadding": 32,
+    "spawnSafeRadius": 115,
+    "spawnBatchMinutes": 5,
+    "spawnBatchCap": 4,
+    "bossEvery": 60,
+    "bossHpPerMinute": 0.18,
+    "bossWarning": 1.2,
+    "finalBossLead": 35,
+    "finalBossHpMultiplier": 3,
+    "eliteEvery": 24,
+    "eliteHpMultiplier": 4,
+    "eliteSizeMultiplier": 1.4,
+    "eliteDamageMultiplier": 1.4,
+    "eliteXpMultiplier": 5,
+    "eliteGold": 8,
+    "propCellSize": 96,
+    "propCellRadius": 3,
+    "propCellCap": 160,
+    "propChance": 0.38,
+    "propHp": 12,
+    "propRadius": 8,
+    "propRespawnDistance": 420,
+    "propDropWeights": {
+      "gold": 40,
+      "heal": 20,
+      "xp": 20,
+      "magnet": 8,
+      "bomb": 6,
+      "freeze": 6
+    },
+    "goldPickupValue": 5,
+    "healPickupValue": 24,
+    "propXp": 6,
+    "bombDamage": 400,
+    "bombRadius": 360,
+    "freezeDuration": 5,
+    "relicRadius": 11,
+    "relicGold": 60,
+    "relicXp": 40,
+    "bossDropXp": 18,
+    "bossDropGold": 15,
+    "bossDamageBonus": 1.25,
+    "screenPurgeRadius": 440,
+    "levelHeal": 2,
+    "levelHealChoice": 30,
+    "levelGoldChoice": 25,
+    "regenTick": 1,
+    "bossPhaseThresholds": [
+      0.65,
+      0.3
+    ],
+    "bossAttackBase": 4.5,
+    "bossAttackPhaseReduction": 0.8,
+    "bossBoltCount": 8,
+    "bossBoltPhaseCount": 4,
+    "bossBoltSpeed": 58,
+    "bossBoltLife": 6,
+    "bossRingRadius": 48,
+    "bossRingPhaseRadius": 12,
+    "bossHazardDamage": 12,
+    "bossHazardLife": 1.4,
+    "bossHazardTell": 1.2,
+    "enemyBoltLife": 6,
+    "enemyBoltSpeed": 58,
+    "enemySummonCount": 3,
+    "enemySummonLimit": 18,
+    "enemySpecialCooldown": 5,
+    "ssrfBlinkDistance": 75,
+    "ssrfBlinkCooldown": 6,
+    "authWindup": 0.65,
+    "authChargeTime": 0.6,
+    "authChargeMultiplier": 3.2,
+    "raceFrequency": 7,
+    "raceAmplitude": 0.65,
+    "prototypeZoneRadius": 22,
+    "prototypeZoneLife": 2,
+    "prototypeZoneInterval": 4,
+    "prototypeZoneDamage": 5,
+    "idorSplitHp": 0.45,
+    "idorSplitCount": 2,
+    "dropScatter": 8,
+    "damageTextCap": 30,
+    "orbitHitInterval": 0.38,
+    "poolHitInterval": 0.5,
+    "runeHitInterval": 0.35,
+    "crossHitInterval": 0.45,
+    "lifeStealFraction": 0.025,
+    "lifeStealCap": 2,
+    "bleedFraction": 0.18,
+    "bleedDuration": 2,
+    "bloodArcanaHeal": 0.25,
+    "goldArcanaHeal": 0.1,
+    "iceArcanaChance": 0.15,
+    "iceArcanaDuration": 1,
+    "explosionArcanaRadius": 24,
+    "explosionArcanaDamage": 0.3,
+    "ricochetArcanaBounces": 2,
+    "criticalArcanaChance": 0.15,
+    "criticalArcanaMultiplier": 0.5,
+    "projectileTrailInterval": 0.12,
+    "pickupLife": 600,
+    "defaultViewport": {
+      "width": 480,
+      "height": 300
+    },
+    "targetingRadius": 280,
+    "existingChoiceWeight": 2,
+    "newChoiceWeight": 1,
+    "knifeFanAngle": 0.13,
+    "wandFanAngle": 0.25,
+    "axeFanAngle": 0.35,
+    "fireballFanAngle": 0.28,
+    "evolvedRuneRadius": 1.4,
+    "evolvedCrossRadius": 1.4,
+    "evolvedFireballBlast": 1.6,
+    "evolvedWandBlast": 4,
+    "poolReturnSpeedFraction": 0.3333,
+    "casterRetreatSpeed": -0.4,
+    "birdAngleStep": 0.7853981633974483,
+    "bossLeashMultiplier": 1.45,
+    "minimumCooldownMultiplier": 0.2,
+    "maximumCooldownMultiplier": 2,
+    "bossRingInnerRatio": 0.6,
+    "enemyBoltRadius": 3.5,
+    "poolTargetRangeMultiplier": 3,
+    "lightningChainRangeMultiplier": 2,
+    "limitBreakEnabled": true,
+    "limitBreakStats": [
+      {
+        "stat": "damage",
+        "amount": 0.04,
+        "label": "Might",
+        "description": "+4% damage for this weapon."
+      },
+      {
+        "stat": "area",
+        "amount": 0.05,
+        "label": "Area",
+        "description": "+5% area for this weapon."
+      },
+      {
+        "stat": "speed",
+        "amount": 0.05,
+        "label": "Velocity",
+        "description": "+5% projectile speed for this weapon."
+      },
+      {
+        "stat": "duration",
+        "amount": 0.05,
+        "label": "Persistence",
+        "description": "+5% duration for this weapon."
+      },
+      {
+        "stat": "cooldown",
+        "amount": -0.015,
+        "label": "Automation",
+        "description": "\u22121.5% cooldown for this weapon."
+      },
+      {
+        "stat": "amount",
+        "amount": 0.2,
+        "label": "Concurrency",
+        "description": "+1 projectile after five Concurrency upgrades."
+      }
+    ],
+    "stageSweepLengthMinimum": 180,
+    "stageSweepViewportRatio": 0.95,
+    "stageGravityCoreRatio": 0.35,
+    "stageGravityEffectDuration": 0.4,
+    "upgradeDescriptionStats": 4,
+    "knifeAimCone": 1.4,
+    "runeFragmentInterval": 0.5,
+    "runeFragmentRadius": 16,
+    "runeFragmentDuration": 1.2,
+    "runeFragmentDamage": 0.24,
+    "openingWaveCount": 8,
+    "openingWaveRadius": 95,
+    "openingEnemy": "xss",
+    "authoredEventRadius": 170,
+    "authoredEventQuickScale": 3,
+    "authoredRushLineSpacing": 18,
+    "authoredEliteEvery": 4,
+    "objectiveTriggerRadius": 155,
+    "objectiveGuardRadius": 32,
+    "objectiveGold": 90,
+    "objectiveXp": 55,
+    "objectiveMight": 0.1,
+    "secretObjectiveGold": 150,
+    "geometryCellSize": 110,
+    "geometryCellRadius": 3,
+    "geometryPillarModulo": 4,
+    "geometryPillarWidth": 25,
+    "geometryPillarHeight": 36,
+    "geometryWallThickness": 28,
+    "geometryWallViewportMultiplier": 3,
+    "merchantChoiceCount": 3,
+    "merchantPurchaseLimit": 3,
+    "earlyLoopDeadline": 25,
+    "geometryLandmarkClearance": 45,
+    "merchantReturnDistance": 35,
+    "merchantInteractionCooldown": 1,
+    "bossKnockbackResistance": 0.15,
+    "eliteKnockbackResistance": 0.5,
+    "inverseEnemyHp": 2,
+    "inverseEnemySpeed": 1.15,
+    "inverseSpawnRate": 1.2,
+    "inverseGold": 2,
+    "inverseGrowth": 1.2,
+    "spawnBatchHardCap": 12,
+    "endlessCycleDuration": 1800,
+    "endlessHpPerCycle": 0.15,
+    "endlessSpeedPerCycle": 0.08,
+    "endlessSpawnPerCycle": 0.15,
+    "endlessGoldPerCycle": 0.2,
+    "endlessArcanaSlots": 6,
+    "maxEggs": 9999,
+    "eggCost": 500,
+    "sealLimit": 6,
+    "stageItemTriggerRadius": 105,
+    "stageItemGuardRadius": 24,
+    "stageItemMaxedGold": 35,
+    "goldFeverThreshold": 25,
+    "goldFeverChainWindow": 8,
+    "goldFeverDuration": 12,
+    "goldFeverExtension": 0.08,
+    "goldFeverMaxDuration": 24,
+    "goldFeverMultiplier": 1.5,
+    "goldFeverDropEvery": 3,
+    "goldFeverDropValue": 1,
+    "eggStats": [
+      {
+        "stat": "might",
+        "amount": 0.005,
+        "label": "Might"
+      },
+      {
+        "stat": "cooldown",
+        "amount": -0.001,
+        "label": "Automation"
+      },
+      {
+        "stat": "area",
+        "amount": 0.005,
+        "label": "Area"
+      },
+      {
+        "stat": "duration",
+        "amount": 0.005,
+        "label": "Persistence"
+      },
+      {
+        "stat": "projectileSpeed",
+        "amount": 0.005,
+        "label": "Velocity"
+      },
+      {
+        "stat": "health",
+        "amount": 0.005,
+        "label": "Integrity"
+      },
+      {
+        "stat": "growth",
+        "amount": 0.005,
+        "label": "Growth"
+      },
+      {
+        "stat": "luck",
+        "amount": 0.005,
+        "label": "Luck"
+      }
+    ],
+    "purgeProtectedKinds": [
+      "relic",
+      "coffin",
+      "merchant",
+      "stageitem",
+      "arsenal"
+    ],
+    "arcanaDraftSize": 3,
+    "arsenalFallbackGold": 60,
+    "fusionProjectileCap": 8,
+    "aegisMaxCharges": 6,
+    "aegisMaxRadius": 180,
+    "aegisInvulnerability": 0.4,
+    "aegisEffectDuration": 0.38,
+    "lancetDirections": 12,
+    "lancetMaxBeams": 6,
+    "lancetMaxRange": 480,
+    "lancetMaxFreeze": 8,
+    "lancetBeamLife": 0.24,
+    "lancetBossFreezeMultiplier": 0.25,
+    "lancetMaxHealthFraction": 0.24,
+    "lancetBossHealthMultiplier": 0.2,
+    "inverseArcanaBonus": 1
+  },
+  "player": {
+    "hp": 100,
+    "speed": 92,
+    "magnet": 25,
+    "r": 7,
+    "armor": 0,
+    "might": 1,
+    "cooldown": 1,
+    "area": 1,
+    "duration": 1,
+    "amount": 0,
+    "projectileSpeed": 1,
+    "growth": 1,
+    "luck": 1,
+    "curse": 1,
+    "regen": 0,
+    "dashDuration": 0.2,
+    "dashCooldown": 3.5,
+    "dashMultiplier": 3.1,
+    "dashInvulnerable": 0.25
+  },
+  "characters": [
+    {
+      "id": "hunter",
+      "name": "The Hunter",
+      "description": "A methodical exploit hunter with a whip made of packet traces.",
+      "bonus": "+10% Might. Gains +1% Might every level.",
+      "color": "#d9b35f",
+      "icon": "hunter",
+      "weapon": "whip",
+      "stats": {
+        "might": 0.1
+      },
+      "perLevel": {
+        "might": 0.01
+      },
+      "unlocked": true,
+      "unlock": "Available from the first run.",
+      "specialty": "Web AppSec / HTTP desync"
+    },
+    {
+      "id": "researcher",
+      "name": "The Researcher",
+      "description": "Reads the source. Finds the bug. Lights up the room.",
+      "bonus": "+25% Growth and +30 pickup range.",
+      "color": "#94c7e0",
+      "icon": "researcher",
+      "weapon": "wand",
+      "stats": {
+        "growth": 0.25,
+        "magnet": 30
+      },
+      "unlocked": true,
+      "unlock": "Available from the first run.",
+      "specialty": "Source review / SSTI"
+    },
+    {
+      "id": "operator",
+      "name": "The Operator",
+      "description": "A red-team operator who never stops moving.",
+      "bonus": "+18% Speed and one extra revival.",
+      "color": "#d66e73",
+      "icon": "operator",
+      "weapon": "knife",
+      "stats": {
+        "speed": 0.18,
+        "revival": 1
+      },
+      "unlocked": true,
+      "unlock": "Available from the first run.",
+      "specialty": "Red team / query injection"
+    },
+    {
+      "id": "reverser",
+      "name": "The Reverser",
+      "description": "Turns corrupted memory into a perfectly controlled orbit.",
+      "bonus": "+1 projectile and +20% Duration.",
+      "color": "#bb9ade",
+      "icon": "reverser",
+      "weapon": "orbit",
+      "stats": {
+        "amount": 1,
+        "duration": 0.2
+      },
+      "unlocked": false,
+      "unlock": "Defeat 1,000 vulnerabilities across your runs.",
+      "unlockRequirement": {
+        "stat": "kills",
+        "value": 1000
+      },
+      "specialty": "Binary exploitation / ROP"
+    },
+    {
+      "id": "cryptanalyst",
+      "name": "The Cryptanalyst",
+      "description": "Searches the keyspace until the entire night gives way.",
+      "bonus": "\u221215% weapon cooldown and +15% Luck.",
+      "color": "#78c6ab",
+      "icon": "cryptanalyst",
+      "weapon": "lightning",
+      "stats": {
+        "cooldown": -0.15,
+        "luck": 0.15
+      },
+      "unlocked": false,
+      "unlock": "Discover your first weapon evolution.",
+      "unlockRequirement": {
+        "stat": "evolutions",
+        "value": 1
+      },
+      "specialty": "Fuzzing / entropy"
+    },
+    {
+      "id": "phantom",
+      "name": "The Phantom",
+      "description": "An untracked process, already inside the kernel.",
+      "bonus": "+30% Area, +2 Armor and +15% Curse.",
+      "color": "#c4c4d8",
+      "icon": "phantom",
+      "weapon": "rune",
+      "stats": {
+        "area": 0.3,
+        "armor": 2,
+        "curse": 0.15
+      },
+      "unlocked": false,
+      "unlock": "Complete one run.",
+      "unlockRequirement": {
+        "stat": "wins",
+        "value": 1
+      },
+      "specialty": "Kernel / privilege boundaries"
+    }
+  ],
+  "stages": [
+    {
+      "id": "cathedral",
+      "name": "The Attack Surface",
+      "description": "An exposed web perimeter. Reverse proxies disagree, endpoints leak and every 403 looks negotiable. The Breach Bell closes the scope around you.",
+      "color": "#b39a66",
+      "icon": "cathedral",
+      "spawnRate": 1,
+      "enemyHp": 1,
+      "enemySpeed": 1,
+      "goldMultiplier": 1,
+      "palette": [
+        "#17131c",
+        "#25202b",
+        "#413443",
+        "#b9a170"
+      ],
+      "enemyPool": [
+        "xss",
+        "sqli",
+        "idor",
+        "auth",
+        "race",
+        "rce",
+        "deser",
+        "prototype",
+        "ssrf"
+      ],
+      "bossKinds": [
+        "sqli",
+        "auth",
+        "rce",
+        "deser"
+      ],
+      "relic": {
+        "name": "The Scope Ledger",
+        "description": "+20 pickup range for this run.",
+        "x": 320,
+        "y": -180,
+        "stat": "magnet",
+        "value": 20,
+        "lore": "The forgotten endpoint was in scope all along."
+      },
+      "propName": "Candle terminal",
+      "difficulty": "Balanced \u00b7 open ground",
+      "landmarkHint": "Follow the gold signal northeast.",
+      "mechanic": {
+        "id": "bell",
+        "name": "WAF Rule Reload",
+        "description": "The cathedral bell summons a ring of fresh attack vectors.",
+        "interval": 45,
+        "initial": 30,
+        "count": 12,
+        "radius": 170,
+        "enemy": "xss",
+        "eliteEvery": 3
+      },
+      "objective": {
+        "x": 260,
+        "y": 140,
+        "name": "The Quarantined Researcher",
+        "description": "Break the quarantine by defeating all wardens, then recover the sealed researcher.",
+        "guardKind": "auth",
+        "guardCount": 3
+      },
+      "merchant": {
+        "x": -190,
+        "y": 70,
+        "name": "The Grey-Hat Broker",
+        "description": "Trade current-run bounty for immediate power. Unspent gold can be banked after the run."
+      },
+      "geometry": {
+        "kind": "open"
+      },
+      "events": [
+        {
+          "time": 60,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "ring",
+          "kind": "sqli",
+          "count": 7,
+          "radius": 170
+        },
+        {
+          "time": 120,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 8,
+          "radius": 170
+        },
+        {
+          "time": 180,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "elites",
+          "kind": "auth",
+          "count": 9,
+          "radius": 170
+        },
+        {
+          "time": 240,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "ring",
+          "kind": "race",
+          "count": 10,
+          "radius": 170
+        },
+        {
+          "time": 300,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "rush-lines",
+          "kind": "rce",
+          "count": 11,
+          "radius": 170
+        },
+        {
+          "time": 360,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "elites",
+          "kind": "deser",
+          "count": 12,
+          "radius": 170
+        },
+        {
+          "time": 420,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "ring",
+          "kind": "prototype",
+          "count": 13,
+          "radius": 170
+        },
+        {
+          "time": 480,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "rush-lines",
+          "kind": "ssrf",
+          "count": 14,
+          "radius": 170
+        },
+        {
+          "time": 540,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "elites",
+          "kind": "xss",
+          "count": 15,
+          "radius": 170
+        },
+        {
+          "time": 600,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "ring",
+          "kind": "sqli",
+          "count": 16,
+          "radius": 170
+        },
+        {
+          "time": 660,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 17,
+          "radius": 170
+        },
+        {
+          "time": 720,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "elites",
+          "kind": "auth",
+          "count": 18,
+          "radius": 170
+        },
+        {
+          "time": 780,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "ring",
+          "kind": "race",
+          "count": 19,
+          "radius": 170
+        },
+        {
+          "time": 840,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "rush-lines",
+          "kind": "rce",
+          "count": 20,
+          "radius": 170
+        },
+        {
+          "time": 900,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "elites",
+          "kind": "deser",
+          "count": 21,
+          "radius": 170
+        },
+        {
+          "time": 960,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "ring",
+          "kind": "prototype",
+          "count": 22,
+          "radius": 170
+        },
+        {
+          "time": 1020,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "rush-lines",
+          "kind": "ssrf",
+          "count": 23,
+          "radius": 170
+        },
+        {
+          "time": 1080,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "elites",
+          "kind": "xss",
+          "count": 24,
+          "radius": 170
+        },
+        {
+          "time": 1140,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "ring",
+          "kind": "sqli",
+          "count": 25,
+          "radius": 170
+        },
+        {
+          "time": 1200,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 26,
+          "radius": 170
+        },
+        {
+          "time": 1260,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "elites",
+          "kind": "auth",
+          "count": 27,
+          "radius": 170
+        },
+        {
+          "time": 1320,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "ring",
+          "kind": "race",
+          "count": 28,
+          "radius": 170
+        },
+        {
+          "time": 1380,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "rush-lines",
+          "kind": "rce",
+          "count": 29,
+          "radius": 170
+        },
+        {
+          "time": 1440,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "elites",
+          "kind": "deser",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1500,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "ring",
+          "kind": "prototype",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1560,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "rush-lines",
+          "kind": "ssrf",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1620,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "elites",
+          "kind": "xss",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1680,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "ring",
+          "kind": "sqli",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1740,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1800,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "elites",
+          "kind": "auth",
+          "count": 30,
+          "radius": 170
+        }
+      ],
+      "scope": "HTTPS / reverse proxies / exposed APIs",
+      "briefing": "scope.test has a reverse proxy, a WAF and a very optimistic threat model. Enumerate the routes. Find the parsing gap.",
+      "graffiti": [
+        "GET /admin \u2192 403?",
+        "CL.TE \u2260 TE.CL",
+        "Host: scope.test",
+        "X-Forwarded-For",
+        "WAF says: probably fine"
+      ],
+      "items": [
+        {
+          "id": "cathedral-magnet",
+          "passiveId": "magnet",
+          "x": -370,
+          "y": -160,
+          "guardKind": "ssrf"
+        },
+        {
+          "id": "cathedral-health",
+          "passiveId": "health",
+          "x": 400,
+          "y": 220,
+          "guardKind": "auth"
+        }
+      ],
+      "arsenal": {
+        "x": 160,
+        "y": -85,
+        "name": "The Zero-Day Vault"
+      }
+    },
+    {
+      "id": "library",
+      "name": "The Forbidden Repository",
+      "description": "A source-code archive with no tenant isolation. Query floods, copied identities and deserialized objects hunt between firewall lanes.",
+      "color": "#839aaf",
+      "icon": "library",
+      "spawnRate": 0.9,
+      "enemyHp": 1.08,
+      "enemySpeed": 0.95,
+      "goldMultiplier": 1.1,
+      "palette": [
+        "#131820",
+        "#202c37",
+        "#3c5365",
+        "#99b5bc"
+      ],
+      "enemyPool": [
+        "sqli",
+        "idor",
+        "ssrf",
+        "xss",
+        "deser",
+        "auth",
+        "prototype",
+        "rce",
+        "race"
+      ],
+      "bossKinds": [
+        "idor",
+        "deser",
+        "ssrf",
+        "rce"
+      ],
+      "relic": {
+        "name": "Source Map",
+        "description": "+15% Growth for this run.",
+        "x": -360,
+        "y": 80,
+        "stat": "growth",
+        "value": 0.15,
+        "lore": "The source map was shipped to production. Of course it was."
+      },
+      "propName": "Corrupted archive",
+      "difficulty": "Methodical \u00b7 resilient enemies",
+      "landmarkHint": "Search the archives to the west.",
+      "mechanic": {
+        "id": "sweep",
+        "name": "Authorization Middleware Sweep",
+        "description": "Moving index sweeps seal two lanes. Stay in the clear corridor.",
+        "interval": 35,
+        "initial": 25,
+        "radius": 9,
+        "laneOffset": 35,
+        "delay": 1.4,
+        "life": 3,
+        "damage": 10
+      },
+      "objective": {
+        "x": -280,
+        "y": -90,
+        "name": "The Redacted Maintainer",
+        "description": "Break the quarantine by defeating all wardens, then recover the sealed researcher.",
+        "guardKind": "idor",
+        "guardCount": 3
+      },
+      "merchant": {
+        "x": 200,
+        "y": 80,
+        "name": "The Grey-Hat Broker",
+        "description": "Trade current-run bounty for immediate power. Unspent gold can be banked after the run."
+      },
+      "geometry": {
+        "kind": "corridor",
+        "halfHeight": 180
+      },
+      "events": [
+        {
+          "time": 60,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "rush-lines",
+          "kind": "ssrf",
+          "count": 7,
+          "radius": 170
+        },
+        {
+          "time": 120,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "elites",
+          "kind": "xss",
+          "count": 8,
+          "radius": 170
+        },
+        {
+          "time": 180,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "ring",
+          "kind": "deser",
+          "count": 9,
+          "radius": 170
+        },
+        {
+          "time": 240,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "rush-lines",
+          "kind": "auth",
+          "count": 10,
+          "radius": 170
+        },
+        {
+          "time": 300,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "elites",
+          "kind": "prototype",
+          "count": 11,
+          "radius": 170
+        },
+        {
+          "time": 360,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "ring",
+          "kind": "rce",
+          "count": 12,
+          "radius": 170
+        },
+        {
+          "time": 420,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "rush-lines",
+          "kind": "race",
+          "count": 13,
+          "radius": 170
+        },
+        {
+          "time": 480,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "elites",
+          "kind": "sqli",
+          "count": 14,
+          "radius": 170
+        },
+        {
+          "time": 540,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "ring",
+          "kind": "idor",
+          "count": 15,
+          "radius": 170
+        },
+        {
+          "time": 600,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "rush-lines",
+          "kind": "ssrf",
+          "count": 16,
+          "radius": 170
+        },
+        {
+          "time": 660,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "elites",
+          "kind": "xss",
+          "count": 17,
+          "radius": 170
+        },
+        {
+          "time": 720,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "ring",
+          "kind": "deser",
+          "count": 18,
+          "radius": 170
+        },
+        {
+          "time": 780,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "rush-lines",
+          "kind": "auth",
+          "count": 19,
+          "radius": 170
+        },
+        {
+          "time": 840,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "elites",
+          "kind": "prototype",
+          "count": 20,
+          "radius": 170
+        },
+        {
+          "time": 900,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "ring",
+          "kind": "rce",
+          "count": 21,
+          "radius": 170
+        },
+        {
+          "time": 960,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "rush-lines",
+          "kind": "race",
+          "count": 22,
+          "radius": 170
+        },
+        {
+          "time": 1020,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "elites",
+          "kind": "sqli",
+          "count": 23,
+          "radius": 170
+        },
+        {
+          "time": 1080,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "ring",
+          "kind": "idor",
+          "count": 24,
+          "radius": 170
+        },
+        {
+          "time": 1140,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "rush-lines",
+          "kind": "ssrf",
+          "count": 25,
+          "radius": 170
+        },
+        {
+          "time": 1200,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "elites",
+          "kind": "xss",
+          "count": 26,
+          "radius": 170
+        },
+        {
+          "time": 1260,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "ring",
+          "kind": "deser",
+          "count": 27,
+          "radius": 170
+        },
+        {
+          "time": 1320,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "rush-lines",
+          "kind": "auth",
+          "count": 28,
+          "radius": 170
+        },
+        {
+          "time": 1380,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "elites",
+          "kind": "prototype",
+          "count": 29,
+          "radius": 170
+        },
+        {
+          "time": 1440,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "ring",
+          "kind": "rce",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1500,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "rush-lines",
+          "kind": "race",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1560,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "elites",
+          "kind": "sqli",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1620,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "ring",
+          "kind": "idor",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1680,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "rush-lines",
+          "kind": "ssrf",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1740,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "elites",
+          "kind": "xss",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1800,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "ring",
+          "kind": "deser",
+          "count": 30,
+          "radius": 170
+        }
+      ],
+      "scope": "source review / multi-tenant APIs / object ownership",
+      "briefing": "The repository includes the source, the secrets and the production database password in an old commit. Read carefully.",
+      "graffiti": [
+        "git log --all",
+        "TODO: add authz",
+        "tenant_id = ?",
+        "SELECT * FROM secrets",
+        "// temporary bypass"
+      ],
+      "items": [
+        {
+          "id": "library-growth",
+          "passiveId": "growth",
+          "x": 440,
+          "y": -90,
+          "guardKind": "idor"
+        },
+        {
+          "id": "library-cooldown",
+          "passiveId": "cooldown",
+          "x": -540,
+          "y": 70,
+          "guardKind": "race"
+        }
+      ],
+      "arsenal": {
+        "x": -175,
+        "y": -85,
+        "name": "The Zero-Day Vault"
+      }
+    },
+    {
+      "id": "foundry",
+      "name": "The Exploit Foundry",
+      "description": "A native exploitation foundry. Heap corruption, gadget chains and race windows boil between solid allocator pillars and erupting payload vents.",
+      "color": "#d47c49",
+      "icon": "foundry",
+      "spawnRate": 1.08,
+      "enemyHp": 1.12,
+      "enemySpeed": 1.03,
+      "goldMultiplier": 1.2,
+      "palette": [
+        "#201414",
+        "#36201c",
+        "#60392a",
+        "#d1844f"
+      ],
+      "enemyPool": [
+        "race",
+        "auth",
+        "sqli",
+        "prototype",
+        "rce",
+        "deser",
+        "xss",
+        "ssrf",
+        "idor"
+      ],
+      "bossKinds": [
+        "race",
+        "prototype",
+        "deser",
+        "rce"
+      ],
+      "relic": {
+        "name": "Arbitrary Write",
+        "description": "+15% Might for this run.",
+        "x": 180,
+        "y": 340,
+        "stat": "might",
+        "value": 0.15,
+        "lore": "You control the address. You control what gets written."
+      },
+      "propName": "Payload crucible",
+      "difficulty": "Hard \u00b7 faster waves",
+      "landmarkHint": "A crucible burns to the south.",
+      "mechanic": {
+        "id": "vents",
+        "name": "Heap Corruption Burst",
+        "description": "Three crucibles rupture around your current position. Move before they ignite.",
+        "interval": 30,
+        "initial": 20,
+        "count": 3,
+        "radius": 25,
+        "scatter": 65,
+        "delay": 1.5,
+        "life": 4,
+        "damage": 12
+      },
+      "objective": {
+        "x": -220,
+        "y": 220,
+        "name": "The Sealed Operator",
+        "description": "Break the quarantine by defeating all wardens, then recover the sealed researcher.",
+        "guardKind": "sqli",
+        "guardCount": 3
+      },
+      "merchant": {
+        "x": 170,
+        "y": -160,
+        "name": "The Grey-Hat Broker",
+        "description": "Trade current-run bounty for immediate power. Unspent gold can be banked after the run."
+      },
+      "geometry": {
+        "kind": "pillars"
+      },
+      "events": [
+        {
+          "time": 60,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "elites",
+          "kind": "prototype",
+          "count": 7,
+          "radius": 170
+        },
+        {
+          "time": 120,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "ring",
+          "kind": "rce",
+          "count": 8,
+          "radius": 170
+        },
+        {
+          "time": 180,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "rush-lines",
+          "kind": "deser",
+          "count": 9,
+          "radius": 170
+        },
+        {
+          "time": 240,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "elites",
+          "kind": "xss",
+          "count": 10,
+          "radius": 170
+        },
+        {
+          "time": 300,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "ring",
+          "kind": "ssrf",
+          "count": 11,
+          "radius": 170
+        },
+        {
+          "time": 360,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 12,
+          "radius": 170
+        },
+        {
+          "time": 420,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "elites",
+          "kind": "race",
+          "count": 13,
+          "radius": 170
+        },
+        {
+          "time": 480,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "ring",
+          "kind": "auth",
+          "count": 14,
+          "radius": 170
+        },
+        {
+          "time": 540,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "rush-lines",
+          "kind": "sqli",
+          "count": 15,
+          "radius": 170
+        },
+        {
+          "time": 600,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "elites",
+          "kind": "prototype",
+          "count": 16,
+          "radius": 170
+        },
+        {
+          "time": 660,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "ring",
+          "kind": "rce",
+          "count": 17,
+          "radius": 170
+        },
+        {
+          "time": 720,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "rush-lines",
+          "kind": "deser",
+          "count": 18,
+          "radius": 170
+        },
+        {
+          "time": 780,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "elites",
+          "kind": "xss",
+          "count": 19,
+          "radius": 170
+        },
+        {
+          "time": 840,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "ring",
+          "kind": "ssrf",
+          "count": 20,
+          "radius": 170
+        },
+        {
+          "time": 900,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 21,
+          "radius": 170
+        },
+        {
+          "time": 960,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "elites",
+          "kind": "race",
+          "count": 22,
+          "radius": 170
+        },
+        {
+          "time": 1020,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "ring",
+          "kind": "auth",
+          "count": 23,
+          "radius": 170
+        },
+        {
+          "time": 1080,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "rush-lines",
+          "kind": "sqli",
+          "count": 24,
+          "radius": 170
+        },
+        {
+          "time": 1140,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "elites",
+          "kind": "prototype",
+          "count": 25,
+          "radius": 170
+        },
+        {
+          "time": 1200,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "ring",
+          "kind": "rce",
+          "count": 26,
+          "radius": 170
+        },
+        {
+          "time": 1260,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "rush-lines",
+          "kind": "deser",
+          "count": 27,
+          "radius": 170
+        },
+        {
+          "time": 1320,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "elites",
+          "kind": "xss",
+          "count": 28,
+          "radius": 170
+        },
+        {
+          "time": 1380,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "ring",
+          "kind": "ssrf",
+          "count": 29,
+          "radius": 170
+        },
+        {
+          "time": 1440,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1500,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "elites",
+          "kind": "race",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1560,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "ring",
+          "kind": "auth",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1620,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "rush-lines",
+          "kind": "sqli",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1680,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "elites",
+          "kind": "prototype",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1740,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "ring",
+          "kind": "rce",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1800,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "rush-lines",
+          "kind": "deser",
+          "count": 30,
+          "radius": 170
+        }
+      ],
+      "scope": "native exploitation / heap / ROP gadgets",
+      "briefing": "NX is enabled. ASLR is on. The developer says the crash is harmless. Turn the primitive into a working chain.",
+      "graffiti": [
+        "RIP=0x41414141",
+        "NX / PIE / ASLR",
+        "pop rdi; ret;",
+        "malloc \u2192 free \u2192 use",
+        "pwndbg> cyclic"
+      ],
+      "items": [
+        {
+          "id": "foundry-armor",
+          "passiveId": "armor",
+          "x": -370,
+          "y": -210,
+          "guardKind": "sqli"
+        },
+        {
+          "id": "foundry-area",
+          "passiveId": "area",
+          "x": 370,
+          "y": 170,
+          "guardKind": "prototype"
+        }
+      ],
+      "arsenal": {
+        "x": 185,
+        "y": 90,
+        "name": "The Zero-Day Vault"
+      }
+    },
+    {
+      "id": "void",
+      "name": "Ring Zero",
+      "description": "A fractured kernel beneath every trust boundary. TOCTOU twins, polluted prototypes and privileged processes circle gravitational faults.",
+      "color": "#af86d7",
+      "icon": "void",
+      "spawnRate": 1.14,
+      "enemyHp": 1.18,
+      "enemySpeed": 1.06,
+      "goldMultiplier": 1.3,
+      "palette": [
+        "#141021",
+        "#251d38",
+        "#49335f",
+        "#ac8fc9"
+      ],
+      "enemyPool": [
+        "ssrf",
+        "prototype",
+        "idor",
+        "rce",
+        "auth",
+        "race",
+        "deser",
+        "sqli",
+        "xss"
+      ],
+      "bossKinds": [
+        "ssrf",
+        "prototype",
+        "rce",
+        "auth"
+      ],
+      "relic": {
+        "name": "Root of Trust",
+        "description": "+1 Armor and one extra revival.",
+        "x": -260,
+        "y": -280,
+        "stat": "armor",
+        "value": 1,
+        "revives": 1,
+        "lore": "The root of trust has misplaced its trust."
+      },
+      "propName": "Kernel obelisk",
+      "difficulty": "Expert \u00b7 dense attack surface",
+      "landmarkHint": "Trace the signal northwest.",
+      "mechanic": {
+        "id": "gravity",
+        "name": "Privilege Boundary Fault",
+        "description": "A kernel rift pulls you toward its damaging core. Dash clear of the fault.",
+        "interval": 28,
+        "initial": 20,
+        "radius": 22,
+        "pullRadius": 95,
+        "pullStrength": 24,
+        "scatter": 55,
+        "delay": 1.2,
+        "life": 5,
+        "damage": 9
+      },
+      "objective": {
+        "x": 230,
+        "y": -230,
+        "name": "The Lost Process",
+        "description": "Break the quarantine by defeating all wardens, then recover the sealed researcher.",
+        "guardKind": "ssrf",
+        "guardCount": 3
+      },
+      "merchant": {
+        "x": -160,
+        "y": 150,
+        "name": "The Grey-Hat Broker",
+        "description": "Trade current-run bounty for immediate power. Unspent gold can be banked after the run."
+      },
+      "geometry": {
+        "kind": "open"
+      },
+      "events": [
+        {
+          "time": 60,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "ring",
+          "kind": "auth",
+          "count": 7,
+          "radius": 170
+        },
+        {
+          "time": 120,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "rush-lines",
+          "kind": "race",
+          "count": 8,
+          "radius": 170
+        },
+        {
+          "time": 180,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "elites",
+          "kind": "deser",
+          "count": 9,
+          "radius": 170
+        },
+        {
+          "time": 240,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "ring",
+          "kind": "sqli",
+          "count": 10,
+          "radius": 170
+        },
+        {
+          "time": 300,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "rush-lines",
+          "kind": "xss",
+          "count": 11,
+          "radius": 170
+        },
+        {
+          "time": 360,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "elites",
+          "kind": "ssrf",
+          "count": 12,
+          "radius": 170
+        },
+        {
+          "time": 420,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "ring",
+          "kind": "prototype",
+          "count": 13,
+          "radius": 170
+        },
+        {
+          "time": 480,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 14,
+          "radius": 170
+        },
+        {
+          "time": 540,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "elites",
+          "kind": "rce",
+          "count": 15,
+          "radius": 170
+        },
+        {
+          "time": 600,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "ring",
+          "kind": "auth",
+          "count": 16,
+          "radius": 170
+        },
+        {
+          "time": 660,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "rush-lines",
+          "kind": "race",
+          "count": 17,
+          "radius": 170
+        },
+        {
+          "time": 720,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "elites",
+          "kind": "deser",
+          "count": 18,
+          "radius": 170
+        },
+        {
+          "time": 780,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "ring",
+          "kind": "sqli",
+          "count": 19,
+          "radius": 170
+        },
+        {
+          "time": 840,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "rush-lines",
+          "kind": "xss",
+          "count": 20,
+          "radius": 170
+        },
+        {
+          "time": 900,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "elites",
+          "kind": "ssrf",
+          "count": 21,
+          "radius": 170
+        },
+        {
+          "time": 960,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "ring",
+          "kind": "prototype",
+          "count": 22,
+          "radius": 170
+        },
+        {
+          "time": 1020,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 23,
+          "radius": 170
+        },
+        {
+          "time": 1080,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "elites",
+          "kind": "rce",
+          "count": 24,
+          "radius": 170
+        },
+        {
+          "time": 1140,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "ring",
+          "kind": "auth",
+          "count": 25,
+          "radius": 170
+        },
+        {
+          "time": 1200,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "rush-lines",
+          "kind": "race",
+          "count": 26,
+          "radius": 170
+        },
+        {
+          "time": 1260,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "elites",
+          "kind": "deser",
+          "count": 27,
+          "radius": 170
+        },
+        {
+          "time": 1320,
+          "name": "SQLi / UNION SELECT Stampede",
+          "pattern": "ring",
+          "kind": "sqli",
+          "count": 28,
+          "radius": 170
+        },
+        {
+          "time": 1380,
+          "name": "XSS / DOM Sink Swarm",
+          "pattern": "rush-lines",
+          "kind": "xss",
+          "count": 29,
+          "radius": 170
+        },
+        {
+          "time": 1440,
+          "name": "SSRF / Metadata Service Pivot",
+          "pattern": "elites",
+          "kind": "ssrf",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1500,
+          "name": "PROTO / __proto__ Contagion",
+          "pattern": "ring",
+          "kind": "prototype",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1560,
+          "name": "IDOR / Tenant Isolation Failure",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1620,
+          "name": "RCE / Input Reached exec()",
+          "pattern": "elites",
+          "kind": "rce",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1680,
+          "name": "AUTHZ / Missing Authorization Rush",
+          "pattern": "ring",
+          "kind": "auth",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1740,
+          "name": "TOCTOU / TOCTOU Window Open",
+          "pattern": "rush-lines",
+          "kind": "race",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1800,
+          "name": "DESER / Gadget Chain Assembly",
+          "pattern": "elites",
+          "kind": "deser",
+          "count": 30,
+          "radius": 170
+        }
+      ],
+      "scope": "kernel / privilege boundaries / race windows",
+      "briefing": "You reached ring 0. The mitigation is another permission check. The permission check is a comment.",
+      "graffiti": [
+        "uid=1000 \u2192 uid=0",
+        "check \u2192 race \u2192 use",
+        "KASLR: enabled",
+        "kernel panic",
+        "CAP_SYS_ADMIN?"
+      ],
+      "items": [
+        {
+          "id": "void-curse",
+          "passiveId": "curse",
+          "x": 360,
+          "y": 190,
+          "guardKind": "reaper"
+        },
+        {
+          "id": "void-duration",
+          "passiveId": "duration",
+          "x": -410,
+          "y": 210,
+          "guardKind": "deser"
+        }
+      ],
+      "arsenal": {
+        "x": -155,
+        "y": 110,
+        "name": "The Zero-Day Vault"
+      }
+    },
+    {
+      "id": "spire",
+      "name": "The Cloud Spire",
+      "description": "A vertical cloud control plane above the archive. Climb through IAM boundaries, stolen service identities and metadata pivots while policy sweeps cut the ascent.",
+      "color": "#99bcd2",
+      "icon": "spire",
+      "spawnRate": 1.05,
+      "enemyHp": 1.15,
+      "enemySpeed": 1.02,
+      "goldMultiplier": 1.35,
+      "palette": [
+        "#101722",
+        "#1b2b3b",
+        "#385268",
+        "#b1c6d2"
+      ],
+      "enemyPool": [
+        "ssrf",
+        "auth",
+        "idor",
+        "race",
+        "prototype",
+        "deser",
+        "rce",
+        "sqli",
+        "xss"
+      ],
+      "bossKinds": [
+        "ssrf",
+        "auth",
+        "prototype",
+        "rce"
+      ],
+      "relic": {
+        "name": "The Workload Identity",
+        "description": "+15% projectile speed for this run.",
+        "x": 90,
+        "y": -330,
+        "stat": "projectileSpeed",
+        "value": 0.15,
+        "lore": "Short-lived credentials. Long-lived consequences."
+      },
+      "propName": "Orphaned service account",
+      "difficulty": "Vertical corridor \u00b7 control-plane storms",
+      "landmarkHint": "Climb north toward the identity beacon.",
+      "mechanic": {
+        "id": "sweep",
+        "name": "IAM Policy Reconciliation",
+        "description": "Privilege boundaries sweep across the control plane. Move through the unsealed lane.",
+        "interval": 32,
+        "initial": 24,
+        "radius": 9,
+        "laneOffset": 42,
+        "delay": 1.4,
+        "life": 3,
+        "damage": 11
+      },
+      "objective": {
+        "x": -85,
+        "y": 330,
+        "name": "The Quarantined Cloud Engineer",
+        "description": "Break the quarantine by defeating all wardens, then recover the sealed researcher.",
+        "guardKind": "auth",
+        "guardCount": 4
+      },
+      "merchant": {
+        "x": -110,
+        "y": -130,
+        "name": "The Grey-Hat Broker",
+        "description": "Trade current-run bounty for immediate power. Unspent gold can be banked after the run."
+      },
+      "geometry": {
+        "kind": "corridor",
+        "axis": "x",
+        "halfWidth": 180
+      },
+      "events": [
+        {
+          "time": 60,
+          "name": "SSRF / Metadata Token Exchange",
+          "pattern": "rush-lines",
+          "kind": "ssrf",
+          "count": 7,
+          "radius": 170
+        },
+        {
+          "time": 120,
+          "name": "AUTHZ / Wildcard Role Assumption",
+          "pattern": "elites",
+          "kind": "auth",
+          "count": 8,
+          "radius": 170
+        },
+        {
+          "time": 180,
+          "name": "IDOR / Cross-Account Resource Hunt",
+          "pattern": "ring",
+          "kind": "idor",
+          "count": 9,
+          "radius": 170
+        },
+        {
+          "time": 240,
+          "name": "TOCTOU / Credential Rotation Race",
+          "pattern": "rush-lines",
+          "kind": "race",
+          "count": 10,
+          "radius": 170
+        },
+        {
+          "time": 300,
+          "name": "PROTO / Workload Policy Pollution",
+          "pattern": "elites",
+          "kind": "prototype",
+          "count": 11,
+          "radius": 170
+        },
+        {
+          "time": 360,
+          "name": "DESER / Forged Control-Plane Event",
+          "pattern": "ring",
+          "kind": "deser",
+          "count": 12,
+          "radius": 170
+        },
+        {
+          "time": 420,
+          "name": "RCE / Workload Breakout",
+          "pattern": "rush-lines",
+          "kind": "rce",
+          "count": 13,
+          "radius": 170
+        },
+        {
+          "time": 480,
+          "name": "SSRF / Metadata Token Exchange",
+          "pattern": "elites",
+          "kind": "ssrf",
+          "count": 14,
+          "radius": 170
+        },
+        {
+          "time": 540,
+          "name": "AUTHZ / Wildcard Role Assumption",
+          "pattern": "ring",
+          "kind": "auth",
+          "count": 15,
+          "radius": 170
+        },
+        {
+          "time": 600,
+          "name": "IDOR / Cross-Account Resource Hunt",
+          "pattern": "rush-lines",
+          "kind": "idor",
+          "count": 16,
+          "radius": 170
+        },
+        {
+          "time": 660,
+          "name": "TOCTOU / Credential Rotation Race",
+          "pattern": "elites",
+          "kind": "race",
+          "count": 17,
+          "radius": 170
+        },
+        {
+          "time": 720,
+          "name": "PROTO / Workload Policy Pollution",
+          "pattern": "ring",
+          "kind": "prototype",
+          "count": 18,
+          "radius": 170
+        },
+        {
+          "time": 780,
+          "name": "DESER / Forged Control-Plane Event",
+          "pattern": "rush-lines",
+          "kind": "deser",
+          "count": 19,
+          "radius": 170
+        },
+        {
+          "time": 840,
+          "name": "RCE / Workload Breakout",
+          "pattern": "elites",
+          "kind": "rce",
+          "count": 20,
+          "radius": 170
+        },
+        {
+          "time": 900,
+          "name": "SSRF / Metadata Token Exchange",
+          "pattern": "ring",
+          "kind": "ssrf",
+          "count": 21,
+          "radius": 170
+        },
+        {
+          "time": 960,
+          "name": "AUTHZ / Wildcard Role Assumption",
+          "pattern": "rush-lines",
+          "kind": "auth",
+          "count": 22,
+          "radius": 170
+        },
+        {
+          "time": 1020,
+          "name": "IDOR / Cross-Account Resource Hunt",
+          "pattern": "elites",
+          "kind": "idor",
+          "count": 23,
+          "radius": 170
+        },
+        {
+          "time": 1080,
+          "name": "TOCTOU / Credential Rotation Race",
+          "pattern": "ring",
+          "kind": "race",
+          "count": 24,
+          "radius": 170
+        },
+        {
+          "time": 1140,
+          "name": "PROTO / Workload Policy Pollution",
+          "pattern": "rush-lines",
+          "kind": "prototype",
+          "count": 25,
+          "radius": 170
+        },
+        {
+          "time": 1200,
+          "name": "DESER / Forged Control-Plane Event",
+          "pattern": "elites",
+          "kind": "deser",
+          "count": 26,
+          "radius": 170
+        },
+        {
+          "time": 1260,
+          "name": "RCE / Workload Breakout",
+          "pattern": "ring",
+          "kind": "rce",
+          "count": 27,
+          "radius": 170
+        },
+        {
+          "time": 1320,
+          "name": "SSRF / Metadata Token Exchange",
+          "pattern": "rush-lines",
+          "kind": "ssrf",
+          "count": 28,
+          "radius": 170
+        },
+        {
+          "time": 1380,
+          "name": "AUTHZ / Wildcard Role Assumption",
+          "pattern": "elites",
+          "kind": "auth",
+          "count": 29,
+          "radius": 170
+        },
+        {
+          "time": 1440,
+          "name": "IDOR / Cross-Account Resource Hunt",
+          "pattern": "ring",
+          "kind": "idor",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1500,
+          "name": "TOCTOU / Credential Rotation Race",
+          "pattern": "rush-lines",
+          "kind": "race",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1560,
+          "name": "PROTO / Workload Policy Pollution",
+          "pattern": "elites",
+          "kind": "prototype",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1620,
+          "name": "DESER / Forged Control-Plane Event",
+          "pattern": "ring",
+          "kind": "deser",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1680,
+          "name": "RCE / Workload Breakout",
+          "pattern": "rush-lines",
+          "kind": "rce",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1740,
+          "name": "SSRF / Metadata Token Exchange",
+          "pattern": "elites",
+          "kind": "ssrf",
+          "count": 30,
+          "radius": 170
+        },
+        {
+          "time": 1800,
+          "name": "AUTHZ / Wildcard Role Assumption",
+          "pattern": "ring",
+          "kind": "auth",
+          "count": 30,
+          "radius": 170
+        }
+      ],
+      "scope": "cloud control plane / IAM boundaries / metadata services",
+      "briefing": "The bastion trusted the workload identity. The workload trusted the metadata service. Somewhere above, a wildcard role waits for its next assumption.",
+      "graffiti": [
+        "sts:AssumeRole",
+        "iam:PassRole",
+        "169.254.169.254",
+        "audience != tenant",
+        "system:serviceaccount"
+      ],
+      "items": [
+        {
+          "id": "spire-armor",
+          "passiveId": "armor",
+          "x": -75,
+          "y": -430,
+          "guardKind": "auth"
+        },
+        {
+          "id": "spire-duration",
+          "passiveId": "duration",
+          "x": 95,
+          "y": 440,
+          "guardKind": "race"
+        }
+      ],
+      "arsenal": {
+        "x": 100,
+        "y": 90,
+        "name": "The Identity Vault"
+      },
+      "unlock": "Clear one ordinary hunt.",
+      "unlockRequirement": {
+        "stat": "wins",
+        "value": 1
+      }
+    }
+  ],
+  "weapons": [
+    {
+      "id": "whip",
+      "name": "HTTP Desync Whip",
+      "description": "Request smuggling, with reach. Sweep both sides of the parsing boundary; stand still to aim at the nearest threat.",
+      "color": "#d8b769",
+      "icon": "whip",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Root Shell",
+        "passive": "might",
+        "description": "A desynchronized request becomes a bidirectional root-shell lash. Bleed targets and siphon integrity.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1
+      },
+      "levels": [
+        {
+          "damage": 16,
+          "cooldown": 1.05,
+          "count": 2,
+          "radius": 52,
+          "spread": 2.5,
+          "pierce": 99,
+          "duration": 0.2,
+          "speed": 0
+        },
+        {
+          "damage": 19,
+          "cooldown": 1.005,
+          "count": 2,
+          "radius": 55,
+          "spread": 2.53,
+          "pierce": 99,
+          "duration": 0.21,
+          "speed": 0
+        },
+        {
+          "damage": 22,
+          "cooldown": 0.96,
+          "count": 2,
+          "radius": 58,
+          "spread": 2.56,
+          "pierce": 99,
+          "duration": 0.22,
+          "speed": 0
+        },
+        {
+          "damage": 25,
+          "cooldown": 0.915,
+          "count": 2,
+          "radius": 61,
+          "spread": 2.59,
+          "pierce": 99,
+          "duration": 0.23,
+          "speed": 0
+        },
+        {
+          "damage": 28,
+          "cooldown": 0.87,
+          "count": 2,
+          "radius": 64,
+          "spread": 2.62,
+          "pierce": 99,
+          "duration": 0.24,
+          "speed": 0
+        },
+        {
+          "damage": 31,
+          "cooldown": 0.825,
+          "count": 2,
+          "radius": 67,
+          "spread": 2.65,
+          "pierce": 99,
+          "duration": 0.25,
+          "speed": 0
+        },
+        {
+          "damage": 34,
+          "cooldown": 0.78,
+          "count": 3,
+          "radius": 70,
+          "spread": 2.68,
+          "pierce": 99,
+          "duration": 0.26,
+          "speed": 0
+        },
+        {
+          "damage": 37,
+          "cooldown": 0.735,
+          "count": 3,
+          "radius": 73,
+          "spread": 2.71,
+          "pierce": 99,
+          "duration": 0.27,
+          "speed": 0
+        }
+      ],
+      "knockback": 1.8,
+      "signature": "CL.TE / front-end \u2260 back-end"
+    },
+    {
+      "id": "knife",
+      "name": "SQL Needles",
+      "description": "Query shards pierce the result set. Straight shots assist targets ahead; standing still selects the nearest sink.",
+      "color": "#8bc9ce",
+      "icon": "knife",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Prepared Execution",
+        "passive": "speed",
+        "description": "A rapid UNION of piercing queries. Every hit is critical; the result set never ends.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1.15
+      },
+      "levels": [
+        {
+          "damage": 12,
+          "cooldown": 0.7,
+          "count": 1,
+          "radius": 3,
+          "pierce": 1,
+          "duration": 1.4,
+          "speed": 225
+        },
+        {
+          "damage": 14,
+          "cooldown": 0.655,
+          "count": 1,
+          "radius": 3,
+          "pierce": 1,
+          "duration": 1.4,
+          "speed": 237
+        },
+        {
+          "damage": 16,
+          "cooldown": 0.61,
+          "count": 1,
+          "radius": 3,
+          "pierce": 1,
+          "duration": 1.4,
+          "speed": 249
+        },
+        {
+          "damage": 18,
+          "cooldown": 0.565,
+          "count": 2,
+          "radius": 3,
+          "pierce": 2,
+          "duration": 1.4,
+          "speed": 261
+        },
+        {
+          "damage": 20,
+          "cooldown": 0.52,
+          "count": 2,
+          "radius": 3,
+          "pierce": 2,
+          "duration": 1.4,
+          "speed": 273
+        },
+        {
+          "damage": 22,
+          "cooldown": 0.475,
+          "count": 3,
+          "radius": 3,
+          "pierce": 3,
+          "duration": 1.4,
+          "speed": 285
+        },
+        {
+          "damage": 24,
+          "cooldown": 0.43,
+          "count": 3,
+          "radius": 3,
+          "pierce": 3,
+          "duration": 1.4,
+          "speed": 297
+        },
+        {
+          "damage": 26,
+          "cooldown": 0.385,
+          "count": 3,
+          "radius": 3,
+          "pierce": 3,
+          "duration": 1.4,
+          "speed": 309
+        }
+      ],
+      "knockback": 0.3,
+      "signature": "' UNION SELECT payload --"
+    },
+    {
+      "id": "wand",
+      "name": "SSTI Probe",
+      "description": "A homing template probe finds the nearest sink. The server should not have evaluated that.",
+      "color": "#a5b9f1",
+      "icon": "wand",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Template Takeover",
+        "passive": "cooldown",
+        "description": "Template context acquired. Homing probes become an explosive code-execution chain.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1.2
+      },
+      "levels": [
+        {
+          "damage": 12,
+          "cooldown": 1.0,
+          "count": 1,
+          "radius": 4,
+          "pierce": 1,
+          "duration": 2.4,
+          "speed": 150
+        },
+        {
+          "damage": 15,
+          "cooldown": 0.945,
+          "count": 1,
+          "radius": 4,
+          "pierce": 1,
+          "duration": 2.4,
+          "speed": 158
+        },
+        {
+          "damage": 18,
+          "cooldown": 0.89,
+          "count": 1,
+          "radius": 4,
+          "pierce": 1,
+          "duration": 2.4,
+          "speed": 166
+        },
+        {
+          "damage": 21,
+          "cooldown": 0.835,
+          "count": 1,
+          "radius": 4,
+          "pierce": 1,
+          "duration": 2.4,
+          "speed": 174
+        },
+        {
+          "damage": 24,
+          "cooldown": 0.78,
+          "count": 2,
+          "radius": 4,
+          "pierce": 1,
+          "duration": 2.4,
+          "speed": 182
+        },
+        {
+          "damage": 27,
+          "cooldown": 0.725,
+          "count": 2,
+          "radius": 4,
+          "pierce": 1,
+          "duration": 2.4,
+          "speed": 190
+        },
+        {
+          "damage": 30,
+          "cooldown": 0.67,
+          "count": 2,
+          "radius": 4,
+          "pierce": 1,
+          "duration": 2.4,
+          "speed": 198
+        },
+        {
+          "damage": 33,
+          "cooldown": 0.615,
+          "count": 2,
+          "radius": 4,
+          "pierce": 1,
+          "duration": 2.4,
+          "speed": 206
+        }
+      ],
+      "knockback": 0.5,
+      "signature": "{{ 7 * 7 }} \u2192 49"
+    },
+    {
+      "id": "orbit",
+      "name": "Stack Pivot",
+      "description": "Orbiting stack frames turn nearby threats into controlled memory. RSP is your problem now.",
+      "color": "#cea4e8",
+      "icon": "orbit",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "ret2libc Carousel",
+        "passive": "area",
+        "description": "A wider ret2libc carousel. More gadgets, more coverage, no clean stack frame left.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1
+      },
+      "levels": [
+        {
+          "damage": 14,
+          "cooldown": 0.38,
+          "count": 2,
+          "radius": 43.0,
+          "projectileRadius": 7,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 2.8
+        },
+        {
+          "damage": 16,
+          "cooldown": 0.38,
+          "count": 2,
+          "radius": 45.5,
+          "projectileRadius": 7,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 2.94
+        },
+        {
+          "damage": 18,
+          "cooldown": 0.38,
+          "count": 2,
+          "radius": 48.0,
+          "projectileRadius": 7,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 3.08
+        },
+        {
+          "damage": 20,
+          "cooldown": 0.38,
+          "count": 3,
+          "radius": 50.5,
+          "projectileRadius": 7,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 3.22
+        },
+        {
+          "damage": 22,
+          "cooldown": 0.38,
+          "count": 3,
+          "radius": 53.0,
+          "projectileRadius": 7,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 3.36
+        },
+        {
+          "damage": 24,
+          "cooldown": 0.38,
+          "count": 4,
+          "radius": 55.5,
+          "projectileRadius": 7,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 3.5
+        },
+        {
+          "damage": 26,
+          "cooldown": 0.38,
+          "count": 4,
+          "radius": 58.0,
+          "projectileRadius": 7,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 3.64
+        },
+        {
+          "damage": 28,
+          "cooldown": 0.38,
+          "count": 4,
+          "radius": 60.5,
+          "projectileRadius": 7,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 3.78
+        }
+      ],
+      "knockback": 0.8,
+      "signature": "leave; ret;"
+    },
+    {
+      "id": "pool",
+      "name": "Blind Injection",
+      "description": "Leave persistent tainted payloads beneath targets. No response body? The side effects are enough.",
+      "color": "#90c37a",
+      "icon": "pool",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Second-Order Injection",
+        "passive": "duration",
+        "description": "Second-order payloads persist, drift toward their operator and expand their blast radius.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1
+      },
+      "levels": [
+        {
+          "damage": 8,
+          "cooldown": 2.8,
+          "count": 1,
+          "radius": 21,
+          "pierce": 99,
+          "duration": 3.2,
+          "speed": 0
+        },
+        {
+          "damage": 10,
+          "cooldown": 2.68,
+          "count": 1,
+          "radius": 23,
+          "pierce": 99,
+          "duration": 3.45,
+          "speed": 0
+        },
+        {
+          "damage": 12,
+          "cooldown": 2.56,
+          "count": 1,
+          "radius": 25,
+          "pierce": 99,
+          "duration": 3.7,
+          "speed": 0
+        },
+        {
+          "damage": 14,
+          "cooldown": 2.44,
+          "count": 1,
+          "radius": 27,
+          "pierce": 99,
+          "duration": 3.95,
+          "speed": 0
+        },
+        {
+          "damage": 16,
+          "cooldown": 2.32,
+          "count": 1,
+          "radius": 29,
+          "pierce": 99,
+          "duration": 4.2,
+          "speed": 0
+        },
+        {
+          "damage": 18,
+          "cooldown": 2.2,
+          "count": 2,
+          "radius": 31,
+          "pierce": 99,
+          "duration": 4.45,
+          "speed": 0
+        },
+        {
+          "damage": 20,
+          "cooldown": 2.08,
+          "count": 2,
+          "radius": 33,
+          "pierce": 99,
+          "duration": 4.7,
+          "speed": 0
+        },
+        {
+          "damage": 22,
+          "cooldown": 1.96,
+          "count": 2,
+          "radius": 35,
+          "pierce": 99,
+          "duration": 4.95,
+          "speed": 0
+        }
+      ],
+      "knockback": 0,
+      "signature": "SLEEP(5) / timing oracle"
+    },
+    {
+      "id": "rune",
+      "name": "Heap Spray",
+      "description": "Spray bouncing allocations across the arena. Eventually every address is your address.",
+      "color": "#c69bdd",
+      "icon": "rune",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Use After Free",
+        "passive": "amount",
+        "description": "Reclaim the freed allocation. Larger chunks burst into persistent heap fragments.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1.2
+      },
+      "levels": [
+        {
+          "damage": 11,
+          "cooldown": 1.8,
+          "count": 1,
+          "radius": 6,
+          "pierce": 99,
+          "duration": 3.2,
+          "speed": 105
+        },
+        {
+          "damage": 14,
+          "cooldown": 1.73,
+          "count": 1,
+          "radius": 6,
+          "pierce": 99,
+          "duration": 3.5,
+          "speed": 111
+        },
+        {
+          "damage": 17,
+          "cooldown": 1.66,
+          "count": 1,
+          "radius": 6,
+          "pierce": 99,
+          "duration": 3.8,
+          "speed": 117
+        },
+        {
+          "damage": 20,
+          "cooldown": 1.59,
+          "count": 1,
+          "radius": 6,
+          "pierce": 99,
+          "duration": 4.1,
+          "speed": 123
+        },
+        {
+          "damage": 23,
+          "cooldown": 1.52,
+          "count": 2,
+          "radius": 6,
+          "pierce": 99,
+          "duration": 4.4,
+          "speed": 129
+        },
+        {
+          "damage": 26,
+          "cooldown": 1.45,
+          "count": 2,
+          "radius": 6,
+          "pierce": 99,
+          "duration": 4.7,
+          "speed": 135
+        },
+        {
+          "damage": 29,
+          "cooldown": 1.38,
+          "count": 2,
+          "radius": 6,
+          "pierce": 99,
+          "duration": 5.0,
+          "speed": 141
+        },
+        {
+          "damage": 32,
+          "cooldown": 1.31,
+          "count": 2,
+          "radius": 6,
+          "pierce": 99,
+          "duration": 5.3,
+          "speed": 147
+        }
+      ],
+      "knockback": 0.6,
+      "signature": "0x41414141 / controlled heap"
+    },
+    {
+      "id": "lightning",
+      "name": "Fuzzing Storm",
+      "description": "Mutate inputs until something breaks. Each crash chains a new test case into the next target.",
+      "color": "#8ccddc",
+      "icon": "lightning",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Coverage Guided",
+        "passive": "luck",
+        "description": "Coverage-guided corpus expansion. Follow new edges, fork the strike, reproduce the crash.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1
+      },
+      "levels": [
+        {
+          "damage": 23,
+          "cooldown": 2.3,
+          "count": 2,
+          "radius": 58,
+          "pierce": 2,
+          "duration": 0.25,
+          "speed": 0
+        },
+        {
+          "damage": 28,
+          "cooldown": 2.21,
+          "count": 2,
+          "radius": 60,
+          "pierce": 2,
+          "duration": 0.25,
+          "speed": 0
+        },
+        {
+          "damage": 33,
+          "cooldown": 2.12,
+          "count": 2,
+          "radius": 62,
+          "pierce": 2,
+          "duration": 0.25,
+          "speed": 0
+        },
+        {
+          "damage": 38,
+          "cooldown": 2.03,
+          "count": 2,
+          "radius": 64,
+          "pierce": 2,
+          "duration": 0.25,
+          "speed": 0
+        },
+        {
+          "damage": 43,
+          "cooldown": 1.94,
+          "count": 3,
+          "radius": 66,
+          "pierce": 2,
+          "duration": 0.25,
+          "speed": 0
+        },
+        {
+          "damage": 48,
+          "cooldown": 1.85,
+          "count": 3,
+          "radius": 68,
+          "pierce": 3,
+          "duration": 0.25,
+          "speed": 0
+        },
+        {
+          "damage": 53,
+          "cooldown": 1.76,
+          "count": 3,
+          "radius": 70,
+          "pierce": 3,
+          "duration": 0.25,
+          "speed": 0
+        },
+        {
+          "damage": 58,
+          "cooldown": 1.67,
+          "count": 3,
+          "radius": 72,
+          "pierce": 3,
+          "duration": 0.25,
+          "speed": 0
+        }
+      ],
+      "knockback": 0.4,
+      "signature": "coverage++ / unique crash"
+    },
+    {
+      "id": "axe",
+      "name": "ROP Cleaver",
+      "description": "Lob heavy ROP gadgets in piercing arcs. Every landing is another controlled return.",
+      "color": "#c3c7cf",
+      "icon": "axe",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Return Oriented",
+        "passive": "area",
+        "description": "The whole arena is one long ROP chain. Piercing gadgets fan out in every direction.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1
+      },
+      "levels": [
+        {
+          "damage": 22,
+          "cooldown": 1.7,
+          "count": 1,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 2.3,
+          "speed": 120,
+          "gravity": 130
+        },
+        {
+          "damage": 27,
+          "cooldown": 1.64,
+          "count": 1,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 2.42,
+          "speed": 120,
+          "gravity": 130
+        },
+        {
+          "damage": 32,
+          "cooldown": 1.58,
+          "count": 1,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 2.54,
+          "speed": 120,
+          "gravity": 130
+        },
+        {
+          "damage": 37,
+          "cooldown": 1.52,
+          "count": 1,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 2.66,
+          "speed": 120,
+          "gravity": 130
+        },
+        {
+          "damage": 42,
+          "cooldown": 1.46,
+          "count": 2,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 2.78,
+          "speed": 120,
+          "gravity": 130
+        },
+        {
+          "damage": 47,
+          "cooldown": 1.4,
+          "count": 2,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 2.9,
+          "speed": 120,
+          "gravity": 130
+        },
+        {
+          "damage": 52,
+          "cooldown": 1.34,
+          "count": 2,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 3.02,
+          "speed": 120,
+          "gravity": 130
+        },
+        {
+          "damage": 57,
+          "cooldown": 1.28,
+          "count": 2,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 3.14,
+          "speed": 120,
+          "gravity": 130
+        }
+      ],
+      "knockback": 1.2,
+      "signature": "pop rdi; ret;"
+    },
+    {
+      "id": "cross",
+      "name": "Forged JWT",
+      "description": "Send a forged session token through the horde and back. Trusting the header was the first mistake.",
+      "color": "#dfbe79",
+      "icon": "cross",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Session Hijack",
+        "passive": "magnet",
+        "description": "Stolen sessions return faster and cut wider paths. Your identity provider has questions.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1.5
+      },
+      "levels": [
+        {
+          "damage": 18,
+          "cooldown": 1.9,
+          "count": 1,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 2.8,
+          "speed": 155,
+          "returnAfter": 0.75
+        },
+        {
+          "damage": 22,
+          "cooldown": 1.84,
+          "count": 1,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 2.9,
+          "speed": 164,
+          "returnAfter": 0.75
+        },
+        {
+          "damage": 26,
+          "cooldown": 1.78,
+          "count": 1,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 3.0,
+          "speed": 173,
+          "returnAfter": 0.75
+        },
+        {
+          "damage": 30,
+          "cooldown": 1.72,
+          "count": 1,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 3.1,
+          "speed": 182,
+          "returnAfter": 0.75
+        },
+        {
+          "damage": 34,
+          "cooldown": 1.66,
+          "count": 2,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 3.2,
+          "speed": 191,
+          "returnAfter": 0.75
+        },
+        {
+          "damage": 38,
+          "cooldown": 1.6,
+          "count": 2,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 3.3,
+          "speed": 200,
+          "returnAfter": 0.75
+        },
+        {
+          "damage": 42,
+          "cooldown": 1.54,
+          "count": 2,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 3.4,
+          "speed": 209,
+          "returnAfter": 0.75
+        },
+        {
+          "damage": 46,
+          "cooldown": 1.48,
+          "count": 2,
+          "radius": 7,
+          "pierce": 99,
+          "duration": 3.5,
+          "speed": 218,
+          "returnAfter": 0.75
+        }
+      ],
+      "knockback": 1.2,
+      "signature": "alg: none / signature: optional"
+    },
+    {
+      "id": "pentagram",
+      "name": "Kill Switch",
+      "description": "Crash the visible attack surface. Early PoCs may destroy their own evidence. Reproducibility is a feature.",
+      "color": "#d37daa",
+      "icon": "pentagram",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Full Disclosure",
+        "passive": "growth",
+        "description": "Full disclosure, complete evidence. Preserve every gem and pull the entire corpus to you.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1
+      },
+      "levels": [
+        {
+          "damage": 260,
+          "cooldown": 31.0,
+          "count": 1,
+          "radius": 360,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 0,
+          "keepXp": 0.3
+        },
+        {
+          "damage": 300,
+          "cooldown": 29.1,
+          "count": 1,
+          "radius": 360,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 0,
+          "keepXp": 0.39
+        },
+        {
+          "damage": 340,
+          "cooldown": 27.2,
+          "count": 1,
+          "radius": 360,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 0,
+          "keepXp": 0.48
+        },
+        {
+          "damage": 380,
+          "cooldown": 25.3,
+          "count": 1,
+          "radius": 360,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 0,
+          "keepXp": 0.57
+        },
+        {
+          "damage": 420,
+          "cooldown": 23.4,
+          "count": 1,
+          "radius": 360,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 0,
+          "keepXp": 0.66
+        },
+        {
+          "damage": 460,
+          "cooldown": 21.5,
+          "count": 1,
+          "radius": 360,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 0,
+          "keepXp": 0.75
+        },
+        {
+          "damage": 500,
+          "cooldown": 19.6,
+          "count": 1,
+          "radius": 360,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 0,
+          "keepXp": 0.84
+        },
+        {
+          "damage": 540,
+          "cooldown": 17.7,
+          "count": 1,
+          "radius": 360,
+          "pierce": 99,
+          "duration": 0.6,
+          "speed": 0,
+          "keepXp": 0.93
+        }
+      ],
+      "knockback": 0,
+      "signature": "SIGKILL / core dumped"
+    },
+    {
+      "id": "fireball",
+      "name": "RCE Payload",
+      "description": "Your input became a command. Slow, heavy payloads explode through clustered execution sinks.",
+      "color": "#ed9965",
+      "icon": "fireball",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Interactive Shell",
+        "passive": "might",
+        "description": "Post-exploitation at scale. Deeper piercing, larger blasts, no shell left unattended.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1
+      },
+      "levels": [
+        {
+          "damage": 27,
+          "cooldown": 2.0,
+          "count": 1,
+          "radius": 6,
+          "pierce": 2,
+          "duration": 3,
+          "speed": 103,
+          "blastRadius": 17
+        },
+        {
+          "damage": 34,
+          "cooldown": 1.93,
+          "count": 1,
+          "radius": 6,
+          "pierce": 2,
+          "duration": 3,
+          "speed": 103,
+          "blastRadius": 19
+        },
+        {
+          "damage": 41,
+          "cooldown": 1.86,
+          "count": 1,
+          "radius": 6,
+          "pierce": 2,
+          "duration": 3,
+          "speed": 103,
+          "blastRadius": 21
+        },
+        {
+          "damage": 48,
+          "cooldown": 1.79,
+          "count": 1,
+          "radius": 6,
+          "pierce": 2,
+          "duration": 3,
+          "speed": 103,
+          "blastRadius": 23
+        },
+        {
+          "damage": 55,
+          "cooldown": 1.72,
+          "count": 2,
+          "radius": 6,
+          "pierce": 3,
+          "duration": 3,
+          "speed": 103,
+          "blastRadius": 25
+        },
+        {
+          "damage": 62,
+          "cooldown": 1.65,
+          "count": 2,
+          "radius": 6,
+          "pierce": 3,
+          "duration": 3,
+          "speed": 103,
+          "blastRadius": 27
+        },
+        {
+          "damage": 69,
+          "cooldown": 1.58,
+          "count": 2,
+          "radius": 6,
+          "pierce": 3,
+          "duration": 3,
+          "speed": 103,
+          "blastRadius": 29
+        },
+        {
+          "damage": 76,
+          "cooldown": 1.51,
+          "count": 2,
+          "radius": 6,
+          "pierce": 4,
+          "duration": 3,
+          "speed": 103,
+          "blastRadius": 31
+        }
+      ],
+      "knockback": 1,
+      "signature": "; id #"
+    },
+    {
+      "id": "birds",
+      "name": "Recon Ravens",
+      "description": "Send two recon familiars to enumerate a rotating patch of the attack surface. Subdomains do not find themselves.",
+      "color": "#b0bce7",
+      "icon": "birds",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Full-Spectrum Recon",
+        "passive": "speed",
+        "description": "Full-spectrum recon tracks live targets and delivers a continuous payload rain.",
+        "damageMultiplier": 1.7,
+        "cooldownMultiplier": 0.62,
+        "areaMultiplier": 1.25,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1
+      },
+      "levels": [
+        {
+          "damage": 13,
+          "cooldown": 1.15,
+          "count": 2,
+          "radius": 15.0,
+          "pierce": 99,
+          "duration": 0.5,
+          "speed": 100,
+          "orbitRadius": 64
+        },
+        {
+          "damage": 16,
+          "cooldown": 1.115,
+          "count": 2,
+          "radius": 16.4,
+          "pierce": 99,
+          "duration": 0.5,
+          "speed": 100,
+          "orbitRadius": 66
+        },
+        {
+          "damage": 19,
+          "cooldown": 1.08,
+          "count": 2,
+          "radius": 17.8,
+          "pierce": 99,
+          "duration": 0.5,
+          "speed": 100,
+          "orbitRadius": 68
+        },
+        {
+          "damage": 22,
+          "cooldown": 1.045,
+          "count": 2,
+          "radius": 19.2,
+          "pierce": 99,
+          "duration": 0.5,
+          "speed": 100,
+          "orbitRadius": 70
+        },
+        {
+          "damage": 25,
+          "cooldown": 1.01,
+          "count": 3,
+          "radius": 20.6,
+          "pierce": 99,
+          "duration": 0.5,
+          "speed": 100,
+          "orbitRadius": 72
+        },
+        {
+          "damage": 28,
+          "cooldown": 0.975,
+          "count": 3,
+          "radius": 22.0,
+          "pierce": 99,
+          "duration": 0.5,
+          "speed": 100,
+          "orbitRadius": 74
+        },
+        {
+          "damage": 31,
+          "cooldown": 0.94,
+          "count": 3,
+          "radius": 23.4,
+          "pierce": 99,
+          "duration": 0.5,
+          "speed": 100,
+          "orbitRadius": 76
+        },
+        {
+          "damage": 34,
+          "cooldown": 0.905,
+          "count": 3,
+          "radius": 24.8,
+          "pierce": 99,
+          "duration": 0.5,
+          "speed": 100,
+          "orbitRadius": 78
+        }
+      ],
+      "knockback": 0.5,
+      "signature": "*.scope.test \u2192 live hosts"
+    },
+    {
+      "id": "aegis",
+      "name": "Sandbox Aegis",
+      "description": "A privilege boundary with a finite charge budget. Absorb a hit, then rebuild one barrier charge after the recharge interval.",
+      "color": "#95cdbd",
+      "icon": "aegis",
+      "maxLevel": 8,
+      "role": "defense",
+      "signature": "seccomp / deny-by-default / fault isolation",
+      "knockback": 1.1,
+      "evolution": {
+        "name": "Unbroken Boundary",
+        "passive": "armor",
+        "description": "Mandatory access control becomes retaliation. Block real damage, briefly reject further contact, and send a counterattack through nearby threats.",
+        "damageMultiplier": 1.8,
+        "cooldownMultiplier": 0.8,
+        "areaMultiplier": 1.3,
+        "extraProjectiles": 1,
+        "speedMultiplier": 1
+      },
+      "levels": [
+        {
+          "damage": 0,
+          "retaliation": 14,
+          "cooldown": 9.0,
+          "count": 1,
+          "radius": 38,
+          "pierce": 99,
+          "duration": 0,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "retaliation": 18,
+          "cooldown": 8.5,
+          "count": 1,
+          "radius": 42,
+          "pierce": 99,
+          "duration": 0,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "retaliation": 22,
+          "cooldown": 8.0,
+          "count": 2,
+          "radius": 46,
+          "pierce": 99,
+          "duration": 0,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "retaliation": 26,
+          "cooldown": 7.5,
+          "count": 2,
+          "radius": 50,
+          "pierce": 99,
+          "duration": 0,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "retaliation": 30,
+          "cooldown": 7.0,
+          "count": 2,
+          "radius": 54,
+          "pierce": 99,
+          "duration": 0,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "retaliation": 34,
+          "cooldown": 6.5,
+          "count": 3,
+          "radius": 58,
+          "pierce": 99,
+          "duration": 0,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "retaliation": 38,
+          "cooldown": 6.0,
+          "count": 3,
+          "radius": 62,
+          "pierce": 99,
+          "duration": 0,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "retaliation": 42,
+          "cooldown": 5.5,
+          "count": 4,
+          "radius": 66,
+          "pierce": 99,
+          "duration": 0,
+          "speed": 0
+        }
+      ]
+    },
+    {
+      "id": "lancet",
+      "name": "Race-Window Lance",
+      "description": "Serialize the race. A directional freeze beam rotates around the operator, holding real enemies inside its critical section without dealing damage.",
+      "color": "#a1cbe5",
+      "icon": "lancet",
+      "maxLevel": 8,
+      "role": "defense",
+      "signature": "TOCTOU / acquire(lock) / deterministic scheduling",
+      "knockback": 0,
+      "evolution": {
+        "name": "Deterministic Horizon",
+        "passive": "duration",
+        "description": "Freeze the schedule and reclaim a bounded fraction of each target\u2019s current integrity. Bosses resist both the freeze and the integrity cut.",
+        "damageMultiplier": 1,
+        "cooldownMultiplier": 0.8,
+        "areaMultiplier": 1.15,
+        "extraProjectiles": 1,
+        "speedMultiplier": 1
+      },
+      "levels": [
+        {
+          "damage": 0,
+          "healthFraction": 0.08,
+          "cooldown": 3.6,
+          "count": 1,
+          "radius": 150,
+          "beamWidth": 20,
+          "pierce": 99,
+          "duration": 1.6,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "healthFraction": 0.09,
+          "cooldown": 3.45,
+          "count": 1,
+          "radius": 160,
+          "beamWidth": 22,
+          "pierce": 99,
+          "duration": 1.8,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "healthFraction": 0.1,
+          "cooldown": 3.3,
+          "count": 1,
+          "radius": 170,
+          "beamWidth": 24,
+          "pierce": 99,
+          "duration": 2.0,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "healthFraction": 0.11,
+          "cooldown": 3.15,
+          "count": 1,
+          "radius": 180,
+          "beamWidth": 26,
+          "pierce": 99,
+          "duration": 2.2,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "healthFraction": 0.12,
+          "cooldown": 3.0,
+          "count": 1,
+          "radius": 190,
+          "beamWidth": 28,
+          "pierce": 99,
+          "duration": 2.4,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "healthFraction": 0.13,
+          "cooldown": 2.85,
+          "count": 2,
+          "radius": 200,
+          "beamWidth": 30,
+          "pierce": 99,
+          "duration": 2.6,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "healthFraction": 0.14,
+          "cooldown": 2.7,
+          "count": 2,
+          "radius": 210,
+          "beamWidth": 32,
+          "pierce": 99,
+          "duration": 2.8,
+          "speed": 0
+        },
+        {
+          "damage": 0,
+          "healthFraction": 0.15,
+          "cooldown": 2.55,
+          "count": 2,
+          "radius": 220,
+          "beamWidth": 34,
+          "pierce": 99,
+          "duration": 3.0,
+          "speed": 0
+        }
+      ]
+    }
+  ],
+  "passives": [
+    {
+      "id": "might",
+      "name": "Exploit Impact",
+      "description": "Increase weapon damage. Turn a low-impact primitive into a finding that matters.",
+      "color": "#d99b79",
+      "icon": "might",
+      "maxLevel": 5,
+      "stat": "might",
+      "perLevel": 0.12,
+      "secondary": {},
+      "statLabel": "weapon damage",
+      "format": "percent"
+    },
+    {
+      "id": "cooldown",
+      "name": "Automation",
+      "description": "Automate the boring requests. Reduce time between every attack.",
+      "color": "#9ba9d7",
+      "icon": "cooldown",
+      "maxLevel": 5,
+      "stat": "cooldown",
+      "perLevel": -0.07,
+      "secondary": {},
+      "statLabel": "weapon cooldown",
+      "format": "percent"
+    },
+    {
+      "id": "area",
+      "name": "Attack Surface",
+      "description": "Expand the attack surface. Reach more sinks with every payload.",
+      "color": "#d1afda",
+      "icon": "area",
+      "maxLevel": 5,
+      "stat": "area",
+      "perLevel": 0.1,
+      "secondary": {},
+      "statLabel": "weapon area",
+      "format": "percent"
+    },
+    {
+      "id": "duration",
+      "name": "Persistence",
+      "description": "Persistence survives the next request. Keep payloads active longer.",
+      "color": "#91bf9c",
+      "icon": "duration",
+      "maxLevel": 5,
+      "stat": "duration",
+      "perLevel": 0.15,
+      "secondary": {},
+      "statLabel": "weapon duration",
+      "format": "percent"
+    },
+    {
+      "id": "amount",
+      "name": "Parallel Requests",
+      "description": "Concurrent requests, concurrent problems. Add one projectile at levels two and five.",
+      "color": "#a3bfe0",
+      "icon": "amount",
+      "maxLevel": 5,
+      "stat": "amount",
+      "perLevel": 0.4,
+      "secondary": {},
+      "statLabel": "projectiles",
+      "format": "flat"
+    },
+    {
+      "id": "speed",
+      "name": "Packet Velocity",
+      "description": "Send the next probe before the first request times out. Boost movement and projectile speed.",
+      "color": "#87c5c3",
+      "icon": "speed",
+      "maxLevel": 5,
+      "stat": "projectileSpeed",
+      "perLevel": 0.12,
+      "secondary": {
+        "speed": 0.025
+      },
+      "statLabel": "projectile speed",
+      "format": "percent"
+    },
+    {
+      "id": "magnet",
+      "name": "Recon Scope",
+      "description": "Collect evidence from farther away. Screenshot or it did not happen.",
+      "color": "#dfbf6b",
+      "icon": "magnet",
+      "maxLevel": 5,
+      "stat": "magnet",
+      "perLevel": 12,
+      "secondary": {},
+      "statLabel": "pickup range",
+      "format": "flat"
+    },
+    {
+      "id": "armor",
+      "name": "Defense in Depth",
+      "description": "Layer your controls. Reduce damage when the perimeter eventually fails.",
+      "color": "#b4bfcd",
+      "icon": "armor",
+      "maxLevel": 5,
+      "stat": "armor",
+      "perLevel": 1,
+      "secondary": {},
+      "statLabel": "Armor",
+      "format": "flat"
+    },
+    {
+      "id": "health",
+      "name": "Backup Instance",
+      "description": "Keep a clean restore point. Increase maximum integrity.",
+      "color": "#d18091",
+      "icon": "health",
+      "maxLevel": 5,
+      "stat": "health",
+      "perLevel": 0.2,
+      "secondary": {},
+      "statLabel": "maximum health",
+      "format": "percent"
+    },
+    {
+      "id": "growth",
+      "name": "Source Insight",
+      "description": "Read the source before the documentation. Get more XP from every evidence gem.",
+      "color": "#90ba93",
+      "icon": "growth",
+      "maxLevel": 5,
+      "stat": "growth",
+      "perLevel": 0.1,
+      "secondary": {},
+      "statLabel": "experience",
+      "format": "percent"
+    },
+    {
+      "id": "luck",
+      "name": "Entropy",
+      "description": "The crash was not random. Improve critical hits, treasure and upgrade choices.",
+      "color": "#c5a8de",
+      "icon": "luck",
+      "maxLevel": 5,
+      "stat": "luck",
+      "perLevel": 0.15,
+      "secondary": {},
+      "statLabel": "Luck",
+      "format": "percent"
+    },
+    {
+      "id": "curse",
+      "name": "Expanded Scope",
+      "description": "Scope expanded. So did the threat model. More enemies and more evidence.",
+      "color": "#d0737d",
+      "icon": "curse",
+      "maxLevel": 5,
+      "stat": "curse",
+      "perLevel": 0.1,
+      "secondary": {},
+      "statLabel": "enemy strength and density",
+      "format": "percent"
+    }
+  ],
+  "enemies": [
+    {
+      "id": "xss",
+      "name": "Script Imp",
+      "description": "A swarm of untrusted scripts. Fragile bodies, fast propagation.",
+      "color": "#c97888",
+      "icon": "xss",
+      "hp": 10,
+      "speed": 30,
+      "damage": 6,
+      "r": 7,
+      "xp": 1,
+      "behavior": "swarm",
+      "armor": 0,
+      "unlockAt": 0,
+      "threat": {
+        "tag": "XSS",
+        "name": "Cross-site scripting",
+        "cwe": "CWE-79",
+        "reference": "https://cwe.mitre.org/data/definitions/79.html",
+        "signature": "untrusted input \u2192 innerHTML",
+        "onKill": "DOM sink reached. Execution context acquired.",
+        "researchClass": "XSS"
+      }
+    },
+    {
+      "id": "sqli",
+      "name": "Query Golem",
+      "description": "Armored query constructs absorb weak probes. Commit to a stronger payload.",
+      "color": "#b2a878",
+      "icon": "sqli",
+      "hp": 30,
+      "speed": 18,
+      "damage": 10,
+      "r": 10,
+      "xp": 3,
+      "behavior": "armored",
+      "armor": 2,
+      "unlockAt": 0,
+      "threat": {
+        "tag": "SQLi",
+        "name": "SQL injection",
+        "cwe": "CWE-89",
+        "reference": "https://cwe.mitre.org/data/definitions/89.html",
+        "signature": "' OR 1=1 --",
+        "onKill": "WHERE clause bypassed. All rows are in scope.",
+        "researchClass": "SQLi"
+      }
+    },
+    {
+      "id": "ssrf",
+      "name": "Proxy Wraith",
+      "description": "A server-side request that blinks through your perimeter. Watch for the pivot.",
+      "color": "#8db6cd",
+      "icon": "ssrf",
+      "hp": 18,
+      "speed": 27,
+      "damage": 8,
+      "r": 8,
+      "xp": 2,
+      "behavior": "blink",
+      "armor": 0,
+      "unlockAt": 0,
+      "threat": {
+        "tag": "SSRF",
+        "name": "Server-side request forgery",
+        "cwe": "CWE-918",
+        "reference": "https://cwe.mitre.org/data/definitions/918.html",
+        "signature": "GET http://169.254.169.254/",
+        "onKill": "Internal pivot complete. The perimeter was a suggestion.",
+        "researchClass": "SSRF"
+      }
+    },
+    {
+      "id": "idor",
+      "name": "Identity Mimic",
+      "description": "One stolen identity becomes two. Breaking object ownership spawns smaller copies.",
+      "color": "#bd9fd2",
+      "icon": "idor",
+      "hp": 23,
+      "speed": 25,
+      "damage": 8,
+      "r": 8,
+      "xp": 2,
+      "behavior": "split",
+      "armor": 0,
+      "unlockAt": 0,
+      "threat": {
+        "tag": "IDOR",
+        "name": "Insecure direct object reference",
+        "cwe": "CWE-639",
+        "reference": "https://cwe.mitre.org/data/definitions/639.html",
+        "signature": "/users/1337 \u2192 /users/1338",
+        "onKill": "Object acquired. Ownership check not found.",
+        "researchClass": "IDOR"
+      }
+    },
+    {
+      "id": "auth",
+      "name": "Auth Knight",
+      "description": "A privileged route behind a decorative access check. Read the charge windup.",
+      "color": "#cfaa70",
+      "icon": "auth",
+      "hp": 35,
+      "speed": 22,
+      "damage": 12,
+      "r": 10,
+      "xp": 3,
+      "behavior": "charge",
+      "armor": 0,
+      "unlockAt": 0,
+      "threat": {
+        "tag": "AUTHZ",
+        "name": "Missing authorization",
+        "cwe": "CWE-862",
+        "reference": "https://cwe.mitre.org/data/definitions/862.html",
+        "signature": "role=user \u2192 /admin",
+        "onKill": "Access granted. Apparently 200 OK is a policy.",
+        "researchClass": "Auth bypass"
+      }
+    },
+    {
+      "id": "race",
+      "name": "Race Twins",
+      "description": "Two processes, one shared resource, no lock. Their zigzags never stay synchronized.",
+      "color": "#d99773",
+      "icon": "race",
+      "hp": 16,
+      "speed": 43,
+      "damage": 8,
+      "r": 7,
+      "xp": 2,
+      "behavior": "zigzag",
+      "armor": 0,
+      "unlockAt": 0,
+      "threat": {
+        "tag": "TOCTOU",
+        "name": "Time-of-check / time-of-use",
+        "cwe": "CWE-367",
+        "reference": "https://cwe.mitre.org/data/definitions/367.html",
+        "signature": "check() \u2192 [race] \u2192 use()",
+        "onKill": "Race won. The check and the use disagree.",
+        "researchClass": null
+      }
+    },
+    {
+      "id": "rce",
+      "name": "Execution Crawler",
+      "description": "An execution sink on legs. It keeps its distance and sends commands your way.",
+      "color": "#e28268",
+      "icon": "rce",
+      "hp": 28,
+      "speed": 23,
+      "damage": 10,
+      "r": 9,
+      "xp": 3,
+      "behavior": "caster",
+      "armor": 0,
+      "unlockAt": 0,
+      "threat": {
+        "tag": "RCE",
+        "name": "OS command injection",
+        "cwe": "CWE-78",
+        "reference": "https://cwe.mitre.org/data/definitions/78.html",
+        "signature": "user input \u2192 exec()",
+        "onKill": "Code execution reached. Your input became a process.",
+        "researchClass": null
+      }
+    },
+    {
+      "id": "deser",
+      "name": "Object Reliquary",
+      "description": "A hostile object graph rebuilds script imps. Remove the gadget source before the swarm grows.",
+      "color": "#a9b99b",
+      "icon": "deser",
+      "hp": 32,
+      "speed": 19,
+      "damage": 9,
+      "r": 10,
+      "xp": 3,
+      "behavior": "summoner",
+      "armor": 0,
+      "unlockAt": 0,
+      "threat": {
+        "tag": "DESER",
+        "name": "Insecure deserialization",
+        "cwe": "CWE-502",
+        "reference": "https://cwe.mitre.org/data/definitions/502.html",
+        "signature": "untrusted bytes \u2192 deserialize()",
+        "onKill": "Gadget chain complete. The object was not just data.",
+        "researchClass": null
+      }
+    },
+    {
+      "id": "prototype",
+      "name": "Prototype Mimic",
+      "description": "Inherited poison spreads across the floor. Do not stand in the polluted prototype chain.",
+      "color": "#a2be79",
+      "icon": "prototype",
+      "hp": 25,
+      "speed": 23,
+      "damage": 9,
+      "r": 9,
+      "xp": 3,
+      "behavior": "poison",
+      "armor": 0,
+      "unlockAt": 0,
+      "threat": {
+        "tag": "PROTO",
+        "name": "Prototype pollution",
+        "cwe": "CWE-1321",
+        "reference": "https://cwe.mitre.org/data/definitions/1321.html",
+        "signature": "__proto__.isAdmin = true",
+        "onKill": "Prototype poisoned. Those defaults belonged to everyone.",
+        "researchClass": null
+      }
+    },
+    {
+      "id": "reaper",
+      "name": "The Unpatched One",
+      "description": "The final privileged process. Survive its phases, read the telegraphs, take control.",
+      "color": "#d6c7e4",
+      "icon": "reaper",
+      "hp": 220,
+      "speed": 29,
+      "damage": 18,
+      "r": 17,
+      "xp": 20,
+      "behavior": "reaper",
+      "armor": 0,
+      "unlockAt": 0,
+      "threat": {
+        "tag": "PRIVESC",
+        "name": "Improper privilege management",
+        "cwe": "CWE-269",
+        "reference": "https://cwe.mitre.org/data/definitions/269.html",
+        "signature": "uid=1000 \u2192 uid=0",
+        "onKill": "Privilege boundary crossed. You own this process now.",
+        "researchClass": null
+      }
+    }
+  ],
+  "arcana": [
+    {
+      "id": "critical",
+      "name": "Critical Thinking",
+      "description": "All weapons gain +15% critical chance. Critical hits deal another +50% damage. Every finding needs a reproducible impact.",
+      "color": "#e6b762",
+      "icon": "critical",
+      "effect": "critical"
+    },
+    {
+      "id": "blood",
+      "name": "Responsible Disclosure",
+      "description": "Every defeated vulnerability restores 0.25 health. Whip lifesteal doubles. A clean disclosure keeps the operator alive.",
+      "color": "#ce637b",
+      "icon": "blood",
+      "effect": "blood"
+    },
+    {
+      "id": "volatile",
+      "name": "Exploit Chain",
+      "description": "Projectile impacts detonate for 30% damage in a small area. One primitive is good. A chain is better.",
+      "color": "#df9057",
+      "icon": "volatile",
+      "effect": "volatile"
+    },
+    {
+      "id": "frost",
+      "name": "Race Condition",
+      "description": "Weapon hits have a 15% chance to freeze a vulnerability for one second. Suspend the thread. Win the scheduling window.",
+      "color": "#8fcfe8",
+      "icon": "frost",
+      "effect": "frost"
+    },
+    {
+      "id": "ricochet",
+      "name": "Return to Sender",
+      "description": "Knives, bolts and fireballs ricochet twice instead of expiring at the edge. Reflected input is still your input.",
+      "color": "#b9a0df",
+      "icon": "ricochet",
+      "effect": "ricochet"
+    },
+    {
+      "id": "greed",
+      "name": "Bug Bounty",
+      "description": "Gold drops heal you, and every chest contains an extra gold reward. Impact first. Payout second.",
+      "color": "#dbbf64",
+      "icon": "greed",
+      "effect": "greed"
+    }
+  ],
+  "powerUps": [
+    {
+      "id": "might",
+      "name": "Might",
+      "description": "Increase all weapon damage.",
+      "color": "#d99b79",
+      "icon": "might",
+      "maxLevel": 5,
+      "baseCost": 75,
+      "costScale": 1.65,
+      "stat": "might",
+      "perLevel": 0.05
+    },
+    {
+      "id": "cooldown",
+      "name": "Cooldown",
+      "description": "Reduce time between automatic attacks.",
+      "color": "#9ba9d7",
+      "icon": "cooldown",
+      "maxLevel": 5,
+      "baseCost": 100,
+      "costScale": 1.65,
+      "stat": "cooldown",
+      "perLevel": -0.025
+    },
+    {
+      "id": "health",
+      "name": "Vitality",
+      "description": "Increase maximum health.",
+      "color": "#cf8397",
+      "icon": "health",
+      "maxLevel": 5,
+      "baseCost": 65,
+      "costScale": 1.65,
+      "stat": "health",
+      "perLevel": 0.1
+    },
+    {
+      "id": "armor",
+      "name": "Armor",
+      "description": "Reduce damage from incoming hits.",
+      "color": "#b4bfcd",
+      "icon": "armor",
+      "maxLevel": 3,
+      "baseCost": 120,
+      "costScale": 1.65,
+      "stat": "armor",
+      "perLevel": 1
+    },
+    {
+      "id": "growth",
+      "name": "Growth",
+      "description": "Earn more experience per gem.",
+      "color": "#91bf9c",
+      "icon": "growth",
+      "maxLevel": 5,
+      "baseCost": 80,
+      "costScale": 1.65,
+      "stat": "growth",
+      "perLevel": 0.05
+    },
+    {
+      "id": "magnet",
+      "name": "Magnet",
+      "description": "Collect evidence from farther away.",
+      "color": "#dfbf6b",
+      "icon": "magnet",
+      "maxLevel": 5,
+      "baseCost": 55,
+      "costScale": 1.65,
+      "stat": "magnet",
+      "perLevel": 8
+    },
+    {
+      "id": "amount",
+      "name": "Amount",
+      "description": "Start with one extra projectile.",
+      "color": "#a3bfe0",
+      "icon": "amount",
+      "maxLevel": 1,
+      "baseCost": 650,
+      "costScale": 1.65,
+      "stat": "amount",
+      "perLevel": 1
+    },
+    {
+      "id": "revival",
+      "name": "Revival",
+      "description": "Return once after a failed exploit.",
+      "color": "#be9bda",
+      "icon": "revival",
+      "maxLevel": 1,
+      "baseCost": 800,
+      "costScale": 1.65,
+      "stat": "revival",
+      "perLevel": 1
+    }
+  ],
+  "ui": {
+    "weaponSlotsLabel": "Weapons",
+    "passiveSlotsLabel": "Relics",
+    "quickLabel": "Quick breach \u00b7 10 minutes",
+    "standardLabel": "Full audit \u00b7 30 minutes",
+    "endlessLabel": "Persistent access \u00b7 endless",
+    "reroll": "Reroll",
+    "skip": "Skip",
+    "banish": "Banish",
+    "evolutionLabel": "Evolution",
+    "statsDamageLabel": "Damage",
+    "statsKillsLabel": "Kills",
+    "healName": "Rollback Snapshot",
+    "healDescription": "Restore health and keep the build you have.",
+    "goldName": "Accepted Bounty",
+    "goldDescription": "Take gold instead of a new item.",
+    "relicName": "Stage relic",
+    "bossName": "CRITICAL / EXPLOITABLE",
+    "bossDescription": "A privileged vulnerability has entered the scope.",
+    "finalBossName": "THE UNPATCHED ONE / ROOT CONTEXT",
+    "winText": "Exploit chain complete. Scope owned. Report ready.",
+    "deathText": "Segmentation fault. The PoC needs one more iteration.",
+    "reviveText": "Checkpoint restored. Same target, better hypothesis.",
+    "limitBreakName": "Limit Break",
+    "limitBreakDescription": "Your arsenal is complete. Push one weapon beyond its limits.",
+    "rescueText": "Researcher recovered. The root cause was an authorization check left as a TODO.",
+    "secretObjectiveText": "Full chain confirmed: reconnaissance, researcher extraction and the final privilege boundary. Impact demonstrated.",
+    "merchantOpenText": "Grey-Hat Broker \u2014 trade run bounty for a better primitive. No duplicate reports.",
+    "arcanaFlavor_critical": "Every finding needs a reproducible impact.",
+    "arcanaFlavor_blood": "A clean disclosure keeps the operator alive.",
+    "arcanaFlavor_volatile": "One primitive is good. A chain is better.",
+    "arcanaFlavor_frost": "Suspend the thread. Win the scheduling window.",
+    "arcanaFlavor_ricochet": "Reflected input is still your input.",
+    "arcanaFlavor_greed": "Impact first. Payout second.",
+    "scope_cathedral": "HTTPS / reverse proxies / exposed APIs",
+    "scope_library": "source review / multi-tenant APIs / object ownership",
+    "scope_foundry": "native exploitation / heap / ROP gadgets",
+    "scope_void": "kernel / privilege boundaries / race windows",
+    "lobbySubtitle": "Enumerate. Find a primitive. Chain it. Survive the disclosure.",
+    "choiceTitle": "Turn the primitive into impact.",
+    "pauseTitle": "Breakpoint hit.",
+    "pauseKicker": "PROCESS ATTACHED / EXECUTION PAUSED",
+    "chestTitle": "Impact demonstrated.",
+    "deathTitle": "The PoC crashed.",
+    "winTitle": "From primitive to full compromise.",
+    "lostTitle": "Works on my machine.",
+    "extractTitle": "Evidence secured. Report submitted.",
+    "debriefTitle": "EXPLOIT CHAIN / ATTACK BREAKDOWN",
+    "briefingLabel": "RULES OF ENGAGEMENT",
+    "bestiaryLabel": "VULNERABILITY DOSSIERS",
+    "intelTitle": "LIVE VULNERABILITY INTEL",
+    "feedTitle": "operator@scope:~#",
+    "scopeLoaded": "Scope loaded. The WAF is feeling confident.",
+    "firstBlood": "FIRST PRIMITIVE / It is exploitable.",
+    "levelFeed": "PRIVILEGE ESCALATION / New gadget available.",
+    "chestFeed": "BOUNTY TRIAGE / The impact was reproducible.",
+    "deathFeed": "CORE DUMPED / Repro steps need work.",
+    "winFeed": "SCOPE OWNED / Write the report before touching prod.",
+    "researchHeading": "REAL RESEARCH / FOLLOW THE VULNERABILITY CLASS",
+    "inverseLabel": "Inverse / hostile trust boundaries",
+    "inverseDescription": "Double enemy health, faster and denser threats. Double gold and +20% Growth.",
+    "endlessCycleText": "NEW ATTACK CYCLE / the scope has expanded. Waves and broker stock reset; threat pressure rises.",
+    "goldFeverStart": "BOUNTY FRENZY / impact is compounding.",
+    "goldFeverEnd": "Bounty frenzy ended. Evidence banked.",
+    "stageItemOpen": "The guardian fell. Recover the exposed artifact.",
+    "stageItemCollected": "FLOOR ARTIFACT / an extra dependency joins your build.",
+    "finalOvertimeText": "FINAL CONFRONTATION / eliminate the privileged process to extract.",
+    "sealsDescription": "Sealed weapons cannot appear as new upgrades. An operator always keeps their starter.",
+    "eggDescription": "Each artifact grants one small permanent stat increment to this operator; every eight artifacts completes the same eight-stat cycle.",
+    "arsenalOpen": "ZERO-DAY VAULT / choose the next primitive.",
+    "arsenalFallback": "Arsenal saturated. The vault pays out its bounty instead.",
+    "arsenalSelected": "PRIMITIVE ACQUIRED / the exploit chain grows.",
+    "arsenalSkipped": "Evidence sold. The vault bounty is secured.",
+    "arcanaDraftText": "FORBIDDEN PACK / choose one rule to break."
+  },
+  "unions": [
+    {
+      "id": "supply-chain",
+      "name": "Supply Chain Collapse",
+      "description": "Recon discovers the entry point; a forged JWT supplies the identity. Recon bombardment and returning session tokens become one chain. Consumes Forged JWT and frees one weapon slot.",
+      "color": "#e2c6f4",
+      "icon": "birds",
+      "weapons": [
+        "birds",
+        "cross"
+      ],
+      "passive": "speed",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Supply Chain Collapse",
+        "damageMultiplier": 2.5,
+        "cooldownMultiplier": 0.6,
+        "areaMultiplier": 1.4,
+        "extraProjectiles": 3,
+        "speedMultiplier": 1.5
+      },
+      "returnAfter": 0.8,
+      "projectileRadius": 7,
+      "projectileLife": 3.2
+    },
+    {
+      "id": "allocator-sovereign",
+      "name": "Allocator Sovereign",
+      "description": "Stack Pivot absorbs Heap Spray: the orbit becomes a fortified carousel while independent bouncing allocations fill the attack surface. Consumes Heap Spray and frees one weapon slot.",
+      "color": "#cba8f0",
+      "icon": "orbit",
+      "weapons": [
+        "orbit",
+        "rune"
+      ],
+      "passive": "area",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Allocator Sovereign",
+        "damageMultiplier": 1.6,
+        "cooldownMultiplier": 0.85,
+        "areaMultiplier": 1.2,
+        "extraProjectiles": 2,
+        "speedMultiplier": 1.1
+      },
+      "fusion": {
+        "weapon": "rune",
+        "cooldown": 1.4,
+        "count": 4,
+        "damageMultiplier": 0.6,
+        "speedMultiplier": 1.1,
+        "durationMultiplier": 1,
+        "radiusMultiplier": 1,
+        "bouncing": true
+      }
+    },
+    {
+      "id": "crash-to-shell",
+      "name": "Crash to Shell",
+      "description": "Fuzzing Storm absorbs RCE Payload: chain lightning keeps coverage climbing while homing shell payloads explode through the survivors. Consumes RCE Payload and frees one weapon slot.",
+      "color": "#f1ae86",
+      "icon": "lightning",
+      "weapons": [
+        "lightning",
+        "fireball"
+      ],
+      "passive": "cooldown",
+      "maxLevel": 8,
+      "evolution": {
+        "name": "Crash to Shell",
+        "damageMultiplier": 1.8,
+        "cooldownMultiplier": 0.72,
+        "areaMultiplier": 1.35,
+        "extraProjectiles": 1,
+        "speedMultiplier": 1
+      },
+      "fusion": {
+        "weapon": "fireball",
+        "cooldown": 1.8,
+        "count": 3,
+        "damageMultiplier": 0.75,
+        "speedMultiplier": 1.15,
+        "durationMultiplier": 1.2,
+        "radiusMultiplier": 1,
+        "homing": true,
+        "blastMultiplier": 1.15,
+        "fanAngle": 0.22
+      }
+    }
+  ],
+  "merchantOffers": [
+    {
+      "id": "patch",
+      "name": "Emergency Rollback",
+      "description": "Restore 50 integrity now.",
+      "type": "heal",
+      "cost": 35,
+      "value": 50,
+      "color": "#9fc799",
+      "icon": "health"
+    },
+    {
+      "id": "checkpoint",
+      "name": "Cold Backup",
+      "description": "Add one revival for this run.",
+      "type": "revive",
+      "cost": 150,
+      "value": 1,
+      "color": "#ba9ed4",
+      "icon": "revival"
+    },
+    {
+      "id": "rootkit",
+      "name": "Privileged Payload",
+      "description": "+15% Might for this run.",
+      "type": "stat",
+      "cost": 100,
+      "stat": "might",
+      "value": 0.15,
+      "color": "#d3a16e",
+      "icon": "might"
+    },
+    {
+      "id": "grimoire",
+      "name": "Leaked Grimoire",
+      "description": "Acquire a forbidden arcana without waiting for the next timed selection.",
+      "type": "arcana",
+      "cost": 180,
+      "color": "#b5a0d1",
+      "icon": "critical"
+    },
+    {
+      "id": "arsenal",
+      "name": "Black-Market Arsenal",
+      "description": "Choose a new weapon or weapon upgrade. This closes the merchant.",
+      "type": "weapon",
+      "cost": 75,
+      "color": "#8db8ca",
+      "icon": "knife"
+    },
+    {
+      "id": "inverse-checkpoint",
+      "name": "Inverse Snapshot",
+      "description": "Inverse exclusive: acquire one additional revival for this run.",
+      "type": "revive",
+      "inverseOnly": true,
+      "cost": 200,
+      "value": 1,
+      "color": "#ba9ed4",
+      "icon": "revival"
+    },
+    {
+      "id": "arcana-slot",
+      "name": "Forbidden Call Frame",
+      "description": "Inverse exclusive: add one arcana slot and immediately draft from three seeded cards. One extra slot per run.",
+      "type": "arcana-slot",
+      "inverseOnly": true,
+      "cost": 300,
+      "color": "#e0bd7b",
+      "icon": "critical"
+    }
+  ],
+  "intel": {
+    "maxFeed": 3,
+    "initialEnemy": "xss",
+    "perClassLogInterval": 12,
+    "focusHold": 5,
+    "maxNearbyLabels": 5,
+    "labelRange": 110,
+    "milestones": [
+      {
+        "kills": 10,
+        "text": "10 PRIMITIVES / Attack complexity: Low."
+      },
+      {
+        "kills": 25,
+        "text": "25 EXPLOITS / The WAF has opened a support ticket."
+      },
+      {
+        "kills": 50,
+        "text": "50 EXPLOITS / \"We cannot reproduce\" is getting harder to say."
+      },
+      {
+        "kills": 100,
+        "text": "100 EXPLOITS / This is a systemic issue."
+      },
+      {
+        "kills": 250,
+        "text": "250 EXPLOITS / Root cause: trust."
+      },
+      {
+        "kills": 500,
+        "text": "500 EXPLOITS / Scope expansion requested."
+      }
+    ],
+    "quips": {
+      "newWeapon": "NEW PRIMITIVE / {name}",
+      "passive": "EXPLOIT MODIFIER / {name}",
+      "evolution": "CHAIN COMPLETE / {name}",
+      "relic": "SOURCE LEAK / {name}"
+    },
+    "researchLinks": 4,
+    "lowNearbyLabels": 2
+  }
+}

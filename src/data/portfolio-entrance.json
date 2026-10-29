@@ -1,0 +1,10 @@
+{
+  "label": "The Night Archive entrance",
+  "eyebrow": "The Night Archive",
+  "enter": "Enter the archive",
+  "skip": "Skip introduction",
+  "replay": "Replay entrance",
+  "durationMs": 1750,
+  "fadeMs": 550,
+  "sessionKey": "cv-archive-entrance-v1"
+}
