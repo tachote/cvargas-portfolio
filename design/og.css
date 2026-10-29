@@ -1,0 +1,30 @@
+@font-face { font-family: Inter; src: url(../public/fonts/Inter.ttf); font-weight: 100 900; }
+@font-face { font-family: JBMono; src: url(../public/fonts/JBMono.ttf); font-weight: 100 800; }
+@font-face { font-family: Pixel; src: url(../public/fonts/Pixelify.ttf); font-weight: 400 700; }
+:root { --bg:#0E0A12; --surface:#1A1220; --border:#3A2A44; --text:#EDE6D6; --muted:#9A8FA3; --accent:#C9A227; --blood:#B0213A; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1200px; height:630px; overflow:hidden; background:var(--bg); }
+.og { position:relative; width:1200px; height:630px; overflow:hidden; background:var(--bg); color:var(--text); }
+.og > i { position:absolute; display:block; }
+.sky, .castle, .fog { inset:0; background:center bottom / cover no-repeat; }
+.sky { background-image:url(../public/fx/layer-sky.svg); opacity:.9; }
+/* same trick as the live site (src/fx.css .l2): the castle is #08060B, brighten it */
+.castle { background-image:url(../public/fx/layer-castle.svg); filter:brightness(6); top:90px; }
+.fog { background-image:url(../public/fx/layer-fog.svg); opacity:.4; top:200px; }
+.moon { top:58px; left:640px; width:96px; height:96px; background:url(../public/fx/moon.svg) center / contain no-repeat; image-rendering:pixelated; filter:drop-shadow(0 0 22px #c9a22755); }
+/* keeps the copy at AA contrast over the castle */
+.shade { inset:0; background:linear-gradient(90deg, #0e0a12e8 0%, #0e0a12b0 34%, #0e0a1230 56%, transparent 70%); }
+.hunter { position:absolute; right:52px; bottom:44px; height:520px; width:auto; }
+.copy { position:absolute; left:76px; top:150px; width:640px; }
+h1 { font-family:Inter; font-weight:800; font-size:104px; line-height:.98; letter-spacing:-2px; color:var(--text); text-shadow:0 4px 0 #000a; }
+.role { margin-top:34px; font-family:JBMono; font-weight:500; font-size:29px; line-height:1.4; white-space:nowrap; color:var(--muted); }
+.role .sep { display:none; } /* stacked layout: line break replaces the " · " */
+.role .org { display:block; }
+.role .org { color:var(--accent); font-weight:700; white-space:nowrap; }
+.url { position:absolute; left:78px; bottom:64px; font-family:Pixel; font-size:24px; letter-spacing:1px; color:var(--muted); }
+.c { width:66px; height:66px; background:url(corner.svg) center / contain no-repeat; }
+.tl { top:24px; left:24px; }
+.tr { top:24px; right:24px; transform:scaleX(-1); }
+.bl { bottom:24px; left:24px; transform:scaleY(-1); }
+.br { bottom:24px; right:24px; transform:scale(-1,-1); }
+.scan { inset:0; background:repeating-linear-gradient(0deg, rgba(0,0,0,.04) 0 2px, rgba(237,230,214,.04) 2px 3px, transparent 3px 4px); pointer-events:none; }
